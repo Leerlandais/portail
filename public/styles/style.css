@@ -3,103 +3,108 @@ body {
     flex-direction: column;
     align-items: center;
     background: hsla(208, 33%, 21%, 1);
-    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);    
-    background-repeat: no-repeat;
-    height: 100vh;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);  
+    height: 200vh;
+    color: hsla(180, 36%, 46%, 1);;
 }
 
 .headerDiv {
     width: 50vw;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
-    margin: 15vh auto 5vh;
-}
-
-h1 {
+    margin: 5vh auto;
     text-align: center;
-    color: hsla(211, 36%, 46%, 1);
 }
 
 h3 {
     margin: 0 auto;
     text-align: center;
+    color: hsla(180, 36%, 46%, 1);
+    width: 100%;
+    display: block;
+}
+
+h6 {
+    text-align: center;
+    color: #fff;
 }
 
 fieldset {
     width: 60vw;
-    color: hsla(211, 36%, 46%, 1);
     border-color: hsla(211, 36%, 46%, 1);
     border-radius: 10px;
 }
 
-.portalHolder {
+.portalHolder, .windowHolder {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.windowHolder {
+    width: 100%;
+    margin-top: 1vh;
 }
 
 .portalWindow {
-    margin: 3%;
+    margin: 3% 0 10%;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
-    width: 10vw;
+    width: 80%;
     height: 12vh;
-    transition: all 350ms ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transition: all 450ms ease-in-out;
 }
 
-.portalHolder a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: all 350ms ease-in-out;
-    color: hsla(211, 36%, 46%, 1);
+.portalWindow:hover {
+    transform: scale(1.3);
 }
 
-.portalHolder a:hover {
-    transform: scale(2);
+.spinIt {
+    transform: rotateY(-360deg);
 }
 
-
-.portalSpan {
-    width: 100%;
-    height: 100%;   
+.windowHolder {
+    transition: transform 1250ms ease-in-out;
 }
 
 .windowCF23 {
-    background-image: url(../images/cf2m.png); 
+    background-image: url(../images/cf2m.png);
+    opacity: 0.8; 
 }
 
 .windowGit {
-    background-image: url(../images/git.png); 
+    background-image: url(../images/git.png);
+    opacity: 0.8; 
 }
 
 .windowTI1 {
-    background-image: url(../images/TI1.png); 
+    background-image: url(../images/TI1.png);
+    opacity: 0.8; 
 }
 
 .windowTI2 {
-    background-image: url(../images/TI2.png); 
+    background-image: url(../images/TI2.png);
+    opacity: 0.8; 
 }
 
 .windowEarlyJS {
     background-image: url(../images/earlyJS.png);
+    opacity: 0.8;
 }
 
 .windowPrefo {
     background-image: url(../images/prefo.png);
+    opacity: 0.8;
 }
 
 .windowTBA1 {
     background-image: url(../images/abstract-coming-soon-halftone-style-background-design/27282.jpg);
+    opacity: 0.8;
 }
-
 
 .windowTBA2 {
     background-image: url(../images/coming-soon-text-abstract-sunrise-dark-background-with-motion-effect/03092022_rorozoa_10.jpg);
+    opacity: 0.8;
 }
+
