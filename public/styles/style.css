@@ -20,6 +20,11 @@ h1 {
     color: hsla(211, 36%, 46%, 1);
 }
 
+h3 {
+    margin: 0 auto;
+    text-align: center;
+}
+
 fieldset {
     width: 60vw;
     color: hsla(211, 36%, 46%, 1);
