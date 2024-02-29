@@ -2,10 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: hsla(208, 33%, 21%, 1);
     background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);  
-    height: 200vh;
-    color: hsla(180, 36%, 46%, 1);;
+    color: hsla(180, 36%, 46%, 1);
 }
 
 .headerDiv {
@@ -19,9 +17,7 @@ body {
 h3 {
     margin: 0 auto;
     text-align: center;
-    color: hsla(180, 36%, 46%, 1);
     width: 100%;
-    display: block;
 }
 
 h6 {
@@ -53,6 +49,8 @@ fieldset {
     border-radius: 20px;
     width: 80%;
     height: 12vh;
+    background-size: cover;
+    opacity: 0.8; 
     transition: all 450ms ease-in-out;
 }
 
@@ -70,41 +68,142 @@ fieldset {
 
 .windowCF23 {
     background-image: url(../images/cf2m.png);
-    opacity: 0.8; 
+    
 }
 
 .windowGit {
     background-image: url(../images/git.png);
-    opacity: 0.8; 
 }
 
 .windowTI1 {
     background-image: url(../images/TI1.png);
-    opacity: 0.8; 
 }
 
 .windowTI2 {
     background-image: url(../images/TI2.png);
-    opacity: 0.8; 
 }
 
 .windowEarlyJS {
     background-image: url(../images/earlyJS.png);
-    opacity: 0.8;
 }
 
 .windowPrefo {
     background-image: url(../images/prefo.png);
-    opacity: 0.8;
 }
 
 .windowTBA1 {
     background-image: url(../images/abstract-coming-soon-halftone-style-background-design/27282.jpg);
-    opacity: 0.8;
 }
 
 .windowTBA2 {
     background-image: url(../images/coming-soon-text-abstract-sunrise-dark-background-with-motion-effect/03092022_rorozoa_10.jpg);
-    opacity: 0.8;
+}
+    
+    
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+    
+    
+    .headerDiv {
+        width: 80vw;
+        border: 2px solid  hsla(211, 36%, 46%, 1);
+        border-radius: 20px;
+        margin: 5vh auto;
+        text-align: center; 
+        font-size: 22px;
+    }
+    
+    h3 {
+        margin: 0 auto 1vh;
+        text-align: center;
+        width: 100%;
+        text-decoration: underline;
+        font-style: italic;
+        font-size: xx-large;
+    }
+    
+    
+    fieldset {
+        width: 60vw;
+        border-color: hsla(211, 36%, 46%, 1);
+        border-radius: 10px;
+    }
+    
+    legend {
+        font-size: larger;
+    }
+
+    .portalHolder, .windowHolder {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .windowHolder {
+        width: 100%;
+        margin-top: 1vh;
+    }
+    
+    .portalWindow {
+        margin: 3% 0 10%;
+        border: 2px solid  hsla(211, 36%, 46%, 1);
+        border-radius: 20px;
+        width: 60%;
+        height: 14vh;
+        transition: all 450ms ease-in-out;
+    }
+    
 }
 
+@media screen and (min-width: 1400px) and (max-width: 2260px) {
+
+    .headerDiv {
+        width: 80vw;
+        border: 2px solid  hsla(211, 36%, 46%, 1);
+        border-radius: 20px;
+        margin: 5vh auto;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    legend {
+        font-size: x-large;
+    }
+    
+    h3 {
+        margin: 0 auto 1vh;
+        text-align: center;
+        width: 100%;
+        text-decoration: underline;
+        font-style: italic;
+        font-size: xx-large;
+    }
+    
+    
+    fieldset {
+        width: 60vw;
+        border-color: hsla(211, 36%, 46%, 1);
+        border-radius: 10px;
+    }
+    
+    .portalHolder, .windowHolder {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .windowHolder {
+        width: 100%;
+        margin-top: 1vh;
+    }
+    
+    .portalWindow {
+        margin: 3% 0 10%;
+        border: 2px solid  hsla(211, 36%, 46%, 1);
+        border-radius: 20px;
+        width: 60%;
+        height: 14vh;
+        transition: all 450ms ease-in-out;
+    }
+}
