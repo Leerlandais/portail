@@ -7,13 +7,13 @@ function displayScreenWidth() {
     let theWidth = window.innerWidth;                                             
     screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
-
+displayScreenWidth();
 
 const windowHolder = document.querySelectorAll(".windowHolder");
 
 for (i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
-    console.log(windowHolder[i]);
+
 }
 function makeItSpin() {
 let spinThis = this;

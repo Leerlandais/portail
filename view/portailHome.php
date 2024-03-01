@@ -11,7 +11,7 @@
 <body>
 <?php
 include("../view/inc/header.php");
-var_dump($db);
+
 ?>
 
 <fieldset>
