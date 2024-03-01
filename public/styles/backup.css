@@ -1,0 +1,72 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.windowHolder {
+    margin: 3%;
+    width: 10vw;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+}
+
+
+.portalSpan {
+    width: 100%;
+    height: 100%;   
+}
+
+.windowCF23 {
+    background-image: url(../images/cf2m.png); 
+}
+
+.windowGit {
+    background-image: url(../images/git.png); 
+}
+
+.windowTI1 {
+    background-image: url(../images/TI1.png); 
+}
+
+.windowTI2 {
+    background-image: url(../images/TI2.png); 
+}
+
+.windowEarlyJS {
+    background-image: url(../images/earlyJS.png);
+}
+
+.windowPrefo {
+    background-image: url(../images/prefo.png);
+}
+
+.windowTBA1 {
+    background-image: url(../images/abstract-coming-soon-halftone-style-background-design/27282.jpg);
+}
+
+.windowTBA2 {
+    background-image: url(../images/coming-soon-text-abstract-sunrise-dark-background-with-motion-effect/03092022_rorozoa_10.jpg);
+}
+
+
+
+@media screen and (max-width: 600px) {
+    
+}
