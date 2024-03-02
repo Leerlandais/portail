@@ -11,7 +11,7 @@
 <body>
 <?php
 include("../view/inc/header.php");
-var_dump($db);
+
 ?>
 
 <fieldset>
@@ -47,7 +47,7 @@ var_dump($db);
         </div>
         <div class="windowHolder" id="windowHolder8">
             <h3>CF2M</h3>
-            <div class="portalWindow windowCF23" id="portalToCF2M"></div>
+            <div class="portalWindow windowCF2M" id="portalToCF2M"></div>
         </div>
     </div>
 </fieldset>

@@ -20,13 +20,19 @@ body {
     /* width and fontsize to be added via media */
 }
 
+.headerDiv a {
+    color: hsla(180, 36%, 46%, 1);
+    font-style: italic;
+    font-size: 0.75em;
+}
+
 fieldset {
     width: 60vw;
     border-color: hsla(211, 36%, 46%, 1);
     border-radius: 10px;
 }
 
-.windowCF23 {
+.windowCF2M {
     background-image: url(../images/cf2m_logo.png); 
     
     background-color: white;
@@ -101,6 +107,76 @@ h3 {
 .portalWindow:hover {
     transform: scale(1.3);
     opacity: 1;
+}
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 20vh;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+}
+
+.contactHolder {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactLabel {
+    width: 15%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.sendBut {
+    width: 10vw;
+    color:  hsla(255, 36%, 46%, 1);
+    background-color:  hsla(220, 13%, 76%, 1);;
+}
+
+.contactInp {
+    width: 60%;
+    background-color:  hsla(180, 13%, 76%, 1);
+}
+
+.formInp {
+    padding-left: 3%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 2px auto;
+}
+
+textarea {
+    margin-bottom: 5px;
+}
+
+.messageHolder, .messageWindow {
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+}
+
+.messageWindow {
+    margin-top: 5vh;
+    padding: 1vh 0;
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.messageHolder {
+    text-align: center;
+    margin: 5px;
+    width: 60%;
+    padding: 0 25px;
 }
 
 

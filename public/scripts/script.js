@@ -53,12 +53,12 @@ switch(spinThis.id) {
         break;
     case "windowHolder7" :
             setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/Site/", "_blank");
+        window.open("https://github.com/Leerlandais", "_blank");
     }, 1250);
         break;
     case "windowHolder8" :
             setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/Site/", "_blank");
+        window.open("https://www.cf2m.be/home", "_blank");
     }, 1250);
         break;
 }
