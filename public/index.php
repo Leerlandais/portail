@@ -15,7 +15,10 @@ if(isset($_GET["p"])){
             $title = "Page d'Accueil";
             include("../view/portailHome.php");
             break;
-
+        case 'contact' :
+            $title = "Contact Me";
+            include("../view/contact.php");
+            break;
         }
     }else{
         $title = "Page d'Accueil";

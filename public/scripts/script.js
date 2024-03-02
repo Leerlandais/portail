@@ -1,4 +1,4 @@
-
+/*
 window.addEventListener('resize', displayScreenWidth); 
 
 
@@ -8,7 +8,7 @@ function displayScreenWidth() {
     screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
 displayScreenWidth();
-
+*/
 const windowHolder = document.querySelectorAll(".windowHolder");
 
 for (i=0; i<windowHolder.length; i++) {
