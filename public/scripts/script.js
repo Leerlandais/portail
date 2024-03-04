@@ -10,11 +10,29 @@ function displayScreenWidth() {
 displayScreenWidth();
 */
 const windowHolder = document.querySelectorAll(".windowHolder");
+const portalWindow = document.querySelectorAll(".portalWindow");
+const descPrefo = document.getElementById("descPrefo");
+
+
+for (i=0; i<portalWindow.length; i++) {
+    portalWindow[i].addEventListener("mouseenter", showDesc);
+}
 
 for (i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
-
 }
+
+function showDesc () {
+    switch(this.id) {
+        case "portalToPrefo" :
+            descPrefo.style.opacity = 1
+            setTimeout(() => {
+                descPrefo.style.opacity = 0;
+              }, 3000);
+            break;
+    }
+}
+
 function makeItSpin() {
 let spinThis = this;
 spinThis.classList.toggle("spinIt");

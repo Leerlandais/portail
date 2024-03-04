@@ -104,7 +104,17 @@ h1 {
     background-repeat: no-repeat;
     opacity: 0.8; 
     transition: all 450ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
     /* width and height in media */
+}
+
+.portalDesc {
+    margin-top: 5%;
+
+    opacity: 0;
 }
 
 
@@ -112,6 +122,8 @@ h1 {
     transform: scale(1.3);
     opacity: 1;
 }
+
+
 
 .contactPage {
     display: flex;

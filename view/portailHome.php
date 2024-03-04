@@ -19,7 +19,7 @@ include("../view/inc/header.php");
     <div class="portalHolder">
         <div class="windowHolder" id="windowHolder1">
             <h3>Site Préformation</h3>
-            <div class="portalWindow windowPrefo" id="portalToPrefo"></div>
+            <div class="portalWindow windowPrefo" id="portalToPrefo"><div class="portalDesc" id="descPrefo">Mon premier site. Fait pour le fin de notre préformation (17/11/2023)</div></div>
         </div>
         <div class="windowHolder" id="windowHolder2">
             <h3>Mes débuts avec JS</h3>
