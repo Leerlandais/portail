@@ -213,11 +213,12 @@ textarea {
     .contactLabel {
         width: 25%;
         text-align: right;
-        margin-right: 10px;
+        margin-right: 2px;
+        font-size: 10px;
     }
 
     .messLabel {
-        margin-right: 20px;
+        margin-right: 2px;
     }
     
     .sendBut {
@@ -238,6 +239,10 @@ textarea {
         width: 80%;
         margin-top: 2px;
         margin-left: 20px;
+    }
+
+    .formInp textarea {
+        width: 90%;
     }
 
     .contactForm {

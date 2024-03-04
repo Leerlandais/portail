@@ -11,7 +11,7 @@
 include("../view/inc/header.php");
 ?>
 <div class="contactPage">
-<h1>Functioning but not yet finished</h1>
+<h1>Leave me a message</h1>
 <div class="contactHolder">
     <form action="" class="contactForm" method="POST">
         <div class="formInp">
