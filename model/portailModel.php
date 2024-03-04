@@ -8,7 +8,7 @@ function getMessages(PDO $db): array
     $query->closeCursor();
     return $result; 
 }
-
+/*
 function addMessage(PDO $db,
 string $firstname,
 string $email,
@@ -31,3 +31,31 @@ string $message
     }
 }
 
+*/
+
+function addMessage(PDO $db, string $firstname, string $email, string $message) {
+    $cleanedFirstName = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $cleanedEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
+    $cleanedMessage = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
+
+    if (empty($cleanedFirstName) || $cleanedEmail === false || empty($cleanedMessage)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO `portail_messages` (`name`, `email`, `message`) VALUES (:firstname, :email, :message)";
+    $stmt = $db->prepare($sql);
+
+    $stmt->bindParam(':firstname', $cleanedFirstName);
+    $stmt->bindParam(':email', $cleanedEmail);
+    $stmt->bindParam(':message', $cleanedMessage);
+
+    try {
+
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+
+        error_log("Error adding message: " . $e->getMessage());
+        return false;
+    }
+}
