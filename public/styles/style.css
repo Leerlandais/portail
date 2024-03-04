@@ -3,7 +3,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);  
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
+    height: 400vh;
     color: hsla(180, 36%, 46%, 1);
 }
 
@@ -81,6 +82,9 @@ h3 {
     /* margins and fontsize in media */
 }
 
+h1 {
+    text-align: center;
+}
 
 .windowHolder {
     /* width and margin in media */
@@ -114,7 +118,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding-top: 20vh;
+    padding-top: 2vh;
 }
 
 .contactForm {
@@ -205,6 +209,52 @@ textarea {
         font-size: 1em;
         margin: 0;
     }
+
+    .contactLabel {
+        width: 25%;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .messLabel {
+        margin-right: 20px;
+    }
+    
+    .sendBut {
+        width: 20vw;
+        color:  hsla(255, 36%, 46%, 1);
+        background-color:  hsla(220, 13%, 76%, 1);;
+    }
+    
+    .contactInp {
+        width: 90%;
+        background-color:  hsla(180, 13%, 76%, 1);
+    }
+    
+    .formInp {
+        padding-left: 3%;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin-top: 2px;
+        margin-left: 20px;
+    }
+
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contactHolder {
+        width: 100%;
+    }
+
+    .messageHolder {
+        font-size: 10px;
+    }
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {

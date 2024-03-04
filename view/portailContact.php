@@ -23,7 +23,7 @@ include("../view/inc/header.php");
             <input type="text" class="contactInp" name="email">
         </div>
             <div class="formInp">
-        <label for="message" class="contactLabel">Message</label>
+        <label for="message" class="contactLabel messLabel">Message</label>
             <textarea class="contactInp" name="message"></textarea>
         </div>
         <button type="submit" class="sendBut">Send</button>
