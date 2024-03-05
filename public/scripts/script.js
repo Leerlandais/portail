@@ -18,6 +18,7 @@ const descTI2 = document.getElementById("descTI2");
 const descGit = document.getElementById("descGit");
 const descCF2M = document.getElementById("descCF2M");
 const messageHolder = document.querySelectorAll(".messageHolder");
+const replyField = document.querySelectorAll(".replyField");
 
 for (let i=0; i<messageHolder.length; i++) {
     messageHolder[i].addEventListener("click", showReplies);
@@ -125,5 +126,8 @@ switch(spinThis.id) {
 
 function showReplies () {
     let pleaseWork = this.childNodes;
+    for (let i=0; i<replyField.length; i++) {
+        replyField[i].setAttribute("style", "display: none;");
+    }
         pleaseWork[5].setAttribute("style", "display: block;");
     }

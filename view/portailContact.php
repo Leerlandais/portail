@@ -36,7 +36,19 @@ include("../view/inc/header.php");
                     <div class="messageHolder" id="message<?=$i?>">                                        
                         <h4><?=$message["name"]?></span> sent this message the <?= (new DateTime($message['datemessage']))->format('d-m-Y @ H\:i')?></h4>  
                         <p><?= wordwrap($message["message"], 28, "\n", true) ?></p>
-                                <div class="replyField" id="replyField<?=$i?>">Here, I can display replies and set up a reply field</div>   
+                                <div class="replyField" id="replyField<?=$i?>">
+                                <form action="" class="replyForm" method="POST">
+        <div class="replyFormInp">
+        <label for="name" class="replyContactLabel">Name</label>
+            <input type="text" class="replyContactInp" name="name">
+        </div>
+        <div class="replyFormInp">
+        <label for="message" class="replyContactLabel messLabel">Message</label>
+            <textarea class="replyContactInp" name="message"></textarea>
+        </div>
+        <button type="submit" class="sendBut">Send</button>
+    </form>
+                            </div>   
                     </div>
                     <?php
                     $i++;
