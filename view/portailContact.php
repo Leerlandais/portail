@@ -31,12 +31,14 @@ include("../view/inc/header.php");
 </div>
 <div class="messageWindow">
 <?php
+            $i = 1;
             foreach ($messages as $message) : ?>                                  
-                    <div class="messageHolder">                                        
+                    <div class="messageHolder" id="message<?=$i?>">                                        
                         <h4><?=$message["name"]?></span> sent this message the <?= (new DateTime($message['datemessage']))->format('d-m-Y @ H\:i')?></h4>  
                         <p><?= wordwrap($message["message"], 28, "\n", true) ?></p>   
                     </div>
                     <?php
+                    $i++;
                 endforeach;                                                             
                 ?>
 </div>
