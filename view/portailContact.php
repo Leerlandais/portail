@@ -35,7 +35,8 @@ include("../view/inc/header.php");
             foreach ($messages as $message) : ?>                                  
                     <div class="messageHolder" id="message<?=$i?>">                                        
                         <h4><?=$message["name"]?></span> sent this message the <?= (new DateTime($message['datemessage']))->format('d-m-Y @ H\:i')?></h4>  
-                        <p><?= wordwrap($message["message"], 28, "\n", true) ?></p>   
+                        <p><?= wordwrap($message["message"], 28, "\n", true) ?></p>
+                                <div class="replyField" id="replyField<?=$i?>">Here, I can display replies and set up a reply field</div>   
                     </div>
                     <?php
                     $i++;

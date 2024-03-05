@@ -123,7 +123,7 @@ switch(spinThis.id) {
 
 }
 
-
 function showReplies () {
-    console.log (this.id);
-}
+    let pleaseWork = this.childNodes;
+        pleaseWork[5].setAttribute("style", "display: block;");
+    }

@@ -195,6 +195,12 @@ textarea {
     padding: 0 25px;
 }
 
+.replyField {
+    display: none;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 90%);
+}
 
 @media screen and (max-width: 600px) {
 
