@@ -54,6 +54,7 @@ include("../view/inc/header.php");
                     $i++;
                 endforeach;                                                             
                 ?>
+                
 </div>
 </div>
 <script src="scripts/script.js"></script>

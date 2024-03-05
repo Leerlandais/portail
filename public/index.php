@@ -10,6 +10,7 @@ try {
 }
 
 $messages = getMessages($db);
+$replies = getReplies($db);
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){

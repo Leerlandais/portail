@@ -8,6 +8,16 @@ function getMessages(PDO $db): array
     $query->closeCursor();
     return $result; 
 }
+
+function getReplies(PDO $db): array
+{
+    $sql = "SELECT * FROM portail_replies ORDER BY id DESC"; 
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result; 
+}
+
 /*
 function addMessage(PDO $db,
 string $firstname,
