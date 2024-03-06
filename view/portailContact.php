@@ -56,7 +56,7 @@ include_once("../view/inc/header.php");
                                         <label for="messageRep" class="replyContactLabel messLabel">Message</label>
                                         <textarea class="replyContactInp" name="messageRep"></textarea>
                                     </div>
-                                    <button type="submit" class="sendBut">Send</button>
+                                    <button type="submit" class="sendReply">Send</button>
                                 </form>
                             </div>   
                         </div>

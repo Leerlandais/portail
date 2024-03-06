@@ -192,13 +192,14 @@ textarea {
     text-align: center;
     margin: 5px;
     width: 60%;
-    padding: 0 25px;
+    padding: 0 25px 15px 25px;
 }
 
 .replyField {
     display: none;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
+    padding: 5px;
     background: linear-gradient(180deg, hsla(120, 33%, 21%, 1) 0%, hsla(180, 36%, 46%, 1) 90%);
 }
 
@@ -206,10 +207,11 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center ;
+    justify-content: center;
     padding: 5px;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
-    background: linear-gradient(180deg, hsla(120, 33%, 21%, 1) 0%, hsla(180, 36%, 46%, 1) 90%);
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
 }
 
 .replyFormInp textarea {
@@ -218,6 +220,13 @@ textarea {
     width: 100%;
 }
 
+.sendReply {
+    width: 15%;
+}
+
+.replyContactInp {
+    background-color:  hsla(180, 13%, 76%, 1);
+}
 
 
 @media screen and (max-width: 600px) {
