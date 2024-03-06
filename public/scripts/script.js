@@ -12,13 +12,26 @@ displayScreenWidth();
 const windowHolder = document.querySelectorAll(".windowHolder");
 const portalWindow = document.querySelectorAll(".portalWindow");
 const descPrefo = document.getElementById("descPrefo");
+const descEarlyJS = document.getElementById("descEarlyJS");
+const descTI1 = document.getElementById("descTI1");
+const descTI2 = document.getElementById("descTI2");
+const descGit = document.getElementById("descGit");
+const descCF2M = document.getElementById("descCF2M");
+const messageHolder = document.querySelectorAll(".messageHolder");
+const replyField = document.querySelectorAll(".replyField");
+const replyForm = document.querySelectorAll(".replyField");
+const parentIdField = document.getElementById("parentIdField");
 
+for (let i=0; i<messageHolder.length; i++) {
+    messageHolder[i].addEventListener("click", showReplies);
+}
+console.log (messageHolder.length);
 
-for (i=0; i<portalWindow.length; i++) {
+for (let i=0; i<portalWindow.length; i++) {
     portalWindow[i].addEventListener("mouseenter", showDesc);
 }
 
-for (i=0; i<windowHolder.length; i++) {
+for (let i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
 }
 
@@ -30,6 +43,36 @@ function showDesc () {
                 descPrefo.style.opacity = 0;
               }, 3000);
             break;
+            case "portalToEarlyJS" :
+                descEarlyJS.style.opacity = 1
+                setTimeout(() => {
+                    descEarlyJS.style.opacity = 0;
+                  }, 3000);
+                break;
+                case "portalToTI1" :
+                    descTI1.style.opacity = 1
+                    setTimeout(() => {
+                        descTI1.style.opacity = 0;
+                      }, 3000);
+                    break;
+                    case "portalToTI2" :
+                        descTI2.style.opacity = 1
+                        setTimeout(() => {
+                            descTI2.style.opacity = 0;
+                          }, 3000);
+                        break;
+                        case "portalToGit" :
+                            descGit.style.opacity = 1
+                            setTimeout(() => {
+                                descGit.style.opacity = 0;
+                              }, 3000);
+                            break;
+                            case "portalToCF2M" :
+                                descCF2M.style.opacity = 1
+                                setTimeout(() => {
+                                    descCF2M.style.opacity = 0;
+                                  }, 3000);
+                                break;      
     }
 }
 
@@ -83,3 +126,12 @@ switch(spinThis.id) {
 
 }
 
+function showReplies () {
+    let pleaseWork = this.childNodes;
+    for (let i=0; i<replyField.length; i++) {
+        replyField[i].setAttribute("style", "display: none;");
+        replyForm[i].setAttribute("style", "display: none;");
+    }
+        pleaseWork[5].setAttribute("style", "display: block;");
+   //     pleaseWork[5].childNodes[5].setAttribute("style", "display: block;");
+    }

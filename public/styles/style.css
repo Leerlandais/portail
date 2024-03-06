@@ -129,7 +129,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+
     padding-top: 2vh;
 }
 
@@ -194,6 +194,30 @@ textarea {
     width: 60%;
     padding: 0 25px;
 }
+
+.replyField {
+    display: none;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background: linear-gradient(180deg, hsla(120, 33%, 21%, 1) 0%, hsla(180, 36%, 46%, 1) 90%);
+}
+
+.replyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    padding: 5px;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background: linear-gradient(180deg, hsla(120, 33%, 21%, 1) 0%, hsla(180, 36%, 46%, 1) 90%);
+}
+
+.replyFormInp textarea {
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
 
 
 @media screen and (max-width: 600px) {
