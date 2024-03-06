@@ -133,5 +133,5 @@ function showReplies () {
         replyForm[i].setAttribute("style", "display: none;");
     }
         pleaseWork[5].setAttribute("style", "display: block;");
-  
+   //     pleaseWork[5].childNodes[5].setAttribute("style", "display: block;");
     }

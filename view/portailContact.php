@@ -47,11 +47,11 @@ include_once("../view/inc/header.php");
                         <?php }   
                      endforeach;  ?>
                                 <form action="" class="replyForm" method="POST">
-                                    <div class="replyFormInp">
+                                    
                                         <label for="nameRep" class="replyContactLabel">Name</label>
                                         <input type="text" class="replyContactInp" name="nameRep">
                                         <input type="text" class="replyContactInp" name="parent_id" id="parentIdField" style="display: none;" value="<?=$message['id']?>">
-                                    </div>
+                                  
                                     <div class="replyFormInp">
                                         <label for="messageRep" class="replyContactLabel messLabel">Message</label>
                                         <textarea class="replyContactInp" name="messageRep"></textarea>
