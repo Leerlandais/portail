@@ -19,6 +19,7 @@ const descGit = document.getElementById("descGit");
 const descCF2M = document.getElementById("descCF2M");
 const messageHolder = document.querySelectorAll(".messageHolder");
 const replyField = document.querySelectorAll(".replyField");
+const parentIdField = document.getElementById("parentIdField");
 
 for (let i=0; i<messageHolder.length; i++) {
     messageHolder[i].addEventListener("click", showReplies);
@@ -130,4 +131,6 @@ function showReplies () {
         replyField[i].setAttribute("style", "display: none;");
     }
         pleaseWork[5].setAttribute("style", "display: block;");
+        parentIdField.value=pleaseWork[5].id;
+        console.log(pleaseWork[5].id);
     }

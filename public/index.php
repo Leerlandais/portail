@@ -41,3 +41,18 @@ if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
     }
 
 }
+
+
+if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
+
+        
+    $insertReply = addReply($db,$_POST['nameRep'],$_POST['parent_id'],$_POST['messageRep']);
+        
+    if ($insertReply) {        
+       
+        exit();
+    } else {        
+        $messageError = "Something went wrong";
+    }
+
+}

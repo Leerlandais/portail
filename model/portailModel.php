@@ -69,3 +69,30 @@ function addMessage(PDO $db, string $firstname, string $email, string $message) 
         return false;
     }
 }
+
+function addReply(PDO $db, string $firstname, string $parent, string $message) {
+    $cleanedFirstName = htmlspecialchars(strip_tags(trim($firstname)), ENT_QUOTES);
+    $cleanedParent =  htmlspecialchars(strip_tags(trim($parent)), ENT_QUOTES);
+    $cleanedMessage = htmlspecialchars(strip_tags(trim($message)), ENT_QUOTES);
+
+    if (empty($cleanedFirstName) || empty($cleanedMessage)) {
+        return false;
+    }
+
+    $sql = "INSERT INTO `portail_replies` (`reply_name`, `parent_message_id`, `reply_to_parent`) VALUES (:firstname, :parentId, :message)";
+    $stmt = $db->prepare($sql);
+
+    $stmt->bindParam(':firstname', $cleanedFirstName);
+    $stmt->bindParam(':parentId', $cleanedParent);
+    $stmt->bindParam(':message', $cleanedMessage);
+
+    try {
+
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+
+        error_log("Error adding message: " . $e->getMessage());
+        return false;
+    }
+}

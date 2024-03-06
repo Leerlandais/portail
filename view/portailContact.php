@@ -39,12 +39,13 @@ include("../view/inc/header.php");
                                 <div class="replyField" id="replyField<?=$i?>">
                                 <form action="" class="replyForm" method="POST">
         <div class="replyFormInp">
-        <label for="name" class="replyContactLabel">Name</label>
-            <input type="text" class="replyContactInp" name="name">
+        <label for="nameRep" class="replyContactLabel">Name</label>
+            <input type="text" class="replyContactInp" name="nameRep">
+            <input type="text" class="replyContactInp" name="parent_id" style="display: none;" value="<?=$message['id']?>">
         </div>
         <div class="replyFormInp">
-        <label for="message" class="replyContactLabel messLabel">Message</label>
-            <textarea class="replyContactInp" name="message"></textarea>
+        <label for="messageRep" class="replyContactLabel messLabel">Message</label>
+            <textarea class="replyContactInp" name="messageRep"></textarea>
         </div>
         <button type="submit" class="sendBut">Send</button>
     </form>
