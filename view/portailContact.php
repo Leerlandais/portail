@@ -43,7 +43,7 @@ include_once("../view/inc/header.php");
             foreach ($replies as $reply) :
                 if ($reply['parent_message_id'] == $message['id']) {
                     ?> 
-                        <h5><?=$reply['reply_name']?> replied : <?=$reply['reply_to_parent']?></h5>   
+                        <h5 title="<?= (new DateTime($reply['date_reply']))->format('d-m-Y @ H\:i')?>"><?=$reply['reply_name']?> replied : <?=$reply['reply_to_parent']?></h5>   
                         <?php }   
                      endforeach;  ?>
                                 <form action="" class="replyForm" method="POST">
