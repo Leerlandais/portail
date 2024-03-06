@@ -11,7 +11,7 @@ function getMessages(PDO $db): array
 
 function getReplies(PDO $db): array
 {
-    $sql = "SELECT * FROM portail_replies ORDER BY id DESC"; 
+    $sql = "SELECT * FROM portail_replies ORDER BY id ASC"; 
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();

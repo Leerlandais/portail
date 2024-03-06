@@ -49,7 +49,7 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
     $insertReply = addReply($db,$_POST['nameRep'],$_POST['parent_id'],$_POST['messageRep']);
         
     if ($insertReply) {        
-       
+        header("Location: ?p=contact"); 
         exit();
     } else {        
         $messageError = "Something went wrong";
