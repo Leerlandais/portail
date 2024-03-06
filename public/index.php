@@ -41,6 +41,20 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
     
 }
 
+if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+
+        
+    $insert = addMessage($db,$_POST['name'],$_POST['email'],$_POST['message']);
+        
+    if ($insert) {        
+        header("Location: ?p=contact"); 
+        exit();
+    } else {        
+        $messageError = "Something went wrong";
+    }
+
+}
+
 if(isset($_GET["p"])){
     switch($_GET["p"]){
         case 'home':
@@ -55,4 +69,6 @@ if(isset($_GET["p"])){
     }else{
         $title = "Page d'Accueil";
         include("../view/portailHome.php");
+
 }
+
