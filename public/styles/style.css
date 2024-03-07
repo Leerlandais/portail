@@ -113,7 +113,7 @@ h1 {
 
 .portalDesc {
     margin-top: 5%;
-
+    text-align: center;
     opacity: 0;
 }
 
@@ -279,6 +279,7 @@ textarea {
     
     .formInp {
         padding-left: 3%;
+        margin-right: 25%;
         display: flex;
         flex-direction: row;
         width: 80%;
@@ -291,10 +292,8 @@ textarea {
     }
 
     .contactForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 100%;
+  
     }
 
     .contactHolder {
@@ -305,6 +304,15 @@ textarea {
         font-size: 10px;
     }
 
+    .sendReply {
+        width: 35%;
+    }
+
+    .replyFormInp textarea {
+        margin-right: 20px;
+        margin-bottom: 5px;
+        width: 95%;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
