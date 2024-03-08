@@ -23,22 +23,22 @@ const replyForm = document.querySelectorAll(".replyField");
 const parentIdField = document.getElementById("parentIdField");
 const cardWindow = document.querySelectorAll(".cardWindow");
 let cardBackgrounds = [
-    "../images/MoustacheGlasses.svg",
-    "../images/MoustacheGlasses.svg",
-    "../images/GlassesSmirk.svg",
-    "../images/GlassesSmirk.svg",
-    "../images/TongueSquint.svg",
-    "../images/TongueSquint.svg",
-    "../images/TongueSmile.svg",
-    "../images/TongueSmile.svg",
-    "../images/StarsEyes.svg",
-    "../images/StarsEyes.svg",
-    "../images/PurpleDevil.svg",
-    "../images/PurpleDevil.svg",
-    "../images/MoneySmile.svg",
-    "../images/MoneySmile.svg",
-    "../images/WinkSmile.svg",
-    "../images/WinkSmile.svg"
+    "images/MoustacheGlasses.svg",
+    "images/MoustacheGlasses.svg",
+    "images/GlassesSmirk.svg",
+    "images/GlassesSmirk.svg",
+    "images/TongueSquint.svg",
+    "images/TongueSquint.svg",
+    "images/TongueSmile.svg",
+    "images/TongueSmile.svg",
+    "images/StarsEyes.svg",
+    "images/StarsEyes.svg",
+    "images/PurpleDevil.svg",
+    "images/PurpleDevil.svg",
+    "images/MoneySmile.svg",
+    "images/MoneySmile.svg",
+    "images/WinkSmile.svg",
+    "images/WinkSmile.svg"
   ];
 console.log(cardBackgrounds);
 
@@ -222,7 +222,7 @@ function showReplies () {
             setTimeout(function () {
                 clickedCard.classList.toggle("flipCardBack");
                 setTimeout(function () {
-                clickedCard.style.backgroundImage = 'url("../images/BWWonder.svg")'
+                clickedCard.style.backgroundImage = 'url("images/BWWonder.svg")'
                 },250);
                 clickedCard.classList.remove("flipCard");
             }, 1500);
