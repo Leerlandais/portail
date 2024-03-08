@@ -51,6 +51,10 @@ if(isset($_GET["p"])){
             $title = "Contact Me";
             include("../view/portailContact.php");
             break;
+        case 'cardgame' :
+            $title = 'Card Memory Game';
+            include("../view/portailCardGame.php");
+            break;
         }
     }else{
         $title = "Page d'Accueil";

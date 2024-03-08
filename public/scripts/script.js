@@ -21,6 +21,7 @@ const messageHolder = document.querySelectorAll(".messageHolder");
 const replyField = document.querySelectorAll(".replyField");
 const replyForm = document.querySelectorAll(".replyField");
 const parentIdField = document.getElementById("parentIdField");
+const cardWindow = document.querySelectorAll(".cardWindow");
 
 for (let i=0; i<messageHolder.length; i++) {
     messageHolder[i].addEventListener("click", showReplies);
@@ -33,6 +34,10 @@ for (let i=0; i<portalWindow.length; i++) {
 
 for (let i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
+}
+
+for (let i=0; i<cardWindow.length; i++) {
+    cardWindow[i].addEventListener("click", flipCard);
 }
 
 function showDesc () {
@@ -137,4 +142,16 @@ function showReplies () {
     }
         pleaseWork[5].setAttribute("style", "display: block;");
    //     pleaseWork[5].childNodes[5].setAttribute("style", "display: block;");
+    }
+
+
+    function flipCard () {
+        console.log(this.id);
+        let clickedCard = this
+        clickedCard.classList.toggle("flipCard");
+        setTimeout(function () {
+            
+            clickedCard.classList.toggle("flipCardBack");
+        }, 1500);
+        
     }

@@ -5,17 +5,32 @@
     if (isset($_GET["p"])) {
         switch($_GET["p"]) {
             case 'home':
-                ?><a href="?p=contact"><h4>Contact</h4></a><?php
+                ?>
+                <a href="?p=contact"><h4>Contact</h4></a>
+                <a href="?p=cardgame"><h4>Memory Game</h4></a>
+                <?php
                 break;
             case 'contact':
-                ?><a href="?p=home"><h4>Home</h4></a><?php
+                ?>
+                <a href="?p=home"><h4>Home</h4></a>
+                <a href="?p=cardgame"><h4>Memory Game</h4></a>
+                <?php
                 break;
+            case 'cardgame':
+                ?>
+                <a href="?p=home"><h4>Home</h4></a>
+                <a href="?p=contact"><h4>Contact</h4></a>
+                <?php
+                break;            
                 default:
                 header("Location: ?p=home");
                 exit();
         }
     } else {
-        ?><a href="?p=contact"><h4>Contact</h4></a><?php
+        ?>
+        <a href="?p=contact"><h4>Contact</h4></a>
+        <a href="?p=cardgame"><h4>Memory Game</h4></a>
+        <?php
     }
     ?>
 </div>

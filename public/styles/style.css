@@ -228,6 +228,51 @@ textarea {
     background-color:  hsla(180, 13%, 76%, 1);
 }
 
+.cardDeck {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.cardField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35vw;
+    height: 60vh;
+}
+
+.cardWindow {
+    width: calc((100% - 96px)/4);
+    height: calc((100% - 72px)/4);
+    background-color: gray;
+    background-image: url("../images/BWWonder.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.cardWindow:hover {
+    background-image: url("../images/BWHappy.svg");
+}
+
+.flipCard {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flipCardBack {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+    transform-origin: center right;
+    transform: translateX(0%) rotateY(-0deg);
+}
 
 @media screen and (max-width: 600px) {
 
