@@ -139,6 +139,9 @@ function flipCard () {
         firstCard = clickedCard;
         console.log(firstCard.style.backgroundImage);
     }else {
+        for (let i=0; i<cardWindow.length; i++) {
+            cardWindow[i].removeEventListener("click", flipCard);
+        }
         goCount++;
         secondCard = clickedCard;
         console.log(firstCard.style.backgroundImage);
@@ -178,10 +181,12 @@ function flipCard () {
 
                     }
                 }
+                setTimeout(function () {
+                for (let i=0; i<cardWindow.length; i++) {
+                    cardWindow[i].addEventListener("click", flipCard);
+                }
+            },2500);
             },500); 
-            
-            
-
 }
     
 
