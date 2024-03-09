@@ -26,8 +26,22 @@ let cardBackgrounds = [
   ];
   let firstCard = "";
   let secondCard = "";
-console.log(cardBackgrounds);
-console.log(cardWindow.length);
+/*
+  window.addEventListener('resize', displayScreenWidth); 
+
+  function displayScreenWidth() { 
+      const screenwidth = document.getElementById("screenwidth");
+      const screenheight = document.getElementById("screenheight");
+      let theWidth = window.innerWidth;                                             
+      let theHeight = window.innerHeight;
+      screenwidth.innerHTML = 'The screen width is: ' + theWidth;
+      screenheight.innerHTML = 'The screen height is: ' + theHeight;
+  }
+  displayScreenWidth();
+*/
+  
+
+
 cardStart.addEventListener('click', shuffleCards);
 /*
 for (let i=cardWinBack.length-1; i>=0; i--) {

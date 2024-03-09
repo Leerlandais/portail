@@ -1,6 +1,7 @@
 <div class="headerDiv">
     <h1 id="portalHeader">Bienvenue sur mon Portail</h1>
-    <!-- <h6 id="screenwidth"></h6> -->
+    <h6 id="screenheight"></h6> 
+     <h6 id="screenwidth"></h6> 
    <?php
     if (isset($_GET["p"])) {
         switch($_GET["p"]) {
