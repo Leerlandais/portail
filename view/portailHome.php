@@ -33,7 +33,7 @@ include("../view/inc/header.php");
         </div>
         <div class="windowHolder" id="windowHolder5">
             <h3>To Be Announced</h3>
-            <div class="portalWindow windowTBA1" id="portalToTBA1"><div class="portalDesc" id="descTBA1"></div></div>
+            <div class="portalWindow windowCardMem" id="portalToCardMem"><div class="portalDesc" id="descCardMem">Jeu du Memoire. Crée 07/03/2024-09/03/2024</div></div>
         </div>
         <div class="windowHolder" id="windowHolder6">
             <h3>Coming Soon</h3>

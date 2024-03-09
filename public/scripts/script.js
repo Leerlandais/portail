@@ -17,6 +17,7 @@ const descTI1 = document.getElementById("descTI1");
 const descTI2 = document.getElementById("descTI2");
 const descGit = document.getElementById("descGit");
 const descCF2M = document.getElementById("descCF2M");
+const descCardMem = document.getElementById("descCardMem");
 const messageHolder = document.querySelectorAll(".messageHolder");
 const replyField = document.querySelectorAll(".replyField");
 const replyForm = document.querySelectorAll(".replyField");
@@ -63,6 +64,12 @@ function showDesc () {
                             descTI2.style.opacity = 0;
                           }, 3000);
                         break;
+                        case "portalToCardMem" :
+                            descCardMem.style.opacity = 1
+                            setTimeout(() => {
+                                descCardMem.style.opacity = 0;
+                              }, 3000);
+                            break;
                         case "portalToGit" :
                             descGit.style.opacity = 1
                             setTimeout(() => {
@@ -108,9 +115,9 @@ switch(spinThis.id) {
     }, 1250);
         break;
     case "windowHolder5" :
- //           setTimeout(function () {
- //       window.open("");
- //   }, 1250);
+            setTimeout(function () {
+        window.open("https://leerlandais.com/public/?p=cardgame", "_self");
+    }, 1250);
         break;    
     case "windowHolder6" :
  //           setTimeout(function () {
