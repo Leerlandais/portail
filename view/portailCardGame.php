@@ -30,7 +30,7 @@ include("../view/inc/header.php");
             <div class="cardWindow cardWinFront" id="cardWinFront15"><div class="cardWindow cardWinBack" id="cardWinBack15"></div> </div>
             <div class="cardWindow cardWinFront" id="cardWinFront16"><div class="cardWindow cardWinBack" id="cardWinBack16"></div> </div>
         </div>
-        <button id = "cardStart" >Start Game</button>
+        <button id = "cardStart" >Start Game</button><button id = "cardQuit">Abandon</button>
     </fieldset>
    
     

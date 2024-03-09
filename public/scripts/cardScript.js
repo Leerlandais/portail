@@ -1,4 +1,5 @@
 const cardStart = document.getElementById("cardStart");
+const cardQuit = document.getElementById("cardQuit");
 const cardWindow = document.querySelectorAll(".cardWindow");
 const cardWinFront = document.querySelectorAll(".cardWinFront");
 const cardWinBack = document.querySelectorAll(".cardWinBack");
@@ -38,6 +39,7 @@ for (let i=cardWinFront.length-1; i>=0; i--) {
  //   cardWinBack[i].style.display = "none";
 }
 
+cardQuit.addEventListener("click", quitGame);
 
 
 /*
@@ -66,6 +68,8 @@ function shuffleCards() {
     for (let i=0; i<cardWindow.length; i++) {
         cardWindow[i].addEventListener("click", flipCard);
     }
+    cardStart.style.display ="none";
+    cardQuit.style.display ="block";
 }
 
 
@@ -190,115 +194,67 @@ function flipCard () {
 }
     
 
+function quitGame () {
+console.log("quit");
 
-
-
-
-
-
-    /*
-    console.log(clickedCard.style.backgroundImage);
-    if (gameTicker % 2 === 1){
-         firstCard = clickedCard;
-        setTimeout(function () {
-            //       clickedCard.classList.toggle("flipCardBack");
-
-            clickedCard.classList.remove("flipCard");
-            },250);
-
-        }else if(firstCard.style.backgroundImage != clickedCard.style.backgroundImage){
-        setTimeout(function () {
- //           firstCard.classList.toggle("flipCardBack");
-            clickedCard.classList.toggle("flipCardBack");
-            setTimeout(function () {
-                firstCard.style.backgroundImage = 'url("images/BWWonder.svg")'
-                clickedCard.style.backgroundImage = 'url("images/BWWonder.svg")'
-            },250);
-            firstCard.classList.toggle("flipCard");
-            clickedCard.classList.remove("flipCard");
-        }, 1500);
-    }else {
-        firstCard.style.backgroundColor = "green";
-        clickedCard.style.backgroundColor = "green";
-        firstCard.removeEventListener("click", flipCard);
-        clickedCard.removeEventListener("click", flipCard);
-    }
-
-    
-    clickedCard.classList.remove("flipCardBack");
-    firstCard.classList.remove("flipCard");
-    
-}, 450); 
-gameTicker++;
-}
-*/
-/*
-
-
-function flipCard () {
-    console.log(this.id);
-    let clickedCard = this
-    clickedCard.classList.toggle("flipCard");
+    for (let i=0; i<cardWindow.length; i++) {
+        cardWindow[i].removeEventListener("click", flipCard);
+        cardWindow[i].classList.toggle("flipCard");
     setTimeout(function () {
-        switch (clickedCard.id) {
-            case "cardWindow16" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[15]})`;
-                break;
-            case "cardWindow15" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[14]})`;                    
-                break;
-            case "cardWindow14" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[13]})`;                    
-                break;
-            case "cardWindow13" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[12]})`;                    
-                break;
-            case "cardWindow12" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[11]})`;                    
-                break;
-            case "cardWindow11" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[10]})`;                    
-                break;
-            case "cardWindow10" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[9]})`;                    
-                break;
-            case "cardWindow9" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[8]})`;                    
-                break;
-            case "cardWindow8" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[7]})`;                    
-                break;
-            case "cardWindow7" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[6]})`;                    
-                break;
-            case "cardWindow6" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[5]})`;                    
-                break;
-            case "cardWindow5" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[4]})`;                    
-                break;  
-            case "cardWindow4" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[3]})`;                    
-                break;  
-            case "cardWindow3" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[2]})`;                    
-                break;  
-            case "cardWindow2" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[1]})`;                    
-                break;       
-            case "cardWindow1" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[0]})`;                    
-                break;                                                                                                                                                                                     
-    } 
-        setTimeout(function () {
-            clickedCard.classList.toggle("flipCardBack");
-            setTimeout(function () {
-            clickedCard.style.backgroundImage = 'url("images/BWWonder.svg")'
-            },250);
-            clickedCard.classList.remove("flipCard");
-        }, 1500);
-    }, 250);
-    clickedCard.classList.remove("flipCardBack");
+            switch (cardWindow[i].id) {
+                case "cardWinFront16" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[15]})`;
+                    break;
+                case "cardWinFront15" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[14]})`;                    
+                    break;
+                case "cardWinFront14" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[13]})`;                    
+                    break;
+                case "cardWinFront13" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[12]})`;                    
+                    break;
+                case "cardWinFront12" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[11]})`;                    
+                    break;
+                case "cardWinFront11" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[10]})`;                    
+                    break;
+                case "cardWinFront10" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[9]})`;                    
+                    break;
+                case "cardWinFront9" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[8]})`;                    
+                    break;
+                case "cardWinFront8" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[7]})`;                    
+                    break;
+                case "cardWinFront7" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[6]})`;                    
+                    break;
+                case "cardWinFront6" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[5]})`;                    
+                    break;
+                case "cardWinFront5" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[4]})`;                    
+                    break;  
+                case "cardWinFront4" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[3]})`;                    
+                    break;  
+                case "cardWinFront3" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[2]})`;                    
+                    break;  
+                case "cardWinFront2" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[1]})`;                    
+                    break;       
+                case "cardWinFront1" :
+                    cardWindow[i].style.backgroundImage = `url(${cardBackgrounds[0]})`;                    
+                    break;                                                                                                                                                                                     
+        }    
+    },250);
+    }
+    setTimeout(function () {
+        location.reload();
+    },3000);
 }
 
-*/

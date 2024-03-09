@@ -304,6 +304,9 @@ textarea {
     align-items: center;
 }
 
+#cardQuit {
+    display: none;
+}
 
 
 @media screen and (max-width: 600px) {
