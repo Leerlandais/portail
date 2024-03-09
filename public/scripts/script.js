@@ -21,26 +21,7 @@ const messageHolder = document.querySelectorAll(".messageHolder");
 const replyField = document.querySelectorAll(".replyField");
 const replyForm = document.querySelectorAll(".replyField");
 const parentIdField = document.getElementById("parentIdField");
-const cardWindow = document.querySelectorAll(".cardWindow");
-let cardBackgrounds = [
-    "images/MoustacheGlasses.svg",
-    "images/MoustacheGlasses.svg",
-    "images/GlassesSmirk.svg",
-    "images/GlassesSmirk.svg",
-    "images/TongueSquint.svg",
-    "images/TongueSquint.svg",
-    "images/TongueSmile.svg",
-    "images/TongueSmile.svg",
-    "images/StarsEyes.svg",
-    "images/StarsEyes.svg",
-    "images/PurpleDevil.svg",
-    "images/PurpleDevil.svg",
-    "images/MoneySmile.svg",
-    "images/MoneySmile.svg",
-    "images/WinkSmile.svg",
-    "images/WinkSmile.svg"
-  ];
-console.log(cardBackgrounds);
+
 
 for (let i=0; i<messageHolder.length; i++) {
     messageHolder[i].addEventListener("click", showReplies);
@@ -55,9 +36,6 @@ for (let i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
 }
 
-for (let i=0; i<cardWindow.length; i++) {
-    cardWindow[i].addEventListener("click", flipCard);
-}
 
 function showDesc () {
     switch(this.id) {
@@ -163,82 +141,3 @@ function showReplies () {
    //     pleaseWork[5].childNodes[5].setAttribute("style", "display: block;");
     }
 
-
-    function flipCard () {
-        console.log(this.id);
-        let clickedCard = this
-        clickedCard.classList.toggle("flipCard");
-        setTimeout(function () {
-            switch (clickedCard.id) {
-                case "cardWindow16" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[15]})`;
-                    break;
-                case "cardWindow15" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[14]})`;                    
-                    break;
-                case "cardWindow14" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[13]})`;                    
-                    break;
-                case "cardWindow13" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[12]})`;                    
-                    break;
-                case "cardWindow12" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[11]})`;                    
-                    break;
-                case "cardWindow11" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[10]})`;                    
-                    break;
-                case "cardWindow10" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[9]})`;                    
-                    break;
-                case "cardWindow9" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[8]})`;                    
-                    break;
-                case "cardWindow8" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[7]})`;                    
-                    break;
-                case "cardWindow7" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[6]})`;                    
-                    break;
-                case "cardWindow6" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[5]})`;                    
-                    break;
-                case "cardWindow5" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[4]})`;                    
-                    break;  
-                case "cardWindow4" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[3]})`;                    
-                    break;  
-                case "cardWindow3" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[2]})`;                    
-                    break;  
-                case "cardWindow2" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[1]})`;                    
-                    break;       
-                case "cardWindow1" :
-                    clickedCard.style.backgroundImage = `url(${cardBackgrounds[0]})`;                    
-                    break;                                                                                                                                                                                     
-        } 
-            setTimeout(function () {
-                clickedCard.classList.toggle("flipCardBack");
-                setTimeout(function () {
-                clickedCard.style.backgroundImage = 'url("images/BWWonder.svg")'
-                },250);
-                clickedCard.classList.remove("flipCard");
-            }, 1500);
-        }, 250);
-        clickedCard.classList.remove("flipCardBack");
-    }
-
-
-    function shuffleCards () {
-        const shuffle = () => { 
-            return cardBackgrounds.sort(() => Math.random() - 0.5); 
-        }; 
-        
-        const shuffledArray = shuffle(cardBackgrounds); 
-        console.log(shuffledArray);
-        cardBackgrounds = shuffledArray;
-        console.log(cardBackgrounds);
-        
-    }

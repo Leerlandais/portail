@@ -11,29 +11,30 @@
 include("../view/inc/header.php");
 ?>
     <fieldset class="cardField">
-        <h2>nameOfGame</h2>
+        <h2>Memory Cards</h2>
         <div class="cardDeck">
-            <div class="cardWindow" id="cardWindow1"></div>
-            <div class="cardWindow" id="cardWindow2"></div>
-            <div class="cardWindow" id="cardWindow3"></div>
-            <div class="cardWindow" id="cardWindow4"></div>
-            <div class="cardWindow" id="cardWindow5"></div>
-            <div class="cardWindow" id="cardWindow6"></div>
-            <div class="cardWindow" id="cardWindow7"></div>
-            <div class="cardWindow" id="cardWindow8"></div>
-            <div class="cardWindow" id="cardWindow9"></div>
-            <div class="cardWindow" id="cardWindow10"></div>
-            <div class="cardWindow" id="cardWindow11"></div>
-            <div class="cardWindow" id="cardWindow12"></div>
-            <div class="cardWindow" id="cardWindow13"></div>
-            <div class="cardWindow" id="cardWindow14"></div>
-            <div class="cardWindow" id="cardWindow15"></div>
-            <div class="cardWindow" id="cardWindow16"></div>
+            <div class="cardWindow cardWinFront" id="cardWinFront1"><div class="cardWindow cardWinBack" id="cardWinBack1"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront2"><div class="cardWindow cardWinBack" id="cardWinBack2"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront3"><div class="cardWindow cardWinBack" id="cardWinBack3"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront4"><div class="cardWindow cardWinBack" id="cardWinBack4"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront5"><div class="cardWindow cardWinBack" id="cardWinBack5"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront6"><div class="cardWindow cardWinBack" id="cardWinBack6"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront7"><div class="cardWindow cardWinBack" id="cardWinBack7"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront8"><div class="cardWindow cardWinBack" id="cardWinBack8"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront9"><div class="cardWindow cardWinBack" id="cardWinBack9"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront10"><div class="cardWindow cardWinBack" id="cardWinBack10"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront11"><div class="cardWindow cardWinBack" id="cardWinBack11"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront12"><div class="cardWindow cardWinBack" id="cardWinBack12"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront13"><div class="cardWindow cardWinBack" id="cardWinBack13"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront14"><div class="cardWindow cardWinBack" id="cardWinBack14"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront15"><div class="cardWindow cardWinBack" id="cardWinBack15"></div> </div>
+            <div class="cardWindow cardWinFront" id="cardWinFront16"><div class="cardWindow cardWinBack" id="cardWinBack16"></div> </div>
         </div>
+        <button id = "cardStart" >Start Game</button>
     </fieldset>
    
     
 
-<script src="scripts/script.js"></script>
+<script src="scripts/cardScript.js"></script>
 </body>
 </html>
