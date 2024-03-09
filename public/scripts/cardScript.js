@@ -143,7 +143,9 @@ function flipCard () {
         console.log(firstCard.style.backgroundImage);
         console.log(secondCard.style.backgroundImage);
         if (firstCard.style.backgroundImage === secondCard.style.backgroundImage) {
+            firstCard.childNodes[0].style.backgroundColor = "green";
             firstCard.style.backgroundColor = "green";
+            secondCard.childNodes[0].style.backgroundColor = "green";
             secondCard.style.backgroundColor = "green";
             firstCard.removeEventListener("click", flipCard);
             secondCard.removeEventListener("click", flipCard);
@@ -151,8 +153,10 @@ function flipCard () {
             secondCard = "";
             gameScore++;
             if (gameScore === 8){
+                setTimeout(function () {
                 alert("congrats; that took " + goCount + " turns");
                 location.reload();
+                },250);
             }
         }else {
             setTimeout(function () {

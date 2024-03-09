@@ -55,6 +55,9 @@ if(isset($_GET["p"])){
             $title = 'Card Memory Game';
             include("../view/portailCardGame.php");
             break;
+                default :
+                $title = "Page d'Accueil";
+                include("../view/portailHome.php");
         }
     }else{
         $title = "Page d'Accueil";

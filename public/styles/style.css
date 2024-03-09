@@ -255,6 +255,7 @@ textarea {
     
 }
 
+
 .cardWindow:active {
     background-image: url("../images/BWHappy.svg") !important;
 }
