@@ -23,7 +23,6 @@ const replyField = document.querySelectorAll(".replyField");
 const replyForm = document.querySelectorAll(".replyField");
 const parentIdField = document.getElementById("parentIdField");
 
-
 for (let i=0; i<messageHolder.length; i++) {
     messageHolder[i].addEventListener("click", showReplies);
 }
@@ -36,6 +35,7 @@ for (let i=0; i<portalWindow.length; i++) {
 for (let i=0; i<windowHolder.length; i++) {
     windowHolder[i].addEventListener("click", makeItSpin);
 }
+
 
 
 function showDesc () {

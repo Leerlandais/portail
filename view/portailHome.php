@@ -48,18 +48,8 @@ include("../view/inc/header.php");
             <div class="portalWindow windowCF2M" id="portalToCF2M"><div class="portalDesc" id="descCF2M">Vers le site de l'école</div></div>
         </div>
     </div>
-</fieldset>
-
-<p>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss"
-            alt="Valid CSS!" />
-    </a>
-</p>
-            
+</fieldset>       
     
-
 <script src="scripts/script.js"></script>
 </body>
 </html>

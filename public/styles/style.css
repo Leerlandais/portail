@@ -154,7 +154,7 @@ h1 {
 .sendBut {
     width: 10vw;
     color:  hsla(255, 36%, 46%, 1);
-    background-color:  hsla(220, 13%, 76%, 1);;
+    background-color:  hsla(220, 13%, 76%, 1);
 }
 
 .contactInp {
@@ -274,6 +274,33 @@ textarea {
     transform-origin: center right;
     transform: translateX(0%) rotateY(-0deg);
 }
+
+.devLogField {
+    width: 20%;
+}
+
+#devList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.devListItem {
+    margin: 3px 0;
+}
+
+.devOrderChange {
+    color: black;
+    background-color:  hsla(220, 13%, 76%, 1);
+}
+
+.listHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 @media screen and (max-width: 600px) {
 

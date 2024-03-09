@@ -7,16 +7,23 @@
             case 'home':
                 ?>
                 <a href="?p=contact"><h4>Contact</h4></a>
-            <!--    <a href="?p=cardgame"><h4>Memory Game</h4></a> -->
+                <a href="?p=devlog"><h4>Development Log</h4></a>
                 <?php
                 break;
             case 'contact':
                 ?>
                 <a href="?p=home"><h4>Home</h4></a>
-           <!--     <a href="?p=cardgame"><h4>Memory Game</h4></a> -->
+                <a href="?p=devlog"><h4>Development Log</h4></a>
                 <?php
                 break;
             case 'cardgame':
+                ?>
+                <a href="?p=home"><h4>Home</h4></a>
+                <a href="?p=contact"><h4>Contact</h4></a>
+                <a href="?p=devlog"><h4>Development Log</h4></a>
+                <?php
+                break;
+            case 'devlog':
                 ?>
                 <a href="?p=home"><h4>Home</h4></a>
                 <a href="?p=contact"><h4>Contact</h4></a>
@@ -29,6 +36,7 @@
     } else {
         ?>
         <a href="?p=contact"><h4>Contact</h4></a>
+        <a href="?p=devlog"><h4>Development Log</h4></a>
   <!--        <a href="?p=cardgame"><h4>Memory Game</h4></a> -->
         <?php
     }
