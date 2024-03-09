@@ -1,7 +1,6 @@
 /*
 window.addEventListener('resize', displayScreenWidth); 
 
-
 function displayScreenWidth() { 
     const screenwidth = document.getElementById("screenwidth");
     let theWidth = window.innerWidth;                                             
@@ -9,7 +8,7 @@ function displayScreenWidth() {
 }
 displayScreenWidth();
 */
-const windowHolder = document.querySelectorAll(".windowHolder");
+
 const portalWindow = document.querySelectorAll(".portalWindow");
 const descPrefo = document.getElementById("descPrefo");
 const descEarlyJS = document.getElementById("descEarlyJS");
@@ -18,25 +17,10 @@ const descTI2 = document.getElementById("descTI2");
 const descGit = document.getElementById("descGit");
 const descCF2M = document.getElementById("descCF2M");
 const descCardMem = document.getElementById("descCardMem");
-const messageHolder = document.querySelectorAll(".messageHolder");
-const replyField = document.querySelectorAll(".replyField");
-const replyForm = document.querySelectorAll(".replyField");
-const parentIdField = document.getElementById("parentIdField");
-
-for (let i=0; i<messageHolder.length; i++) {
-    messageHolder[i].addEventListener("click", showReplies);
-}
-console.log (messageHolder.length);
 
 for (let i=0; i<portalWindow.length; i++) {
     portalWindow[i].addEventListener("mouseenter", showDesc);
 }
-
-for (let i=0; i<windowHolder.length; i++) {
-    windowHolder[i].addEventListener("click", makeItSpin);
-}
-
-
 
 function showDesc () {
     switch(this.id) {
@@ -83,6 +67,12 @@ function showDesc () {
                                   }, 3000);
                                 break;      
     }
+}
+
+const windowHolder = document.querySelectorAll(".windowHolder");
+
+for (let i=0; i<windowHolder.length; i++) {
+    windowHolder[i].addEventListener("click", makeItSpin);
 }
 
 function makeItSpin() {
@@ -137,6 +127,16 @@ switch(spinThis.id) {
 }
 
 }
+
+const messageHolder = document.querySelectorAll(".messageHolder");
+const replyField = document.querySelectorAll(".replyField");
+const replyForm = document.querySelectorAll(".replyField");
+const parentIdField = document.getElementById("parentIdField");
+
+for (let i=0; i<messageHolder.length; i++) {
+    messageHolder[i].addEventListener("click", showReplies);
+}
+
 
 function showReplies () {
     let pleaseWork = this.childNodes;

@@ -294,6 +294,10 @@ textarea {
     background-color:  hsla(220, 13%, 76%, 1);
 }
 
+#devOrderDown {
+    display: none;
+}
+
 .listHolder {
     display: flex;
     flex-direction: column;
