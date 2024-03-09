@@ -38,9 +38,7 @@ for (let i=cardWinFront.length-1; i>=0; i--) {
  //   cardWinBack[i].style.display = "none";
 }
 
-for (let i=0; i<cardWindow.length; i++) {
-    cardWindow[i].addEventListener("click", flipCard);
-}
+
 
 /*
 function shuffleCards () {
@@ -65,6 +63,9 @@ function shuffleCards() {
     }
 
     cardBackgrounds = array; 
+    for (let i=0; i<cardWindow.length; i++) {
+        cardWindow[i].addEventListener("click", flipCard);
+    }
 }
 
 
