@@ -71,6 +71,9 @@ function shuffleCards() {
 function flipCard () {
     console.log(this.id);
     let clickedCard = this;
+    if (clickedCard === firstCard) {
+        return;
+    }
 //    clickedCard.classList.remove("flipCard");
     clickedCard.classList.toggle("flipCard");
     setTimeout(function () {
@@ -130,7 +133,7 @@ function flipCard () {
     },250);  // first spin timer
     setTimeout(function () {
     clickedCard.classList.toggle("flipCard");
-    
+
     if (firstCard === ""){
         firstCard = clickedCard;
         console.log(firstCard.style.backgroundImage);
@@ -166,7 +169,7 @@ function flipCard () {
                             firstCard = "";
                             secondCard = "";
                         },1000); 
-                        }, 1500);
+                        }, 1000);
 
                     }
                 }

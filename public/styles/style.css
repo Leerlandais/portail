@@ -248,15 +248,15 @@ textarea {
     width: calc((100% - 96px)/4);
     height: calc((100% - 72px)/4);
     background-color: gray;
-
+    
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
-
+    
 }
 
-.cardWindow:hover {
-    background-image: url("../images/BWHappy.svg");
+.cardWindow:active {
+    background-image: url("../images/BWHappy.svg") !important;
 }
 
 .flipCard {

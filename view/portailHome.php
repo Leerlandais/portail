@@ -32,8 +32,8 @@ include("../view/inc/header.php");
             <div class="portalWindow windowTI2" id="portalToTI2"><div class="portalDesc" id="descTI2">Le deuxième test d'intégration (19/02/2024)</div></div>
         </div>
         <div class="windowHolder" id="windowHolder5">
-            <h3>To Be Announced</h3>
-            <div class="portalWindow windowCardMem" id="portalToCardMem"><div class="portalDesc" id="descCardMem">Jeu du Memoire. Crée 07/03/2024-09/03/2024</div></div>
+            <h3>Jeux du Mémoire</h3>
+            <div class="portalWindow windowCardMem" id="portalToCardMem"><div class="portalDesc" id="descCardMem">Jeux du Mémoire. Crée le 07/03/2024-09/03/2024</div></div>
         </div>
         <div class="windowHolder" id="windowHolder6">
             <h3>Coming Soon</h3>
