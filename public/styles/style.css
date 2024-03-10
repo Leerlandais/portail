@@ -13,18 +13,33 @@ body {
     /* flex-flow etc in media */
 }
 
+#portalHeader {
+    margin: 2vh auto 0;
+}
+
 .headerDiv {
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
     margin: 5vh auto;
     text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* width and fontsize to be added via media */
+}
+
+.navLinks {
+    font-size: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .headerDiv a {
     color: hsla(180, 36%, 46%, 1);
     font-style: italic;
-    font-size: 0.75em;
+ 
+    margin: 0 25px;
 }
 
 fieldset {
