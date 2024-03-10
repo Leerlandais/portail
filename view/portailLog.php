@@ -15,6 +15,7 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">10/03/2024 - Started new project. Tabs</li>
             <li class="devListItem">09/03/2024 - Started Dev Log</li>
             <li class="devListItem">09/03/2024 - Finished Card Game</li>
             <li class="devListItem">07/03/2024 - Started Card Game</li>

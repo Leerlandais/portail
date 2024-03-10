@@ -2,12 +2,17 @@
 
 require_once "../config.php";
 require_once "../model/portailModel.php";
+require_once "../model/portailTabsModel.php";
 
 try {
     $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
 } catch (Exception $e) {
     die($e->getMessage());
 }    
+
+
+
+/*  -------------     CONTACT    --------------  */
 
 $messages = getMessages($db);
 $replies = getReplies($db);
@@ -41,6 +46,33 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
     
 }    
 
+/*  -------------     TABS    --------------  */
+
+$artists = getArtists($db);
+/*
+if (isset($_POST["artist_name"])); {
+    $addName = addArtist($db, $_POST["artist_name"]);
+
+    if ($addName) {
+        header("Location: ?p=tabcontrol");
+        exit();
+    } else {        
+        $messageError = "Something went wrong";
+    }  
+    }
+*/
+
+
+
+
+
+
+
+
+
+
+/*  -------------     CONTROLLER    --------------  */
+
 if(isset($_GET["p"])){
     switch($_GET["p"]){
         case 'home':
@@ -62,6 +94,10 @@ if(isset($_GET["p"])){
         case 'tabs' :
             $title = "Guitar Tablatures";
             include("../view/portailTabs.php");
+            break;
+        case 'tabcontrol' :
+            $title = "Me Only";
+            include("../view/portailTabDB.php");
             break;
                 default :
                 $title = "Page d'Accueil";
