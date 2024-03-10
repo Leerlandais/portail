@@ -59,6 +59,10 @@ if(isset($_GET["p"])){
             $title = "Development History";
             include("../view/portailLog.php");
             break;
+        case 'tabs' :
+            $title = "Guitar Tablatures";
+            include("../view/portailTabs.php");
+            break;
                 default :
                 $title = "Page d'Accueil";
                 include("../view/portailHome.php");
