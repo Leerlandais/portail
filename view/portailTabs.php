@@ -13,7 +13,28 @@
 
 ?>
 <h1>My Favourite Tablature<a href="?p=tabcontrol" class = "leeOnly">s</a></h1>
-     
+
+<fieldset>
+    <div class="artistDisplay">
+       
+            <?php  foreach ($artists as $artist) : ?>
+                <ul class="artistUL">
+                    <li class="showArtist"><?=$artist["artist_name"]?></li>
+                    <?php  foreach ($songs as $song) : 
+                         if ($song["artist_id"] === $artist["id"]) { ?>
+                            <ul class="songUL">
+                             <li><?=$song["song_name"];?></li>    
+                                 </ul>        
+                                <?php 
+            }
+        endforeach;  
+        ?>
+                </ul>
+        <?php  endforeach;  ?>
+
+</div>
+</fieldset>
+
     
 <script src="scripts/tabs.js"></script>
 </body>

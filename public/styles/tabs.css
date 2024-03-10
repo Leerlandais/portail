@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
-    height: 400vh;
+    height: 100vh;
     color: hsla(180, 36%, 46%, 1);
 }
 
@@ -35,5 +35,21 @@ body {
 
 .leeOnly {
     text-decoration: none;
-    color: hsla(180, 36%, 46%, 1);;
+    color: hsla(180, 36%, 46%, 1);
 }
+
+.artistLabel {
+    margin-right: 10px;
+}
+
+
+.songUL {
+    display: none;
+}
+
+
+ .backTabs {
+    color: hsla(180, 36%, 46%, 1);
+ }
+
+ 
