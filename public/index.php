@@ -51,8 +51,8 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
 $artists = getArtists($db);
 $songs = getSongs($db);
 
-if (isset($_POST["artist_name"])) {
-    $addName = addArtist($db, $_POST["artist_name"]);
+if (isset($_POST["artists_name"])) {
+    $addName = addArtist($db, $_POST["artists_name"]);
 
     if ($addName) {
         header("Location: ?p=tabcontrol");
@@ -65,7 +65,7 @@ if (isset($_POST["artist_name"])) {
 
     
     if (isset($_POST["song_name"], $_POST["artist_id"])) {
-        $addSong = addSong($db, $_POST["artist_id"], $_POST["song_name"]);
+        $addSong = addSong($db, $_POST["song_name"], $_POST["artist_id"]);
     
         if ($addSong) {
             header("Location: ?p=tabcontrol");
