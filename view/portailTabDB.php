@@ -12,7 +12,7 @@
 
 ?>
 <h1>My Favourite Tablatures</h1>
-<a href="?p=tabs" class="backTabs"><h4>Back to Tabs</h4></a>
+<a href="?p=tabsLee" class="backTabs"><h4>Back to Tabs</h4></a>
 
 <fieldset class="artistTabField">
 <div class="existingArtist">

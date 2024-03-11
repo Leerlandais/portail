@@ -29,7 +29,7 @@
                 <a href="?p=contact"><h4>Contact</h4></a>
                 <?php
                 break;
-                case 'tabs' :
+                case 'tabsLee' :
                     ?>
                 <a href="?p=home"><h4>Home</h4></a>
                 <a href="?p=contact"><h4>Contact</h4></a>

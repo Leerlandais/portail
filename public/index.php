@@ -104,7 +104,7 @@ if(isset($_GET["p"])){
             $title = "Development History";
             include("../view/portailLog.php");
             break;
-        case 'tabs' :
+        case 'tabsLee' :
             $title = "Guitar Tablatures";
             include("../view/portailTabs.php");
             break;
