@@ -28,7 +28,14 @@
                 <a href="?p=home"><h4>Home</h4></a>
                 <a href="?p=contact"><h4>Contact</h4></a>
                 <?php
-                break;            
+                break;
+                case 'tabs' :
+                    ?>
+                <a href="?p=home"><h4>Home</h4></a>
+                <a href="?p=contact"><h4>Contact</h4></a>
+                <a href="?p=devlog"><h4>Development Log</h4></a>
+                <?php
+                break;
                 default:
                 header("Location: ?p=home");
                 exit();
