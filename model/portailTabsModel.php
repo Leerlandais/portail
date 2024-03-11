@@ -1,4 +1,20 @@
 <?php
+function getArtists(PDO $db): array {
+    $sql = "SELECT * FROM portail_tabs_artist ORDER BY artist_name ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+
+
+function getSongs(PDO $db): array {
+    $sql = "SELECT * FROM portail_tabs_song ORDER BY id ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
 
 function addArtist (PDO $db, string $artName) {
     $cleanedName = htmlspecialchars(strip_tags(trim($artName)), ENT_QUOTES);
@@ -6,7 +22,7 @@ function addArtist (PDO $db, string $artName) {
         return false;
     }
 
-    $sql = "INSERT INTO `portail_tabs_artist` (`artists_name`) VALUES (:name)";
+    $sql = "INSERT INTO `portail_tabs_artist` (`artist_name`) VALUES (:name)";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':name', $cleanedName);
     try {
@@ -38,21 +54,5 @@ function addSong (PDO $db, string $artistId, string $songName) {
     }
 }
 
-function getArtists(PDO $db): array {
-    $sql = "SELECT * FROM portail_tabs_artist ORDER BY artists_name ASC";
-    $query = $db->query($sql);
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result;
-}
-
-
-function getSongs(PDO $db): array {
-    $sql = "SELECT * FROM portail_tabs_song ORDER BY id ASC";
-    $query = $db->query($sql);
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    $query->closeCursor();
-    return $result;
-}
 
 

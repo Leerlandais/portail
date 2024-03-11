@@ -19,7 +19,7 @@
        
             <?php  foreach ($artists as $artist) : ?>
                 <ul class="artistUL">
-                    <li class="showArtist"><?=$artist["artists_name"]?></li>
+                    <li class="showArtist"><?=$artist["artist_name"]?></li>
                     <?php  foreach ($songs as $song) : 
                          if ($song["artist_id"] === $artist["id"]) { ?>
                             <ul class="songUL">
