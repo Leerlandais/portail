@@ -65,8 +65,8 @@ if (isset($_POST["artist_name"])) {
 
 
 
-if (isset($_POST["song_name"], $_POST["artist_id"])) {
-    $addSong = addSong($db, $_POST["song_name"], $_POST["artist_id"]);
+if (isset($_POST["artist_id"], $_POST["song_name"])) {
+    $addSong = addSong($db, $_POST["artist_id"], $_POST["song_name"]);
     
     if ($addSong) {
         header("Location: ?p=tabcontrol");

@@ -24,7 +24,8 @@
                 <div class="songInp">
                 <label for="song_name" class="artistLabel">Song Name</label>
                 <input type="text" class="artistInp" name="song_name">
-                <input type="text" class="artistInp" style = "display: none"; name="artist_id" value="<?=$artist['id']?>">
+                <input type="text" class="artistInp" style = "display: none" name="artist_id" value="<?=$artist['id']?>">
+                <button type="submit">qsdqd</button>
             </div>
             </form>
         
