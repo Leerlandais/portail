@@ -40,6 +40,7 @@ include_once("../view/inc/header.php");
                         <div class="replyField" id="replyField<?=$i?>">
                             <?php
             
+   
             foreach ($replies as $reply) :
                 if ($reply['parent_message_id'] == $message['id']) {
                     ?> 

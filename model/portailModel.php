@@ -2,20 +2,44 @@
 
 function getMessages(PDO $db): array
 {
+    /*
     $sql = "SELECT * FROM portail_messages ORDER BY id DESC"; 
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result; 
+    */
+    $sql = "SELECT * FROM portail_messages ORDER BY id DESC"; 
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }catch (PDOException $e){
+        error_log("Error getting messages: " . $e->getMessage());
+        return false;
+    }
 }
 
 function getReplies(PDO $db): array
 {
-    $sql = "SELECT * FROM portail_replies ORDER BY id ASC"; 
+    /*
+    $sql = "SELECT * FROM portail_replies, portail_messages WHERE portail_replies.parent_message_id=portail_messages.id ORDER BY date_reply ASC"; 
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result; 
+    */
+    $sql = "SELECT * FROM portail_replies JOIN portail_messages ON portail_replies.parent_message_id = portail_messages.id ORDER BY date_reply ASC"; 
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }catch (PDOException $e){
+        error_log("Error getting replies: " . $e->getMessage());
+        return false;
+    }
 }
 
 /*
