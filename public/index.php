@@ -3,6 +3,7 @@
 require_once "../config.php";
 require_once "../model/portailModel.php";
 require_once "../model/portailTabsModel.php";
+require_once "../model/portailCountriesModel.php";
 
 try {
     $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
@@ -16,6 +17,7 @@ try {
 
 $messages = getMessages($db);
 $replies = getReplies($db);
+$countries = getCountries($db);
 
 if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 
@@ -112,6 +114,10 @@ if(isset($_GET["p"])){
             $title = "Me Only";
             include("../view/portailTabDB.php");
             break;
+        case 'countries' :
+            $title = "Countries";
+            include("../view/portailCountries.php");
+            break;            
                 default :
                 $title = "Page d'Accueil";
                 include("../view/portailHome.php");

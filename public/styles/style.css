@@ -323,6 +323,17 @@ textarea {
     display: none;
 }
 
+.countryBody {
+    height: 750vh;
+}
+
+.countryTable, .countryCol {
+    width: 85vw;
+    border: 1px solid hsla(211, 36%, 46%, 1);
+    text-align: center;
+}
+
+
 
 @media screen and (max-width: 600px) {
 
