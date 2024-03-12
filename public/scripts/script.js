@@ -106,13 +106,13 @@ switch(spinThis.id) {
         break;
     case "windowHolder5" :
             setTimeout(function () {
-        window.open("https://leerlandais.com/public/?p=cardgame", "_self");
+        window.open("?p=cardgame", "_self");
     }, 1250);
         break;    
     case "windowHolder6" :
- //           setTimeout(function () {
- //       window.open("");
- //   }, 1250);
+            setTimeout(function () {
+        window.open("?p=countries", "_self");
+    }, 1250);
         break;
     case "windowHolder7" :
             setTimeout(function () {

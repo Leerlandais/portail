@@ -80,8 +80,8 @@ fieldset {
     background-image: url(../images/memCardGame.png);
 }
 
-.windowTBA2 {
-    background-image: url(../images/comingsoon_neon.jpeg); 
+.windowCountries {
+    background-image: url(../images/svg/ie.svg); 
 }
 
 h6 {
@@ -499,7 +499,8 @@ textarea {
         align-items: center;
         width: 33%;
     }
-    
+
+        
     .portalWindow {
         width: 80%;
         height: 22vw;

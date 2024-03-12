@@ -39,10 +39,10 @@ include("../view/inc/header.php");
             <td class="countryCol"><?php echo $country['nom']; ?></td>
             <td class="countryCol"><?php echo $country['iso']; ?></td>
             <td class="countryCol"><?= $country['population'];?></td>
-            <td class="countryCol"><?= $country['superficie'];?></td>
+            <td class="countryCol"><?= $country['superficie']." km²";?></td>
             <td class="countryCol"><?= $country['capitale'];?></td>
             <td class="countryCol"><?= $country['popu_cap'];?></td>
-            <td class="countryCol"><?= $country['altitude'];?></td>
+            <td class="countryCol"><?= $country['altitude']." m";?></td>
             <td class="countryCol">Flag Coming</td>
         </tr>
     <?php

@@ -38,7 +38,7 @@ include("../view/inc/header.php");
         </div>
         <div class="windowHolder" id="windowHolder6">
             <h3>Coming Soon</h3>
-            <div class="portalWindow windowTBA2" id="portalToTBA2"><div class="portalDesc" id="descTBA2"></div></div>
+            <div class="portalWindow windowCountries" id="portalToCountries"><div class="portalCountries" id="descCountries"></div></div>
         </div>
         <div class="windowHolder" id="windowHolder7">
             <h3>GitHub</h3>
