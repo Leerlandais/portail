@@ -1,0 +1,521 @@
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
+    height: 400vh;
+    color: #4ba0a0;
+}
+
+a {
+    color: hsla(180, 36%, 46%, 1);
+    
+}
+
+.portalHolder, .windowHolder {
+    display: flex;
+    /* flex-flow etc in media */
+}
+
+#portalHeader {
+    margin: 2vh auto 0;
+}
+
+.headerDiv {
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    margin: 5vh auto;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width and fontsize to be added via media */
+}
+
+.navLinks {
+    font-size: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.headerDiv a {
+    color: hsla(180, 36%, 46%, 1);
+    font-style: italic;
+    text-decoration: none;
+    margin: 0 25px;
+}
+
+fieldset {
+    width: 60vw;
+    border-color: hsla(211, 36%, 46%, 1);
+    border-radius: 10px;
+}
+
+.windowCF2M {
+    background-image: url(../images/cf2m_logo.png); 
+    
+    background-color: white;
+}
+
+.windowGit {
+    background-image: url(../images/git_shadow.jpeg);
+}
+
+.windowTI1 {
+    background-image: url(../images/TI1.png);
+}
+
+.windowTI2 {
+    background-image: url(../images/postit.jpeg);
+}
+
+.windowEarlyJS {
+  /*  background-image: url(../images/earlyJS.png); */
+    background-image: url(../images/javascript.jpeg);
+}
+
+.windowPrefo {
+   /* background-image: url(../images/prefo.png); */
+    background-image: url(../images/cmdrPet.jpeg);
+}
+
+.windowCardMem {
+    background-image: url(../images/memCardGame.png);
+}
+
+.windowCountries {
+    background-image: url(../images/svg/ie.svg); 
+}
+
+h6 {
+    text-align: center;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    font-style: italic;
+    /* margins and fontsize in media */
+}
+
+h1 {
+    text-align: center;
+}
+
+.windowHolder {
+    /* width and margin in media */
+    transition: transform 1250ms ease-in-out;
+}
+
+.spinIt {
+    transform: rotateY(-360deg);
+}
+
+.portalWindow {
+    margin: 3% 0 10%;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8; 
+    transition: all 450ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    /* width and height in media */
+}
+
+.portalDesc {
+    margin-top: 5%;
+    text-align: center;
+    opacity: 0;
+}
+
+
+.portalWindow:hover {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 2vh;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+}
+
+.contactHolder {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactLabel {
+    width: 15%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.sendBut {
+    width: 10vw;
+    color:  hsla(255, 36%, 46%, 1);
+    background-color:  hsla(220, 13%, 76%, 1);
+}
+
+.contactInp {
+    width: 60%;
+    background-color:  hsla(180, 13%, 76%, 1);
+}
+
+.formInp {
+    padding-left: 3%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 2px auto;
+}
+
+textarea {
+    margin-bottom: 5px;
+}
+
+.messageHolder, .messageWindow {
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+}
+
+.messageWindow {
+    margin-top: 5vh;
+    padding: 1vh 0;
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.messageHolder {
+    text-align: center;
+    margin: 5px;
+    width: 60%;
+    padding: 0 25px 15px 25px;
+}
+
+.replyField {
+    display: none;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    padding: 5px;
+    background: linear-gradient(180deg, hsla(120, 33%, 21%, 1) 0%, hsla(180, 36%, 46%, 1) 90%);
+}
+
+.replyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+}
+
+.replyFormInp textarea {
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.sendReply {
+    width: 15%;
+}
+
+.replyContactInp {
+    background-color:  hsla(180, 13%, 76%, 1);
+}
+
+.cardDeck {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.cardField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35vw;
+    height: 60vh;
+}
+
+.cardWindow {
+    width: calc((100% - 96px)/4);
+    height: calc((100% - 72px)/4);
+    background-color: gray;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    
+}
+
+
+.cardWindow:active {
+    background-image: url("../images/BWHappy.svg") !important;
+}
+
+.flipCard {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flipCardBack {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+    transform-origin: center right;
+    transform: translateX(0%) rotateY(-0deg);
+}
+
+.devLogField {
+    width: 20%;
+}
+
+#devList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.devListItem {
+    margin: 3px 0;
+}
+
+.devOrderChange {
+    color: black;
+    background-color:  hsla(220, 13%, 76%, 1);
+}
+
+#devOrderDown {
+    display: none;
+}
+
+.listHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cardQuit {
+    display: none;
+}
+
+.countryBody {
+    height: 750vh;
+}
+
+.countryTable, .countryCol {
+    width: 85vw;
+    border: 1px solid hsla(211, 36%, 46%, 1);
+    text-align: center;
+}
+
+.countryCol img {
+    height: 30%;
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+
+    .headerDiv {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .portalHolder {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .windowHolder, .portalWindow {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 85%;
+        height: 40vw;
+    }
+
+    h3 {
+        font-size: 1em;
+        margin: 0;
+    }
+
+    .contactLabel {
+        width: 25%;
+        text-align: right;
+        margin-right: 2px;
+        font-size: 10px;
+    }
+
+    .messLabel {
+        margin-right: 2px;
+    }
+    
+    .sendBut {
+        width: 20vw;
+        color:  hsla(255, 36%, 46%, 1);
+        background-color:  hsla(220, 13%, 76%, 1);;
+    }
+    
+    .contactInp {
+        width: 90%;
+        background-color:  hsla(180, 13%, 76%, 1);
+    }
+    
+    .formInp {
+        padding-left: 3%;
+        margin-right: 25%;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin-top: 2px;
+        margin-left: 20px;
+    }
+
+    .formInp textarea {
+        width: 90%;
+    }
+
+    .contactForm {
+        width: 100%;
+  
+    }
+
+    .contactHolder {
+        width: 100%;
+    }
+
+    .messageHolder {
+        font-size: 10px;
+    }
+
+    .sendReply {
+        width: 35%;
+    }
+
+    .replyFormInp textarea {
+        margin-right: 20px;
+        margin-bottom: 5px;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+
+    .headerDiv {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .portalHolder {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .windowHolder, .portalWindow {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 85%;
+        height: 40vw;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+
+    .headerDiv {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .portalHolder {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .windowHolder, .portalWindow {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 85%;
+        height: 40vw;
+    }
+
+    h3 {
+        font-size: 2em;
+        margin: 0;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .headerDiv {
+        width: 90%;
+        font-size: 24px;
+    }
+
+    fieldset {
+        width: 85vw;
+    }
+
+    .portalHolder {
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .windowHolder {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 33%;
+    }
+
+        
+    .portalWindow {
+        width: 80%;
+        height: 22vw;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+}
