@@ -5,7 +5,12 @@ body {
     align-items: center;
     background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
     height: 400vh;
+    color: #4ba0a0;
+}
+
+a {
     color: hsla(180, 36%, 46%, 1);
+    
 }
 
 .portalHolder, .windowHolder {
@@ -333,7 +338,10 @@ textarea {
     text-align: center;
 }
 
-
+.countryCol img {
+    height: 30%;
+    width: 30%;
+}
 
 @media screen and (max-width: 600px) {
 
