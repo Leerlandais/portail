@@ -19,7 +19,7 @@ $messages = getMessages($db);
 $replies = getReplies($db);
 
 if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
-
+    
     
     $insert = addMessage($db,$_POST['name'],$_POST['email'],$_POST['message']);
     
@@ -81,10 +81,17 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
 
 
 // $countries = getCountries($db);
+
+if(isset($_POST["itemsPerPage"])){
+$itemCount = $_POST["itemsPerPage"];
+var_dump($itemCount);
+}
+
 $totalCountries = count(getCountries($db));
 
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
     $page = (int) $_GET[PAGINATION_GET_NAME];
+    
 } else {
     $page = 1;
 }
@@ -95,7 +102,7 @@ $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page,
 
 /*  -------------     CONTROLLER    --------------  */
 
-$db =null;
+// $db =null;
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){
@@ -103,38 +110,39 @@ if(isset($_GET["p"])){
             $title = "Welcome";
             include("../view/portailHome.php");
             break;
-        case 'contact' :
-            $title = "Contact Me";
-            include("../view/portailContact.php");
-            break;
-        case 'cardgame' :
-            $title = 'Card Memory Game';
-            include("../view/portailCardGame.php");
-            break;
-        case 'devlog' :
-            $title = "Development History";
-            include("../view/portailLog.php");
-            break;
-        case 'tabsLee' :
-            $title = "Guitar Tablatures";
-            include("../view/portailTabs.php");
-            break;
-        case 'tabcontrol' :
-            $title = "Me Only";
-            include("../view/portailTabDB.php");
-            break;
-        case 'countries' :
-            $title = "Countries";
-            include("../view/portailCountries.php");
-            break;            
-                default :
-                $title = "Page d'Accueil";
-                include("../view/portailHome.php");
-        }
-    }else{
-        $title = "Page d'Accueil";
-        include("../view/portailHome.php");
-
-}
-
-
+            case 'contact' :
+                $title = "Contact Me";
+                include("../view/portailContact.php");
+                break;
+                case 'cardgame' :
+                    $title = 'Card Memory Game';
+                    include("../view/portailCardGame.php");
+                    break;
+                    case 'devlog' :
+                        $title = "Development History";
+                        include("../view/portailLog.php");
+                        break;
+                        case 'tabsLee' :
+                            $title = "Guitar Tablatures";
+                            include("../view/portailTabs.php");
+                            break;
+                            case 'tabcontrol' :
+                                $title = "Me Only";
+                                include("../view/portailTabDB.php");
+                                break;
+                                case 'countries' :
+                                    $title = "Countries";
+                                    include("../view/portailCountries.php");
+                                    break;            
+                                    default :
+                                    $title = "Page d'Accueil";
+                                    include("../view/portailHome.php");
+                                }
+                            }else{
+                                $title = "Page d'Accueil";
+                                include("../view/portailHome.php");
+                                
+                            }
+                            
+                            
+                            

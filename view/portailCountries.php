@@ -27,6 +27,15 @@ include("../view/inc/header.php");
     <button type="submit">change</button>
 </form>
 -->
+<form action="" method="POST">
+<select name="itemPerPage" id="">
+    <option value="10">10</option>
+    <option value="20">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="all">All</option>
+</select>
+</form>
 <?php
 
 if (isset($pagination)) {
@@ -51,7 +60,7 @@ if (isset($pagination)) {
             <td class="countryCol"><?= $country['capitale'];?></td>
             <td class="countryCol"><?= $country['popu_cap'];?></td>
             <td class="countryCol"><?= $country['altitude']." m";?></td>
-            <td class="countryCol"><img src="../images/svg/<?= strtolower($country['iso']); ?>.svg"></td>
+            <td class="countryCol"><img src="images/svg/<?= strtolower($country['iso']); ?>.svg"></td>
         </tr>
     <?php
         }

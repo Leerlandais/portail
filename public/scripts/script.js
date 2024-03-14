@@ -1,13 +1,13 @@
-/*
-window.addEventListener('resize', displayScreenWidth); 
+const showScreen = document.getElementById("showScreen");
+showScreen.addEventListener('click', displayScreenWidth); 
 
 function displayScreenWidth() { 
     const screenwidth = document.getElementById("screenwidth");
     let theWidth = window.innerWidth;                                             
     screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
-displayScreenWidth();
-*/
+
+
 
 const portalWindow = document.querySelectorAll(".portalWindow");
 const descPrefo = document.getElementById("descPrefo");

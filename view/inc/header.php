@@ -1,5 +1,6 @@
 <div class="headerDiv">
     <h1 id="portalHeader">Bienvenue sur mon Portail</h1>
+    <h6 id="screenwidth"></h6><button id="showScreen">Press</button>
 <div class="navLinks">
     <?php
     if (isset($_GET["p"])) {

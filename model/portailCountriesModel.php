@@ -56,9 +56,9 @@ function paginationModel(string $url,
     if($currentPage===1){
         $sortie.= "";
     }elseif ($currentPage===2) {
-        $sortie.= "<a href='$url?p=countries&pg=1"."'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
+        $sortie.= "<a href='$url?p=countries&$getName=1"."'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
     }else{
-        $sortie.= "<a href='$url?p=countries&pg=1'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
+        $sortie.= "<a href='$url?p=countries&$getName=1'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
     }
 
     for($i=1;$i<=$nbPage;$i++)
@@ -69,7 +69,7 @@ function paginationModel(string $url,
         else $sortie.= " <a href='$url?p=countries&$getName=$i'>$i</a> ";
     }
 
-    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?p=countries&$getName=".($currentPage+1)."'>></a> <a href='$url?p=countries&$getName=$nbPage'>>></a>";
+    $sortie.= $currentPage === $nbPage ? "" : "<a href='$url?p=countries&$getName=".($currentPage+1)."'>></a> <a href='$url?p=countries&$getName=$nbPage'>>></a>";
 
     return $sortie;
 }
