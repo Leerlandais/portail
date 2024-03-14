@@ -17,11 +17,10 @@ try {
 
 $messages = getMessages($db);
 $replies = getReplies($db);
-$countries = getCountries($db);
 
 if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 
-        
+    
     $insert = addMessage($db,$_POST['name'],$_POST['email'],$_POST['message']);
     
     if ($insert) {        
@@ -78,15 +77,25 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
     }  
 }
 
+/* ---------------- MAPS ---------------------- */
 
 
+// $countries = getCountries($db);
+$totalCountries = count(getCountries($db));
 
+if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+} else {
+    $page = 1;
+}
 
+$countries = getPaginationInformations($db, $page, MY_COUNTRIES_PER_PAGE);
 
-
-
+$pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
 
 /*  -------------     CONTROLLER    --------------  */
+
+$db =null;
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){

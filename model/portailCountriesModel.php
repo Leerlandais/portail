@@ -14,52 +14,62 @@ function getCountries(PDO $db): array {
     return [];
 }
 
+function getCountriesByAmount(PDO $db, $numPerPage) {
+    $sql = "SELECT * FROM portail_countries ORDER BY id ASC LIMIT $numPerPage"; 
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }catch (PDOException $e){
+        error_log("Error getting messages: " . $e->getMessage());
+        return false;
+    }
+    return [];
+}
 
-function paginationModel(string $url, // url (pour garder les autres variables get)   - moi, je n'aime pas PascalCase :D
-                        string $getName, // le nom de notre variable get de pagination
-                        int $nbTotalItem, // le nombre total d'item à afficher
-                        int $currentPage=1,  // la page actuelle
-                        int $nbByPage=10 // la nombre d'item par page
+function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage)
+{
+    $offset = ($currentPage - 1) * $nbPerPage;
+    $sql = "SELECT * FROM `portail_countries` ORDER BY `id` ASC LIMIT $offset,$nbPerPage";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+
+function paginationModel(string $url, 
+                        string $getName,
+                        int $nbTotalItem, 
+                        int $currentPage=1,
+                        int $nbByPage=50 
                         )
 {
-    // pas d'item, pas de pagination
+    
     if($nbTotalItem===0) return null;
-    // création de la variable de sortie au format texte
+    
     $sortie="";
-    // on calcule le nombre de page en divisant le nombre
-    // total d'item par le nombre d'item par page
-    // le tout arrondit à l'entier supérieur ceil
-    // et retourné en entier avec (int), ceil() retourne un float
+    
     $nbPage = (int) ceil($nbTotalItem/$nbByPage);
-
-    // si une seule page, pas de pagination
     if($nbPage<2) return null;
 
-    // on commence par le bouton précédent
     if($currentPage===1){
-        // pas de liens
-        $sortie.= "<< <";
+        $sortie.= "";
     }elseif ($currentPage===2) {
-        // liens vers l'accueil sans duplicate content (./ = ./?pg=1)
-        $sortie.= "<a href='$url'><<</a> <a href='$url'><</a>";
+        $sortie.= "<a href='$url?p=countries&pg=1"."'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
     }else{
-        // liens vers l'accueil et la page précédente
-        $sortie.= "<a href='$url'><<</a> <a href='$url?&$getName=".($currentPage-1)."'><</a>";
+        $sortie.= "<a href='$url?p=countries&pg=1'><<</a> <a href='$url?p=countries&$getName=".($currentPage-1)."'><</a>";
     }
 
-    // on boucle sur le nombre de pages
     for($i=1;$i<=$nbPage;$i++)
     {
-        // si on est sur la page en cours, on affiche un texte
+        
         if($i===$currentPage) $sortie.= " $i ";
-        // sinon si on affiche la page 1, on évite le duplicate content
-        else if($i===1) $sortie.= " <a href='$url'>$i</a> ";
-        // sinon on affiche un lien
-        else $sortie.= " <a href='$url?&$getName=$i'>$i</a> ";
+        else if($i===1) $sortie.= " <a href='$url?p=countries'>$i</a> ";
+        else $sortie.= " <a href='$url?p=countries&$getName=$i'>$i</a> ";
     }
 
-    // on termine par le bouton suivant, utilisation d'une ternaire pour remplacer un il et else
-    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?&$getName=".($currentPage+1)."'>></a> <a href='$url?&$getName=$nbPage'>>></a>";
+    $sortie.= $currentPage === $nbPage ? "> >>" : "<a href='$url?p=countries&$getName=".($currentPage+1)."'>></a> <a href='$url?p=countries&$getName=$nbPage'>>></a>";
 
     return $sortie;
 }

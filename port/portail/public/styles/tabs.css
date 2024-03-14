@@ -1,0 +1,56 @@
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
+    height: 100vh;
+    color: hsla(180, 36%, 46%, 1);
+}
+
+.headerDiv {
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    margin: 5vh auto;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width and fontsize to be added via media */
+}
+
+.navLinks {
+    font-size: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.headerDiv a {
+    color: hsla(180, 36%, 46%, 1);
+    font-style: italic;
+ 
+    margin: 0 25px;
+}
+
+.leeOnly {
+    text-decoration: none;
+    color: hsla(180, 36%, 46%, 1);
+}
+
+.artistLabel {
+    margin-right: 10px;
+}
+
+
+.songUL {
+    display: none;
+}
+
+
+ .backTabs {
+    color: hsla(180, 36%, 46%, 1);
+ }
+
+ 
