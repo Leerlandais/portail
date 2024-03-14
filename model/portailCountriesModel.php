@@ -13,7 +13,7 @@ function getCountries(PDO $db): array {
     }
     return [];
 }
-
+/*
 function getCountriesByAmount(PDO $db, $numPerPage) {
     $sql = "SELECT * FROM portail_countries ORDER BY id ASC LIMIT $numPerPage"; 
     $stmt = $db->prepare($sql);
@@ -27,17 +27,29 @@ function getCountriesByAmount(PDO $db, $numPerPage) {
     }
     return [];
 }
+*/
 
-function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage)
+function getCountriesBySort(PDO $db, int $currentPage, int $nbPerPage, $sortby="id")
 {
     $offset = ($currentPage - 1) * $nbPerPage;
-    $sql = "SELECT * FROM `portail_countries` ORDER BY `id` ASC LIMIT $offset,$nbPerPage";
+    $sql = "SELECT * FROM `portail_countries` ORDER BY $sortby ASC LIMIT $offset,$nbPerPage";
     $query = $db->query($sql);
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result;
 }
+/*
+function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage, string $sortby="id")
+{   
+$offset = ($currentPage - 1) * $nbPerPage;
+$sql = "SELECT * FROM `portail_countries` ORDER BY $sortby ASC LIMIT $offset,$nbPerPage";
 
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+*/
 function paginationModel(string $url, 
                         string $getName,
                         int $nbTotalItem, 
