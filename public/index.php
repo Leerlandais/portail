@@ -91,7 +91,7 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
     $page = 1;
 }
 
-$pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount, $sortByType);
+/// $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount, $sortByType);
 
 /*
 if(isset($_GET["sort"])) {
