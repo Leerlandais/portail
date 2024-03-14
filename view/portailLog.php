@@ -15,6 +15,7 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">14/03/2024 - Select Amount to display</li>
             <li class="devListItem">13/03/2024 - Added Pages to Countries</li>
             <li class="devListItem">12/03/2024 - Changed PHP query to prepare</li>
             <li class="devListItem">11/03/2024 - Changed SQL to JOIN</li>     

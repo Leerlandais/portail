@@ -9,37 +9,46 @@
 <body class="countryBody">
 <?php
 include("../view/inc/header.php");
-
+if(isset($itemCount)) echo $itemCount;
 ?>
 
 <h1>Somewhat Complete List of Countries</h1>
 <h2>Things to do 
     <ul>
-        <li>Select Display Amount</li>
         <li>Sort by anything</li>
         <li>Select countries by X to Y</li>
         <li>Whatever else I can think of</li>
     </ul> 
 </h2>
-<!--
-<form action="" method="POST">
-    <input type="text" name="amount">
-    <button type="submit">change</button>
-</form>
--->
-<form action="" method="POST">
-<select name="itemPerPage" id="">
+
+<!-- <a href="?p=countries&hello">hello</a> -->
+<?php
+/*
+  if (isset($_GET['hello'])) {                  NOW I KNOW HOW I'LL DO THE SORT :)
+    echo 'that worked';
+  }
+  */
+?>
+
+
+
+<?php
+
+
+
+   
+if (isset($pagination)) {
+    echo "<p>$pagination</p>"; }  ?>
+    <form action="" method="POST" class="countryCount">
+<select name="itemsPerPage" id="">
     <option value="10">10</option>
     <option value="20">25</option>
     <option value="50">50</option>
     <option value="100">100</option>
     <option value="all">All</option>
 </select>
+<button type="send">Show</button>
 </form>
-<?php
-
-if (isset($pagination)) {
-    echo "<p>$pagination</p>"; }  ?>
 <table class="countryTable">
     <th class="countryInfo">Name</th>
     <th class="countryInfo">ISO Code</th>

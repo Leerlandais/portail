@@ -82,11 +82,6 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
 
 // $countries = getCountries($db);
 
-if(isset($_POST["itemsPerPage"])){
-$itemCount = $_POST["itemsPerPage"];
-var_dump($itemCount);
-}
-
 $totalCountries = count(getCountries($db));
 
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
@@ -95,11 +90,17 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 } else {
     $page = 1;
 }
-
-$countries = getPaginationInformations($db, $page, MY_COUNTRIES_PER_PAGE);
-
-$pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
-
+if(isset($_POST["itemsPerPage"])){
+    if($_POST["itemsPerPage"] === "all") $_POST["itemsPerPage"] = $totalCountries;
+    $itemCount = $_POST["itemsPerPage"];
+    $countries = getPaginationInformations($db, $page, $itemCount);
+    $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount);
+    }else {
+        $countries = getPaginationInformations($db, $page, MY_COUNTRIES_PER_PAGE);
+        $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
+        
+    }
+    
 /*  -------------     CONTROLLER    --------------  */
 
 // $db =null;

@@ -343,6 +343,14 @@ textarea {
     width: 30%;
 }
 
+.countryCount {
+    margin: 5px 0 10px;
+}
+
+.countryCount button, .countryCount select{
+    background-color:  hsla(220, 13%, 76%, 1);
+}
+
 @media screen and (max-width: 600px) {
 
     .headerDiv {

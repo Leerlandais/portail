@@ -1,3 +1,5 @@
+/*
+
 const showScreen = document.getElementById("showScreen");
 showScreen.addEventListener('click', displayScreenWidth); 
 
@@ -7,7 +9,7 @@ function displayScreenWidth() {
     screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
 
-
+*/
 
 const portalWindow = document.querySelectorAll(".portalWindow");
 const descPrefo = document.getElementById("descPrefo");
