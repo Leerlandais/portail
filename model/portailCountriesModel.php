@@ -1,5 +1,6 @@
 <?php
 
+/*
 function getCountries(PDO $db): array {
     $sql = "SELECT * FROM portail_countries ORDER BY id ASC"; 
     $stmt = $db->prepare($sql);
@@ -13,7 +14,8 @@ function getCountries(PDO $db): array {
     }
     return [];
 }
-/*
+
+
 function getCountriesByAmount(PDO $db, $numPerPage) {
     $sql = "SELECT * FROM portail_countries ORDER BY id ASC LIMIT $numPerPage"; 
     $stmt = $db->prepare($sql);
@@ -29,7 +31,20 @@ function getCountriesByAmount(PDO $db, $numPerPage) {
 }
 */
 
-function getCountriesBySort(PDO $db, int $currentPage, int $nbPerPage, $sortby="id")
+function countCountries(PDO $db): array {
+    $sql = "SELECT id FROM portail_countries"; 
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }catch (PDOException $e){
+        error_log("Error getting count: " . $e->getMessage());
+        return false;
+    }
+}
+
+function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, $sortby="id")
 {
     $offset = ($currentPage - 1) * $nbPerPage;
     $sql = "SELECT * FROM `portail_countries` ORDER BY $sortby ASC LIMIT $offset,$nbPerPage";
@@ -50,7 +65,7 @@ $sql = "SELECT * FROM `portail_countries` ORDER BY $sortby ASC LIMIT $offset,$nb
     return $result;
 }
 */
-function paginationModel(string $url, 
+function paginationModel(string $url,                                                                               // need to rewrite this !!!!!!!!!!!!!!!!!!
                         string $getName,
                         int $nbTotalItem, 
                         int $currentPage=1,

@@ -82,7 +82,7 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
 
 // $countries = getCountries($db);
 
-$totalCountries = count(getCountries($db));
+$totalCountries = count(countCountries($db));
 
 if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
     $page = (int) $_GET[PAGINATION_GET_NAME];
@@ -90,6 +90,10 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 } else {
     $page = 1;
 }
+
+$pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount, $sortByType);
+
+/*
 if(isset($_GET["sort"])) {
     switch($_GET["sort"]) {
         case 'name' :
@@ -125,8 +129,8 @@ if(isset($_GET["sort"])) {
         $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE);
         
     }
+*/
 
-// can i do an if(isset($_GET["sort"] && isset($_POST["itemsPerPage"]))) {?} Probably, yeah :)
     
 /*  -------------     CONTROLLER    --------------  */
 
