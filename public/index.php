@@ -90,20 +90,47 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
 } else {
     $page = 1;
 }
-if(isset($_POST["itemsPerPage"])){
+if(isset($_GET["sort"])) {
+    switch($_GET["sort"]) {
+        case 'name' :
+                $sortByType = "nom";
+            break;
+        case 'iso' :
+                $sortByType = "iso";
+            break;
+        case 'pop' :
+                $sortByType = "population";
+            break;
+        case 'area' :
+                $sortByType = "superficie";
+            break;
+        case 'cap' :
+                $sortByType = "capitale";
+            break;
+        case 'pop_cap' :
+                $sortByType = "popu_cap";
+            break;
+        case 'alt' :
+                $sortByType = "altitude";
+            break;                                                                                            
+        }
+        $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE, $sortByType);
+        $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
+}else if(isset($_POST["itemsPerPage"])){
     if($_POST["itemsPerPage"] === "all") $_POST["itemsPerPage"] = $totalCountries;
     $itemCount = $_POST["itemsPerPage"];
-    $countries = getPaginationInformations($db, $page, $itemCount);
+    $countries = getCountriesBySort($db, $page, $itemCount);
     $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount);
     }else {
-        $countries = getPaginationInformations($db, $page, MY_COUNTRIES_PER_PAGE);
-        $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
+        $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE);
         
     }
+
+// can i do an if(isset($_GET["sort"] && isset($_POST["itemsPerPage"]))) {?} Probably, yeah :)
     
 /*  -------------     CONTROLLER    --------------  */
 
-// $db =null;
+ $db =null;
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){
