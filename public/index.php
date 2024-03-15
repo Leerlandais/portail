@@ -91,33 +91,47 @@ if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME]
     $page = 1;
 }
 
-/// $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount, $sortByType);
-
-/*
+$sortByType="nom";
 if(isset($_GET["sort"])) {
     switch($_GET["sort"]) {
         case 'name' :
-                $sortByType = "nom";
+            $sortByType = "nom";
             break;
-        case 'iso' :
+            case 'iso' :
                 $sortByType = "iso";
-            break;
-        case 'pop' :
-                $sortByType = "population";
-            break;
-        case 'area' :
-                $sortByType = "superficie";
-            break;
-        case 'cap' :
-                $sortByType = "capitale";
-            break;
-        case 'pop_cap' :
-                $sortByType = "popu_cap";
-            break;
-        case 'alt' :
-                $sortByType = "altitude";
-            break;                                                                                            
-        }
+                break;
+                case 'pop' :
+                    $sortByType = "population";
+                    break;
+                    case 'area' :
+                        $sortByType = "superficie";
+                        break;
+                        case 'cap' :
+                            $sortByType = "capitale";
+                            break;
+                            case 'pop_cap' :
+                                $sortByType = "popu_cap";
+                                break;
+                                case 'alt' :
+                                    $sortByType = "altitude";
+                                    break;                                                                                            
+                                }
+                                
+                            }
+if(isset($_POST["itemsPerPage"])) {
+    $itemCount = $_POST["itemsPerPage"];
+}else {
+    $itemCount = MY_COUNTRIES_PER_PAGE;
+}
+                            
+                            $countries = getCountries($db, $page, $itemCount, $sortByType);
+                             $pagination = paginationModel("", PAGINATION_GET_NAME, $totalCountries, $page, $sortByType, $itemCount);
+
+
+        /*
+
+
+
         $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE, $sortByType);
         $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
 }else if(isset($_POST["itemsPerPage"])){
