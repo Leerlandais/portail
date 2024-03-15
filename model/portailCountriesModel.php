@@ -44,7 +44,7 @@ function countCountries(PDO $db): array {
     }
 }
 
-function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, $sortby="id")
+function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, string $sortby="id")
 {
     var_dump($currentPage);
     $offset = ($currentPage - 1) * $nbPerPage;
