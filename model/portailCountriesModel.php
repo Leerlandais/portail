@@ -46,7 +46,6 @@ function countCountries(PDO $db): array {
 
 function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, string $sortby="id")
 {
-    var_dump($currentPage);
     $offset = ($currentPage - 1) * $nbPerPage;
     $sql = "SELECT * FROM `portail_countries` ORDER BY $sortby ASC LIMIT $offset,$nbPerPage";
     $query = $db->query($sql);
@@ -54,6 +53,44 @@ function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, string $sort
     $query->closeCursor();
     return $result;
 }
+
+
+/*
+function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, string $sortBy="id")
+{
+    $offset = ($currentPage - 1) * $nbPerPage;
+    $query = $db->prepare("SELECT * FROM `portail_countries` ORDER BY ? ASC LIMIT ?, ?");
+    $query->bindParam(1, $sortBy, PDO::PARAM_STR);
+    $query->bindParam(2, $nbPerPage, PDO::PARAM_INT);
+    $query->bindParam(3, $offset, PDO::PARAM_INT);
+    $result = $query->execute();
+    return $result;
+
+
+}
+
+*/
+/*
+function getCountries(PDO $db, int $currentPage, int $nbPerPage=25, string $sortBy="id")
+{
+    $offset = ($currentPage - 1) * $nbPerPage;
+    $sql = "SELECT * FROM `portail_countries` ORDER BY :sort ASC LIMIT :offs, :num";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':sort', $sortBy);
+    $stmt->bindValue(':offs', $offset);
+    $stmt->bindValue(':num', $nbPerPage);
+    try {
+
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+
+        error_log("Error adding message: " . $e->getMessage());
+        return false;
+    }
+}
+
+
 /*
 function getPaginationInformations(PDO $db, int $currentPage, int $nbPerPage, string $sortby="id")
 {   
@@ -94,11 +131,11 @@ function paginationModel(string $url,                                           
     {
         
         if($i===$currentPage) $sortie.= " $i ";
-        else if($i===1) $sortie.= " <a href='$url?p=countries&sort=$sortBy&itemPer=$nbByPage'>$i</a> ";
+        else if($i===1) $sortie.= " <a href='$url?p=countries&$getName=$i&sort=$sortBy&itemPer=$nbByPage'>$i</a> ";
         else $sortie.= " <a href='$url?p=countries&$getName=$i&sort=$sortBy&itemPer=$nbByPage'>$i</a> ";
     }
 
-    $sortie.= $currentPage === $nbPage ? "" : "<a href='$url?p=countries&$getName=".($currentPage+1)."'>></a> <a href='$url?p=countries&$getName=$nbPage&sort=$sortBy&itemPer=$nbByPage'>>></a>";
+    $sortie.= $currentPage === $nbPage ? "" : "<a href='$url?p=countries&$getName=".($currentPage+1)."&sort=$sortBy&itemPer=$nbByPage'>></a> <a href='$url?p=countries&$getName=$nbPage&sort=$sortBy&itemPer=$nbByPage'>>></a>";
 
     return $sortie;
 }
