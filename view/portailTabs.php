@@ -31,11 +31,12 @@
         ?>
                 </ul>
         <?php  endforeach;  ?>
-
 </div>
 </fieldset>
-
-    
+<?php
+foreach($tabs as $tab) : ?>
+<div class="songTab"><?=$tab["tab"]?></div>
+<?php  endforeach;  ?>
 <script src="scripts/tabs.js"></script>
 </body>
 </html>

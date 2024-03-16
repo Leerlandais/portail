@@ -16,6 +16,14 @@ function getSongs(PDO $db): array {
     return $result;
 }
 
+function getTabs(PDO $db): array {
+    $sql = "SELECT * FROM portail_tabs_tab ORDER BY id ASC";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+
 function addArtist (PDO $db, string $artName) {
     $cleanedName = htmlspecialchars(strip_tags(trim($artName)), ENT_QUOTES);
     if (empty($cleanedName)) {

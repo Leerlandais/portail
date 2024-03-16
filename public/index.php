@@ -51,6 +51,7 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
 
 $artists = getArtists($db);
 $songs = getSongs($db);
+$tabs = getTabs($db);
 
 
 if (isset($_POST["artist_name"])) {

@@ -14,7 +14,7 @@ include("../view/inc/header.php");
 ?>
 
 <fieldset>
-    <legend>Choisissez votre Passage</legend>
+    <legend>Choisissez votre Passag<a href="?p=tabsLee" class = "leeOnly">e</a></legend>
     <div class="portalHolder">
         <div class="windowHolder" id="windowHolder1">
             <h3>Site Préformation</h3>

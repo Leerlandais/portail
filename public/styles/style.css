@@ -350,6 +350,10 @@ textarea {
 .countryCount button, .countryCount select{
     background-color:  hsla(220, 13%, 76%, 1);
 }
+.leeOnly {
+    text-decoration: none;
+    color: hsla(180, 36%, 46%, 1);
+}
 
 @media screen and (max-width: 600px) {
 
