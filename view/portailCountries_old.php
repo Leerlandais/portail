@@ -34,7 +34,7 @@ include("../view/inc/header.php");
 
 <?php
 
-
+echo $totalCountries;
 
    
 if (isset($pagination)) {
