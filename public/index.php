@@ -3,7 +3,7 @@
 require_once "../config.php";
 require_once "../model/portailModel.php";
 require_once "../model/portailTabsModel.php";
-require_once "../model/portailCountriesModel.php";
+
 
 try {
     $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
@@ -76,75 +76,6 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
         $messageError = "Something went wrong";
     }  
 }
-
-/* ---------------- MAPS ---------------------- */
-
-
-// $countries = getCountries($db);
-
-$totalCountries = count(countCountries($db));
-
-if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
-    $page = (int) $_GET[PAGINATION_GET_NAME];
-    
-} else {
-    $page = 1;
-}
-
-$sortByType="nom";
-if(isset($_GET["sort"])) {
-    switch($_GET["sort"]) {
-        case 'name' :
-            $sortByType = "nom";
-            break;
-            case 'iso' :
-                $sortByType = "iso";
-                break;
-                case 'pop' :
-                    $sortByType = "population";
-                    break;
-                    case 'area' :
-                        $sortByType = "superficie";
-                        break;
-                        case 'cap' :
-                            $sortByType = "capitale";
-                            break;
-                            case 'pop_cap' :
-                                $sortByType = "popu_cap";
-                                break;
-                                case 'alt' :
-                                    $sortByType = "altitude";
-                                    break;                                                                                            
-                                }
-                                
-                            }
-if(isset($_POST["itemsPerPage"])) {
-    $itemCount = $_POST["itemsPerPage"];
-}else {
-    $itemCount = MY_COUNTRIES_PER_PAGE;
-}
-                            
-                            $countries = getCountries($db, $page, $itemCount, $sortByType);
-                             $pagination = paginationModel("", PAGINATION_GET_NAME, $totalCountries, $page, $sortByType, $itemCount);
-
-
-        /*
-
-
-
-        $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE, $sortByType);
-        $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
-}else if(isset($_POST["itemsPerPage"])){
-    if($_POST["itemsPerPage"] === "all") $_POST["itemsPerPage"] = $totalCountries;
-    $itemCount = $_POST["itemsPerPage"];
-    $countries = getCountriesBySort($db, $page, $itemCount);
-    $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount);
-    }else {
-        $countries = getCountriesBySort($db, $page, MY_COUNTRIES_PER_PAGE);
-        
-    }
-*/
-
     
 /*  -------------     CONTROLLER    --------------  */
 
@@ -176,10 +107,7 @@ if(isset($_GET["p"])){
                                 $title = "Me Only";
                                 include("../view/portailTabDB.php");
                                 break;
-                                case 'countries' :
-                                    $title = "Countries";
-                                    include("../view/portailCountries.php");
-                                    break;            
+             
                                     default :
                                     $title = "Page d'Accueil";
                                     include("../view/portailHome.php");

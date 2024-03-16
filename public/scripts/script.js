@@ -113,7 +113,7 @@ switch(spinThis.id) {
         break;    
     case "windowHolder6" :
             setTimeout(function () {
-        window.open("?p=countries", "_self");
+        window.open("https://leerlandais.com/NewMaps", "_self");
     }, 1250);
         break;
     case "windowHolder7" :
