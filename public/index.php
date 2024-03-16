@@ -3,7 +3,7 @@
 require_once "../config.php";
 require_once "../model/portailModel.php";
 require_once "../model/portailTabsModel.php";
-require_once "../model/portailCountriesModel.php";
+
 
 try {
     $db = new PDO(DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET . ";port=" . DB_PORT, DB_LOGIN, DB_PWD);
@@ -77,34 +77,10 @@ if (isset($_POST["artist_id"], $_POST["song_name"])) {
         $messageError = "Something went wrong";
     }  
 }
-
-/* ---------------- MAPS ---------------------- */
-
-
-// $countries = getCountries($db);
-
-$totalCountries = count(getCountries($db));
-
-if (!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])) {
-    $page = (int) $_GET[PAGINATION_GET_NAME];
-    
-} else {
-    $page = 1;
-}
-if(isset($_POST["itemsPerPage"])){
-    if($_POST["itemsPerPage"] === "all") $_POST["itemsPerPage"] = $totalCountries;
-    $itemCount = $_POST["itemsPerPage"];
-    $countries = getPaginationInformations($db, $page, $itemCount);
-    $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, $itemCount);
-    }else {
-        $countries = getPaginationInformations($db, $page, MY_COUNTRIES_PER_PAGE);
-        $pagination = paginationModel("./", PAGINATION_GET_NAME, $totalCountries, $page, MY_COUNTRIES_PER_PAGE);
-        
-    }
     
 /*  -------------     CONTROLLER    --------------  */
 
-// $db =null;
+ $db =null;
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){
@@ -132,10 +108,7 @@ if(isset($_GET["p"])){
                                 $title = "Me Only";
                                 include("../view/portailTabDB.php");
                                 break;
-                                case 'countries' :
-                                    $title = "Countries";
-                                    include("../view/portailCountries.php");
-                                    break;            
+             
                                     default :
                                     $title = "Page d'Accueil";
                                     include("../view/portailHome.php");

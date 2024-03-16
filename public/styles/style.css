@@ -86,7 +86,7 @@ fieldset {
 }
 
 .windowCountries {
-    background-image: url(../images/svg/ie.svg); 
+    background-image: url(../NewMaps/public/images/svg/ie.svg); 
 }
 
 h6 {
@@ -329,7 +329,7 @@ textarea {
 }
 
 .countryBody {
-    height: 750vh;
+    height: 1250vh;
 }
 
 .countryTable, .countryCol {

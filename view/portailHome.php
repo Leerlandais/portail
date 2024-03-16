@@ -37,7 +37,7 @@ include("../view/inc/header.php");
             <div class="portalWindow windowCardMem" id="portalToCardMem"><div class="portalDesc" id="descCardMem">Jeux du Mémoire. Crée le 07/03/2024-09/03/2024</div></div>
         </div>
         <div class="windowHolder" id="windowHolder6">
-            <h3>Coming Soon</h3>
+            <h3>Countries</h3>
             <div class="portalWindow windowCountries" id="portalToCountries"><div class="portalCountries" id="descCountries"></div></div>
         </div>
         <div class="windowHolder" id="windowHolder7">

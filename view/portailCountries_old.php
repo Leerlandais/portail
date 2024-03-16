@@ -9,7 +9,7 @@
 <body class="countryBody">
 <?php
 include("../view/inc/header.php");
-if(isset($itemCount)) echo $itemCount;
+// if(isset($itemCount)) echo $itemCount;
 ?>
 
 <h1>Somewhat Complete List of Countries</h1>
@@ -34,7 +34,7 @@ if(isset($itemCount)) echo $itemCount;
 
 <?php
 
-
+echo $totalCountries;
 
    
 if (isset($pagination)) {
@@ -42,7 +42,7 @@ if (isset($pagination)) {
     <form action="" method="POST" class="countryCount">
 <select name="itemsPerPage" id="">
     <option value="10">10</option>
-    <option value="20">25</option>
+    <option value="25">25</option>
     <option value="50">50</option>
     <option value="100">100</option>
     <option value="all">All</option>
@@ -50,13 +50,13 @@ if (isset($pagination)) {
 <button type="send">Show</button>
 </form>
 <table class="countryTable">
-    <th class="countryInfo">Name</th>
-    <th class="countryInfo">ISO Code</th>
-    <th class="countryInfo">Population</th>
-    <th class="countryInfo">Area</th>
-    <th class="countryInfo">Capital</th>
-    <th class="countryInfo">Population of Capital</th>
-    <th class="countryInfo">Altitude of Capital</th>
+    <th class="countryInfo"><a href="?p=countries&sort=name">Name</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=iso">ISO Code</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=pop">Population</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=area">Area</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=cap">Capital</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=pop_cap">Population of Capital</a></th>
+    <th class="countryInfo"><a href="?p=countries&sort=alt">Altitude of Capital</a></th>
     <th class="countryInfo">Flag</th>
     <?php
         foreach($countries as $country) {
