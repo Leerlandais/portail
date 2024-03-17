@@ -39,4 +39,4 @@ foreach($tabs as $tab) : ?>
 <?php  endforeach;  ?>
 <script src="scripts/tabs.js"></script>
 </body>
-</html>
+</html> 
