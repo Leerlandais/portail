@@ -22,9 +22,10 @@
                         foreach ($songs as $song) : 
                             if ($song["artists_id"] == $artist["artist_id"]) {
                         ?>
-                            <li class="songName"><a href="?song=song<?=$i?>"><?=$song["song_name"]?></a></li>
+                            <li class="songName"><a href="?song=<?=$song["chord1"]?>"><?=$song["song_name"]?></a></li>
                     <?php
                             } 
+                            $i++;
                         endforeach; ?>
 
                     </ul>

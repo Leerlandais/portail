@@ -33,7 +33,7 @@ function getArtists(PDO $db){
 
 function getSongs(PDO $db){
 
-    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id
+    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id, tabs_tab.chord1
     FROM    tabs_song
     JOIN    tabs_artist ON tabs_artist.artist_id = tabs_song.artists_id
     JOIN    tabs_tab ON tabs_song.tabs_id = tabs_tab.tab_id
