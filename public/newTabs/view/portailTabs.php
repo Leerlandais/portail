@@ -33,6 +33,15 @@
         </ul>
     </div>
 </fieldset>
+
+<div class="showSong">
+    
+    <?php
+    if (isset($_GET["song"])) {
+    echo $_GET["song"];
+    }
+    ?>
+</div>
 <script src="scripts/tabs.js"></script>
 </body>
 </html>
