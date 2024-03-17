@@ -22,7 +22,7 @@
                         foreach ($songs as $song) : 
                             if ($song["artists_id"] == $artist["artist_id"]) {
                         ?>
-                            <li class="songName"><a href="?song=<?=$song["chord1"]?>"><?=$song["song_name"]?></a></li>
+                            <li class="songName"><a href="?song=<?=$song["tabs_id"]?>"><?=$song["song_name"]?></a></li>
                     <?php
                             } 
                             $i++;
@@ -36,11 +36,13 @@
 
 <div class="showSong">
     
-    <?php
-    if (isset($_GET["song"])) {
-    echo $_GET["song"];
-    }
-    ?>
+<?php if (isset($tabs)) {
+    foreach($tabs as $tab) :
+        if ($tab["tab_id"] == $_GET["song"])
+    echo $tab["chord1"];
+    endforeach;
+}
+?>
 </div>
 <script src="scripts/tabs.js"></script>
 </body>

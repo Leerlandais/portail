@@ -12,6 +12,13 @@ try {
 
 $artists = getArtists($db);
 $songs = getSongs($db);
+// $tabs = getTabs($db);
+
+if (isset($_GET["song"])) {
+    $thisSong = $_GET["song"];
+    $tabs = getTabs($db, $thisSong);
+}
+    
 
 /*  -------------     TABS    --------------  */
 

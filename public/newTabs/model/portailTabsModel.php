@@ -33,7 +33,7 @@ function getArtists(PDO $db){
 
 function getSongs(PDO $db){
 
-    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id, tabs_tab.chord1
+    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id, tabs_tab.chord1, tabs_tab.tab_id, tabs_song.tabs_id
     FROM    tabs_song
     JOIN    tabs_artist ON tabs_artist.artist_id = tabs_song.artists_id
     JOIN    tabs_tab ON tabs_song.tabs_id = tabs_tab.tab_id
@@ -55,6 +55,28 @@ function getSongs(PDO $db){
     }
 
 } 
+
+function getTabs(PDO $db, $song) {
+
+    $sql = "SELECT tabs_tab.tab_id, tabs_song.tabs_id, tabs_tab.chord1
+    FROM    tabs_tab
+    JOIN    tabs_song ON tabs_tab.tab_id = tabs_song.tabs_id";
+
+    $stmt = $db->prepare($sql);
+    
+    try {
+    
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    
+    }catch (PDOException $e){
+    
+        error_log("Error getting tabs: " . $e->getMessage());
+        return false;
+    
+    }
+}
 
 
 
