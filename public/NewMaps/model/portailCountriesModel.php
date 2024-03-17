@@ -42,30 +42,19 @@ function paginationModel(string $url,
 {
 
     if($nbTotalItem===0) return null;
-
     $sortie="";
-
- 
     $nbPage = (int) ceil($nbTotalItem/$nbByPage);
-
    
     if($nbPage<2) return null;
-
-   
     if($currentPage===1){
-
         $sortie.= "<< <";
     }elseif ($currentPage===2) {
-
         $sortie.= "<a href='$url'><<</a> <a href='$url'><</a>";
     }else{
-
         $sortie.= "<a href='$url'><<</a> <a href='$url?&$getName=".($currentPage-1)."&sort=$sortBy&dir=$sortDir&item=$nbByPage'><</a>";
     }
-
     for($i=1;$i<=$nbPage;$i++)
-    {
-   
+    {   
         if($i===$currentPage) $sortie.= " $i ";
         else if($i===1) $sortie.= " <a href='$url'>$i</a> ";
         else $sortie.= " <a href='$url?&$getName=$i&sort=$sortBy&dir=$sortDir&item=$nbByPage'>$i</a> ";
@@ -110,7 +99,7 @@ function getCountries(PDO $db,
     
     }catch (PDOException $e){
     
-        error_log("Error getting messages: " . $e->getMessage());
+        error_log("Error getting countries: " . $e->getMessage());
         return false;
     
     }
