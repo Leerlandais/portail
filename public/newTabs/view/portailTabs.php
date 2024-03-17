@@ -38,10 +38,12 @@
     
 <?php if (isset($tabs)) {
     foreach($tabs as $tab) :
-        if ($tab["tab_id"] == $_GET["song"])
-    echo $tab["chord1"];
+        if ($tab["tab_id"] == $_GET["song"]) {
+            echo $tab["tab_name"];  // stick tab in divs etc
+        echo "put tab here".$tab["chord1"];
+        }
     endforeach;
-}
+    }
 ?>
 </div>
 <script src="scripts/tabs.js"></script>
