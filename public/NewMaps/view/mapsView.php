@@ -19,7 +19,8 @@
 $sort_order = isset($_GET['sort']) && $_GET['dir'] == 'DESC' ? 'ASC' : 'DESC';
 
 if (isset($_GET["item"])) {
-    $itemPer = $_GET["item"];
+    $cleanedItems = htmlspecialchars(strip_tags(trim($_GET["item"])), ENT_QUOTES);
+    $itemPer = $cleanedItems;
 }else {
     $itemPer = 233;
 }  ?>
