@@ -58,7 +58,7 @@ function getSongs(PDO $db){
 
 function getTabs(PDO $db, $song) {
 
-    $sql = "SELECT tabs_tab.tab_id, tabs_song.tabs_id, tabs_tab.chord1, tabs_tab.tab_name, tabs_tab.verse1
+    $sql = "SELECT *
     FROM    tabs_tab
     JOIN    tabs_song ON tabs_tab.tab_id = tabs_song.tabs_id";
 

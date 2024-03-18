@@ -17,3 +17,13 @@ body {
     color: hsla(180, 36%, 46%, 1);
     text-decoration: none;
 }
+
+.tableHolder {
+    width: 80%;
+}
+.tabWindow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 50%;
+}
