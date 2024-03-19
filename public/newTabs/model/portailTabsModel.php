@@ -8,7 +8,7 @@ function getArtists(PDO $db){
     ORDER BY artist_name";
 
     /*
-    $sql = "SELECT DISTINCT  tabs_artist.artist_name, tabs_song.song_name, tabs_tab.chord1
+    $sql = "SELECT DISTINCT  tabs_artist.artist_name, tabs_song.song_name, tabs_tab.full_song
             FROM    tabs_artist
             JOIN    tabs_song ON tabs_artist.artist_id = tabs_song.artists_id
             JOIN    tabs_tab ON tabs_song.tabs_id = tabs_tab.tab_id
@@ -33,7 +33,7 @@ function getArtists(PDO $db){
 
 function getSongs(PDO $db){
 
-    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id, tabs_tab.chord1, tabs_tab.tab_id, tabs_song.tabs_id
+    $sql = "SELECT song_name, artists_id, tabs_artist.artist_id, tabs_tab.full_song, tabs_tab.tab_id, tabs_song.tabs_id
     FROM    tabs_song
     JOIN    tabs_artist ON tabs_artist.artist_id = tabs_song.artists_id
     JOIN    tabs_tab ON tabs_song.tabs_id = tabs_tab.tab_id
