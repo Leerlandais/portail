@@ -11,7 +11,7 @@
 <?php // var_dump($songs); ?>
 
 <fieldset class="artistField">
-    <legend>Select Artist</legend>
+    <legend>Select Artis<a href="/view/portailTabDB.php">t</a></legend>
     <div class="artistWindow">
         <ul class="artistList">
             <?php foreach ($artists as $artist) : ?>

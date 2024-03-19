@@ -32,3 +32,8 @@ pre {
     font-family: monospace;
     white-space: pre-wrap;
   }
+
+  legend a {
+    text-decoration: none;
+    color: hsla(180, 36%, 46%, 1);
+  }

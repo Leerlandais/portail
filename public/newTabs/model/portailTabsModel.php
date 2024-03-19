@@ -2,7 +2,7 @@
 
 function getArtists(PDO $db){
 
-    $sql = "SELECT DISTINCT artist_name, artist_id
+    $sql = "SELECT DISTINCT tabs_artist.artist_name, tabs_artist.artist_id
     FROM    tabs_artist
     JOIN    tabs_song ON tabs_artist.artist_id = tabs_song.artists_id
     ORDER BY artist_name";
