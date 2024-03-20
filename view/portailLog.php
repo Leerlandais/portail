@@ -15,6 +15,7 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">20/03/2024 - Made Tabs Page visible and protected the AddTab page</li>
             <li class="devListItem">16/03/2024 - Complete rewrite of Countries, fully working</li>
             <li class="devListItem">15/03/2024 - Added SortBy to Countries</li>
             <li class="devListItem">14/03/2024 - Select Amount to display to Countries</li>
