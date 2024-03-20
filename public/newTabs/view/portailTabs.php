@@ -11,7 +11,7 @@
 <?php // var_dump($songs); ?>
 
 <fieldset class="artistField">
-    <legend>Select Artist</legend>
+    <legend>Select Artis<a href="/view/portailTabDB.php">t</a></legend>
     <div class="artistWindow">
         <ul class="artistList">
             <?php foreach ($artists as $artist) : ?>
@@ -43,28 +43,10 @@
             echo $tab["tab_name"]."<br>";  // stick tab in divs etc ?>
     <div class="tabHolder">
         <div class="tabWindow">
-        
-        <div class="chord"><?=$tab["chord1"];?></div><div class="verse"><?=$tab["verse1"];?></div></div>
-        <div class="tabWindow">
-        <div class="chord"><?=$tab["chord2"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="verse"><?=$tab["verse2"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="chord"><?=$tab["chord3"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="verse"><?=$tab["verse3"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="chord"><?=$tab["chord4"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="verse"><?=$tab["verse4"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="chord"><?=$tab["chord5"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="verse"><?=$tab["verse5"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="chord"><?=$tab["chord6"];?></div>        </div>
-        <div class="tabWindow">
-        <div class="verse"><?=$tab["verse6"];?></div>        </div>
+        <pre>
+        <div class="chord"><?=$tab["full_song"];?></div>
+        </div>
+        </pre>
         </div>
         <?php
         }

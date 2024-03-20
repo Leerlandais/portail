@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
-    height: 100vh;
+    height: 350vh;
     color: hsla(180, 36%, 46%, 1);
 }
  
@@ -25,5 +25,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 50%;
+    width: 100%;
 }
+
+pre {
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+
+  legend a {
+    text-decoration: none;
+    color: hsla(180, 36%, 46%, 1);
+  }
