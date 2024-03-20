@@ -20,7 +20,7 @@
 </form>
 
 <?php if (isset($checkedPwd)) {
-    include("../../../view/inc/header.php");
+    include("inc/portailTabAdd.php");
 }else {
     echo "Enter the Password";
 }
