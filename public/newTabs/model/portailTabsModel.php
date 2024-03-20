@@ -79,7 +79,14 @@ function getTabs(PDO $db, $song) {
 }
 
 
-
+function checkPass($passToCheck) {
+    $cleanedPass = htmlspecialchars(strip_tags(trim($passToCheck)), ENT_QUOTES);
+    if ($cleanedPass == MY_TABS_PWD) {
+        return true;
+    }else {
+        header ("public");
+    }
+}
 
 
 

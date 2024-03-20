@@ -126,6 +126,11 @@ switch(spinThis.id) {
         window.open("https://www.cf2m.be/home", "_blank");
     }, 1250);
         break;
+    case "windowHolder9" :
+            setTimeout(function () {
+        window.open("https://leerlandais.com/newTabs", "_blank");
+    }, 1250);
+        break;        
 }
 
 }

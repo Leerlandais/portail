@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favourite Tablatures</title>
+    <title><?=$title?></title>
     <link rel="stylesheet" href="styles/tabs.css">
     
 </head>
 <body>
-<?php // var_dump($songs); ?>
+<?php 
+    include("../../../view/inc/header.php");
+    
+?>
 
 <fieldset class="artistField">
-    <legend>Select Artis<a href="/view/portailTabDB.php">t</a></legend>
+    <legend>Select Artis<a href="?pg=tabcontrol">t</a></legend>
     <div class="artistWindow">
         <ul class="artistList">
             <?php foreach ($artists as $artist) : ?>

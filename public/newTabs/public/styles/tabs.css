@@ -3,12 +3,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
-    height: 350vh;
+    height: 100vh;
+    background: hsla(208, 33%, 21%, 1) 0%; 
     color: hsla(180, 36%, 46%, 1);
 }
  
+.headerDiv {
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    margin: 5vh auto;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width and fontsize to be added via media */
+}
 
+.artistField {
+    border: 2px solid hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+}
+
+.navLinks {
+    font-size: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.headerDiv a {
+    color: hsla(180, 36%, 46%, 1);
+    font-style: italic;
+    text-decoration: none;
+    margin: 0 25px;
+}
 .songList {
     display: none;
 }
@@ -17,11 +45,16 @@ body {
     color: hsla(180, 36%, 46%, 1);
     text-decoration: none;
 }
-
+.showSong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .tableHolder {
     width: 80%;
 }
 .tabWindow {
+    padding-left: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;

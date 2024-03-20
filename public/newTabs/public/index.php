@@ -22,12 +22,32 @@ if (isset($_GET["song"])) {
 
 /*  -------------     TABS    --------------  */
 
-
+if (isset($_POST["pwd"])) {
+    $checkedPwd = false;
+    $checkedPwd = checkPass($_POST["pwd"]); 
+}
     
 /*  -------------     CONTROLLER    --------------  */
 
- $db =null;
- 
- include ("../view/portailTabs.php");
-                            
+ // $db =null;
+ if(isset($_GET["pg"])){
+    switch($_GET["pg"]){
+        case 'tabsLee':
+            $title = "tabsLee";
+            include("../view/portailTabs.php");
+            break;
+            case 'tabcontrol' :
+                $title = "Add tabs";
+                include("../view/portailTabDB.php");
+                break;
+                default :
+                $title = "Page d'Accueil";
+                include("../view/portailTabs.php");
+            }
+        }else{
+            $title = "Page d'Accueil";
+            include("../view/portailTabs.php");
+            
+    }
+
                             

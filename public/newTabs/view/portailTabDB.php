@@ -4,46 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?></title>
-    <link rel="stylesheet" href="styles/tabs.css">
+    <link rel="stylesheet" href="../public/styles/tabs.css">
     
 </head>
 <body>
     <?php
-// var_dump($songs);
+// var_dump($artists);
 ?>
 <h1>My Favourite Tablatures</h1>
-<a href="/view/portailTabs.php" class="backTabs"><h4>Back to Tabs</h4></a>
+<a href="?pg=tabsLee" class="backTabs"><h4>Back to Tabs</h4></a>
 
-<fieldset class="artistTabField">
-<div class="existingArtist">
-    <h2>Artists already in the DB</h2>
-    <ul>
-<?php  foreach ($artists as $artist) : ?>
-        <li class="artistList"><?=$artist["artist_name"]?></li>
-        <form action="" class = "artistForm" method="POST">
-                <div class="songInp">
-                <label for="song_name" class="artistLabel">Song Name</label>
-                <input type="text" class="artistInp" name="song_name">
-                <input type="text" class="artistInp" style = "display: none" name="artist_id" value="<?=$artist['id']?>">
-                <button type="submit" style = "display: none" ></button>
-            </div>
-            </form>
-        
-        <?php  endforeach;  ?>
-    </ul>
-    
-   
-        <form action="" class = "artistForm" method="POST">
-            <div class="formInp">
-                <label for="artist_name" class="artistLabel">Artist's Name</label>
-                <input type="text" class="artistInp" name="artist_name">
-            </div>
-        </form>
-   
-</div>
-</fieldset>
+<form action="" method="POST">
+    <input type="password" name="pwd" id="pwd">
+    <button type="submit">Enter</button>
+</form>
 
-
+<?php if (isset($checkedPwd)) {
+    include("../../../view/inc/header.php");
+}else {
+    echo "Enter the Password";
+}
+?>
 <script src="scripts/tabs.js"></script>
 </body>
 </html>
