@@ -108,7 +108,25 @@ function addArtist (PDO $db, string $artName) {
 }
 
 
+function addSong (PDO $db, string $artistId, string $songName) {
+    $cleanedID = htmlspecialchars(strip_tags(trim($artistId)), ENT_QUOTES);
+    $cleanedSongName = htmlspecialchars(strip_tags(trim($songName)), ENT_QUOTES);
+    if (empty($cleanedSongName) || empty($cleanedID)) {
+        return false;
+    }
 
+    $sql = "INSERT INTO `portail_tabs_song` (`artist_id`, `song_name`) VALUES (:artID, :songName)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':artID', $cleanedID);
+    $stmt->bindParam(':songName', $cleanedSongName);
+    try {
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        error_log("Error adding message: " . $e->getMessage());
+        return false;
+    }
+}
 
 /*
 function getArtists(PDO $db): array {

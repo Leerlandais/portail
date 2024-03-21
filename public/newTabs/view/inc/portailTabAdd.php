@@ -12,6 +12,7 @@
         <form action="" method="POST" class="addSongForm">
         <label for="songNom"><?=$artist["artist_name"]?></label>
         <input type="text" name="songNom">
+        <input type="text" name="artID" value="<?=$artist["artist_id"]?>">
         <button type="submit">Add</button>
 
         <?php endforeach; ?>

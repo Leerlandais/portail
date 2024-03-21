@@ -14,7 +14,7 @@ include("../view/inc/header.php");
 ?>
 
 <fieldset>
-    <legend>Choisissez votre Passag<a href="?p=tabsLee" class = "leeOnly">e</a></legend>
+    <legend>Choisissez votre Passag<a href="newTabs/public/?p=tabsLee" class = "leeOnly">e</a></legend>
     <div class="portalHolder">
         <div class="windowHolder" id="windowHolder5">
             <h3>Jeux du Mémoire</h3>
