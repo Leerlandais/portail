@@ -2,7 +2,7 @@
 
 require_once "../config.php";
 require_once "../model/portailModel.php";
-require_once "../model/portailTabsModel.php";
+
 
 
 try {
@@ -47,37 +47,6 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
     
 }    
 
-/*  -------------     TABS    --------------  */
-
-$artists = getArtists($db);
-$songs = getSongs($db);
-$tabs = getTabs($db);
-
-
-if (isset($_POST["artist_name"])) {
-    $addName = addArtist($db, $_POST["artist_name"]);
-    
-    if ($addName) {
-        header("Location: ?p=tabcontrol");
-        exit();
-    } else {        
-        $messageError = "Something went wrong";
-    }  
-}
-
-
-
-if (isset($_POST["artist_id"], $_POST["song_name"])) {
-    $addSong = addSong($db, $_POST["artist_id"], $_POST["song_name"]);
-    
-    if ($addSong) {
-        header("Location: ?p=tabcontrol");
-        exit();
-    } else {        
-        $messageError = "Something went wrong";
-    }  
-}
-    
 /*  -------------     CONTROLLER    --------------  */
 
  $db =null;

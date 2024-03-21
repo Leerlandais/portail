@@ -86,8 +86,13 @@ fieldset {
 }
 
 .windowCountries {
-    background-image: url(../NewMaps/public/images/svg/ie.svg); 
+    background-image: url(../images/ie.svg); 
 }
+
+.windowTabs {
+    background-image: url(../images/guitar1.jpg); 
+}
+
 
 h6 {
     text-align: center;
