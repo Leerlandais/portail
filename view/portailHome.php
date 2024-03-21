@@ -14,7 +14,7 @@ include("../view/inc/header.php");
 ?>
 
 <fieldset>
-    <legend>Choisissez votre Passag<a href="newTabs/public/?p=tabsLee" class = "leeOnly">e</a></legend>
+    <legend>Choisissez votre Passage</legend>
     <div class="portalHolder">
         <div class="windowHolder" id="windowHolder5">
             <h3>Jeux du Mémoire</h3>
@@ -22,11 +22,11 @@ include("../view/inc/header.php");
         </div>
         <div class="windowHolder" id="windowHolder6">
             <h3>Countries</h3>
-            <div class="portalWindow windowCountries" id="portalToCountries"><div class="portalCountries" id="descCountries"></div></div>
+            <div class="portalWindow windowCountries" id="portalToCountries"><div class="portalDesc" id="descCountries">Un exercice sur les DB et PHP</div></div>
         </div>
         <div class="windowHolder" id="windowHolder9">
             <h3>Tabs</h3>
-            <div class="portalWindow windowTabs" id="portalToTabs"><div class="portalDesc" id="descTabs"></div></div>
+            <div class="portalWindow windowTabs" id="portalToTabs"><div class="portalDesc" id="descTabs">Un collection de mes tablatures préférés</div></div>
         </div>
         <div class="windowHolder" id="windowHolder1">
             <h3>Site Préformation</h3>

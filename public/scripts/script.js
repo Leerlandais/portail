@@ -19,6 +19,8 @@ const descTI2 = document.getElementById("descTI2");
 const descGit = document.getElementById("descGit");
 const descCF2M = document.getElementById("descCF2M");
 const descCardMem = document.getElementById("descCardMem");
+const descCountries = document.getElementById("descCountries");
+const descTabs = document.getElementById("descTabs");
 
 for (let i=0; i<portalWindow.length; i++) {
     portalWindow[i].addEventListener("mouseenter", showDesc);
@@ -26,6 +28,18 @@ for (let i=0; i<portalWindow.length; i++) {
 
 function showDesc () {
     switch(this.id) {
+        case "portalToCountries" :
+            descCountries.style.opacity = 1
+            setTimeout(() => {
+                descCountries.style.opacity = 0;
+              }, 3000);
+            break;
+            case "portalToTabs" :
+                descTabs.style.opacity = 1
+                setTimeout(() => {
+                    descTabs.style.opacity = 0;
+                  }, 3000);
+                break;
         case "portalToPrefo" :
             descPrefo.style.opacity = 1
             setTimeout(() => {
