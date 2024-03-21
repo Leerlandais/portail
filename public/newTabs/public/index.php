@@ -26,6 +26,21 @@ if (isset($_POST["pwd"])) {
     $checkedPwd = false;
     $checkedPwd = checkPass($_POST["pwd"]); 
 }
+
+if (isset($_POST["artNom"])) {   
+    var_dump($_POST["artNom"]);
+    var_dump($db);
+        $addArt = addArtist($db,$_POST['artNom']);
+        
+        if ($addArt) {        
+            header("./"); 
+            exit();
+        } else {        
+            $messageError = "Something went wrong";
+        }    
+        
+    }   
+
     
 /*  -------------     CONTROLLER    --------------  */
 

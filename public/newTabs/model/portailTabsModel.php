@@ -88,9 +88,22 @@ function checkPass($passToCheck) {
     }
 }
 
-
-
-
+function addArtist (PDO $db, string $artName) {
+    $cleanedName = htmlspecialchars(strip_tags(trim($artName)), ENT_QUOTES);
+    if (empty($cleanedName)) {
+        return false;
+    }
+    $sql = "INSERT INTO `tabs_artist` ('artist_name') VALUES (:artName)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':artName', $cleanedName);
+    try {
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        error_log("Error adding Artist: " . $e->getMessage());
+        return false;
+}
+}
 
 
 
