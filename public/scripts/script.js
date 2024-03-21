@@ -127,7 +127,7 @@ switch(spinThis.id) {
         break;    
     case "windowHolder6" :
             setTimeout(function () {
-        window.open("https://leerlandais.com/NewMaps", "_self");
+        window.open("https://leerlandais.com/newMaps", "_self");
     }, 1250);
         break;
     case "windowHolder7" :
@@ -142,7 +142,7 @@ switch(spinThis.id) {
         break;
     case "windowHolder9" :
             setTimeout(function () {
-        window.open("https://leerlandais.com/newTabs", "_blank");
+        window.open("https://leerlandais.com/newTabs", "_self");
     }, 1250);
         break;        
 }

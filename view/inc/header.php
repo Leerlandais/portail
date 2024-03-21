@@ -31,41 +31,14 @@
                 <a href="?p=contact"><h4>Contact</h4></a>
                 <?php
                 break;
-                case 'tabsLee' :
-                    ?>
-                <a href="?p=home"><h4>Home</h4></a>
-                <a href="?p=contact"><h4>Contact</h4></a>
-                <a href="?p=devlog"><h4>Development Log</h4></a>
-                <?php
-                break;
-                case 'countries' :
-                    ?>
-                <a href="?p=home"><h4>Home</h4></a>
-                <a href="?p=contact"><h4>Contact</h4></a>
-                <a href="?p=devlog"><h4>Development Log</h4></a>
-                <?php
-                break;
                 default:
                 header("Location: ?p=home");
                 exit();
             }
-        } else if (isset($_GET["pg"])) {
-            switch($_GET["pg"]) {
-                case 'tabsLee':
-                    ?>
-                    <a href="http://portail/public/?p=contact"><h4>Contact</h4></a>
-                    <a href="http://portail/public/?p=devlog"><h4>Development Log</h4></a>
-                    <?php
-                    break;
-                    case 'tabcontrol':
-                        ?>
-                    <a href="http://portail/public/?p=home"><h4>Home</h4></a>
-                    <a href="http://portail/public/?p=devlog"><h4>Development Log</h4></a>
-                    <?php
-                    break;
-                    }
-            ?>
-
+            }else {
+                ?>
+                <a href="?p=contact"><h4>Contact</h4></a>
+                <a href="?p=devlog"><h4>Development Log</h4></a>
         <?php
     }
     ?>
