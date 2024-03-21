@@ -33,7 +33,7 @@ function getArtists(PDO $db){
 
 function getSongs(PDO $db){
 
-    $sql = "SELECT tabs_song.song_name, tabs_song.artists_id, tabs_artist.artist_id, tabs_tab.full_song, tabs_tab.tab_id, tabs_song.tabs_id
+    $sql = "SELECT *
     FROM    tabs_song
     JOIN    tabs_artist ON tabs_artist.artist_id = tabs_song.artists_id
     JOIN    tabs_tab ON tabs_song.tabs_id = tabs_tab.tab_id
@@ -93,11 +93,13 @@ function addArtist (PDO $db, string $artName) {
     if (empty($cleanedName)) {
         return false;
     }
-    $sql = "INSERT INTO `tabs_artist` ('artist_name') VALUES (:artName)";
+    var_dump($artName);
+    $sql = "INSERT INTO `tabs_artist`(`artist_name`) VALUES (:artName)";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':artName', $cleanedName);
     try {
         $stmt->execute();
+        $db->commit();
         return true;
     } catch (PDOException $e) {
         error_log("Error adding Artist: " . $e->getMessage());
