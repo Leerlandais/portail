@@ -47,6 +47,11 @@ a {
     margin: 0 25px;
 }
 
+legend a {
+    text-decoration: none;
+     cursor: default;
+}
+
 fieldset {
     width: 60vw;
     border-color: hsla(211, 36%, 46%, 1);

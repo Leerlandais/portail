@@ -15,6 +15,8 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">24/03/2024 - Rebuilt tabs to improve DB efficiency</li>
+            <li class="devListItem">23/03/2024 - Completed Tabs Project including homemade SlugMaker</li>
             <li class="devListItem">21/03/2024 - Moved Tabs and Maps into their own folders (local, Git and Site)</li>
             <li class="devListItem">20/03/2024 - Made Tabs Page visible and protected the AddTab page</li>
             <li class="devListItem">16/03/2024 - Complete rewrite of Countries, fully working</li>

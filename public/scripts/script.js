@@ -142,7 +142,7 @@ switch(spinThis.id) {
         break;
     case "windowHolder9" :
             setTimeout(function () {
-        window.open("https://leerlandais.com/newTabs", "_self");
+        window.open("https://leerlandais.com/Tabs", "_self");
     }, 1250);
         break;        
 }
