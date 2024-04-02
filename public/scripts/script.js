@@ -95,7 +95,7 @@ function makeItSpin() {
 let spinThis = this;
 spinThis.classList.toggle("spinIt");
 console.log(spinThis.id);
-if (window.innerWidth < 800 && spinThis.id != "windowHolder4"){
+if (window.innerWidth < 700 && spinThis.id != "windowHolder4"){
     alert("Sorry, this site is only available on larger screens");
     return;
 }

@@ -260,7 +260,7 @@ textarea {
 
 .cardDeck {
     width: 90%;
-    height: 100%;
+    height: 500px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
