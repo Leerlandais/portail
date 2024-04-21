@@ -98,6 +98,9 @@ fieldset {
     background-image: url(../images/guitar1.jpg); 
 }
 
+.windowCrudProject {
+    background-image: url(../images/mapCard.png); 
+}
 
 h6 {
     text-align: center;

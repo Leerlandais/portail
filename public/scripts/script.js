@@ -81,7 +81,13 @@ function showDesc () {
                                 setTimeout(() => {
                                     descCF2M.style.opacity = 0;
                                   }, 3000);
-                                break;      
+                                break; 
+                                case "portalToCrudProject" :
+                                    descCrudProject.style.opacity = 1
+                                    setTimeout(() => {
+                                        descCrudProject.style.opacity = 0;
+                                      }, 3000);
+                                    break;                                     
     }
 }
 
@@ -144,7 +150,12 @@ switch(spinThis.id) {
             setTimeout(function () {
         window.open("https://leerlandais.com/newTabs", "_self");
     }, 1250);
-        break;        
+        break;  
+    case "windowHolder10" :
+            setTimeout(function () {
+        window.open("https://leerlandais.com/newCrud", "_self");
+    }, 1250);
+        break;             
 }
 
 }
