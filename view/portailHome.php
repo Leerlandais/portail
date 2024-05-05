@@ -10,6 +10,11 @@
 <body>
 <?php
 include("../view/inc/header.php");
+if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
+    ?>
+    <a href="?retour">Back to Admin</a>
+    <?php
+}
 
 ?>
 
@@ -58,7 +63,11 @@ include("../view/inc/header.php");
         </div>
     </div>
 </fieldset>       
-    
+    <a href="?login">here</a>
+    <?php 
+        if (isset($_GET["login"])) include ("inc/login-form.php");
+    ?>
+
 <script src="scripts/script.js"></script>
 </body>
 </html>
