@@ -131,7 +131,7 @@ h1 {
 }
 
 .portalWindow {
-    margin: 3% 0 10%;
+    margin: 3% 0 3%;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
     background-size: cover;
@@ -536,10 +536,16 @@ textarea {
         width: 33%;
     }
 
+    .portalWindow {
+        background-size: cover;
+        width: 300px !important;
+    }
+    
+
         
     .portalWindow {
-        width: 80%;
-        height: 22vw;
+        width: 100%;
+        height: 22vh;
     }
 
     h3 {

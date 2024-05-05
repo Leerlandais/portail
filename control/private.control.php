@@ -10,6 +10,7 @@ if (isset($_GET["home"])) {
 }
 
 if (isset($_GET["retour"])) {
+    $title = 'Hello again, Boss';
     include ("../private/admin.home.php");
     die();
 }

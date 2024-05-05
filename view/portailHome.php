@@ -10,12 +10,12 @@
 <body>
 <?php
 include("../view/inc/header.php");
+$getPortals = getAllVisiblePortals ($log);
 if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     ?>
     <a href="?retour">Back to Admin</a>
     <?php
 }
-
 ?>
 
 <fieldset>
@@ -33,8 +33,12 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
         ?>
     </div>
 </fieldset>       
+    <?php
+        if (!isset($_SESSION["id"]) || $_SESSION["id"] !== session_id()) {
+    ?>
     <a href="?login">here</a>
     <?php 
+    }
         if (isset($_GET["login"])) include ("inc/login-form.php");
     ?>
 

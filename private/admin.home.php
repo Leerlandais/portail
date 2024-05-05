@@ -13,8 +13,16 @@
 <body>
     <div class="container-fluid d-flex flex-column align-items-center">
         <?php include('inc/header.php'); ?>
-        <p class="h1 text-center text-danger"></p>
-        
+        <p class="h1 text-center text-danger">
+            <?php if (isset($errorMessage)) echo $errorMessage;?>
+        </p>
+        <?php
+            if (isset($_GET["insert"])) {
+                include ("inc/insert-form.php");
+            }else if (isset($_GET["update"])) {
+                include ("inc/update-form.php");
+            }
+        ?>
 
     </div>
 
