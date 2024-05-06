@@ -101,6 +101,7 @@ fieldset {
         align-items: center;
         width: 100%;
         padding-top: 2vh;
+        text-align: center;
     }
 
     .portalWindow {
@@ -108,7 +109,7 @@ fieldset {
         align-items: center;
         width: 85%;
         height: 35vw;
-    }
+    }²
 
     h3 {
         font-size: 1.5em;
@@ -157,15 +158,19 @@ fieldset {
 
 @media screen and (min-width: 1600px) {
 
+    .headerDiv {
+        width: 95%;
+    }
+    
     .portalHolder {
-        width: 80vw;
+        width: 85vw;
         flex-flow: row wrap;
     }
 
     .windowHolder {
-        width: 20vw;
+        width: 24vw;
         height: auto;
-        margin: 0 auto;
+        margin: 3vh auto;
         text-align: center;
     }
 

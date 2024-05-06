@@ -1,6 +1,6 @@
 <div class="headerDiv">
     <h1 id="portalHeader">Bienvenue sur mon Portail</h1>
- <h6 id="screenwidth"></h6>
+ <h3 id="screenwidth"></h3>
     <div class="navLinks">
         <?php
    //     var_dump($db);

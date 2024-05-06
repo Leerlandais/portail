@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 06, 2024 at 04:44 AM
+-- Generation Time: May 06, 2024 at 07:53 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `portail_db`
 --
-CREATE DATABASE IF NOT EXISTS `portail_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `portail_db`;
 
 -- --------------------------------------------------------
 
@@ -37,18 +35,26 @@ CREATE TABLE IF NOT EXISTS `portals` (
   `img_src` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `dest_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `visible` tinyint(1) NOT NULL DEFAULT '1',
-  `placement` smallint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `placement` smallint UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `placement` (`placement`)
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `portals`
 --
 
 INSERT INTO `portals` (`id`, `title`, `description`, `img_src`, `dest_url`, `visible`, `placement`) VALUES
-(1, 'CRUD Project', 'Projet sur CRUD, Bootstrap et Leaflet', 'url(images/mapCard.png)', 'https://leerlandais.com/newCrud\", \"_self', 1, 1),
-(2, 'Jeux du Mémoire', 'Crée 07/03/2024 - 09/03/2024', 'url(images/memCardGame.png)', '?p=cardgame\", \"_self', 1, 2),
-(3, 'Countries', 'Un exercice sur les DB et PHP', 'url(images/ie.svg)', 'https://leerlandais.com/newMaps\", \"_self', 1, 3);
+(1, 'CRUD Project', 'Projet sur CRUD, Bootstrap et Leaflet', 'url(images/mapCard.png)', 'https://leerlandais.com/newCrud', 0, 0),
+(2, 'Jeux du Mémoire', 'Crée 07/03/2024 - 09/03/2024', 'url(images/memCardGame.png)', 'https://leerlandais.com/portail/public/?p=cardgame', 1, 1),
+(3, 'Countries', 'Un exercice sur les DB et PHP', 'url(images/ie.svg)', 'https://leerlandais.com/newMaps', 1, 3),
+(78, 'Tabs', 'Un collection de mes tablatures préférés', 'url(images/guitar1.jpg)', 'https://leerlandais.com/newTabs', 1, 7),
+(79, 'Site Préformation', 'Mon premier site. Fait pour le fin de notre préformation (17/11/2023)', 'url(images/cmdrPet.jpeg)', 'https://2023.webdev-cf2m.be/Lee/Site/', 1, 2),
+(80, 'Premier Travail d&#039;Intégration', 'Notre premier test d&#039;intégration (14/12/2023)', 'url(images/TI1.png)', 'https://2023.webdev-cf2m.be/Lee/TI/public/', 1, 5),
+(81, 'Deuxième Travail d&#039;Intégration', 'Le deuxième test d&#039;intégration (19/02/2024)', 'url(images/postit.jpeg)', 'https://2023.webdev-cf2m.be/Lee/TI2-HomeVersion/public/', 1, 8),
+(82, 'GitHub', '', 'url(images/git_shadow.jpeg)', 'https://github.com/Leerlandais', 1, 10),
+(83, 'Mes débuts avec JS', 'Mes premiers pas en JS (17/11/2023 - 22/12/2023)', 'url(images/javascript.jpeg)', 'https://2023.webdev-cf2m.be/Lee/javaStuff/', 1, 6),
+(84, 'CF2M', 'Vers le site de l&#039;école', 'url(images/cf2m_logo.png)', 'https://www.cf2m.be/home', 1, 4);
 
 -- --------------------------------------------------------
 
