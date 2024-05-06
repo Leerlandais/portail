@@ -1,0 +1,175 @@
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%); 
+    height: 400vh;
+    color: #4ba0a0;
+}
+
+a {
+    color: hsla(180, 36%, 46%, 1);    
+}
+
+.headerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+    border-radius: 20px;
+    margin: 5vh auto;
+    text-align: center; 
+    width: 85vw;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+
+fieldset {
+    width: 75vw;
+    border-color: hsla(211, 36%, 46%, 1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
+}
+
+.portalHolder {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    padding-top: 2vh;
+}
+
+.windowHolder {
+    width: 85%;
+    height: 40vw;
+    margin-bottom: 2vh;
+    transition: transform 1250ms ease-in-out;
+}
+
+.spinIt {
+    transform: rotateY(-360deg);
+}
+.windowHolder h3 {
+    margin: 0;
+}
+
+.portalWindow {
+
+    border: 2px solid  hsla(211, 36%, 46%, 1);
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8; 
+    transition: all 450ms ease-in-out;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 80%;
+    height: 18vh;
+    margin: 1vh auto;
+    /* width and height in media */
+}
+
+.portalDesc {
+    margin-top: 5%;
+    text-align: center;
+    opacity: 0;
+}
+
+
+.portalWindow:hover {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+
+
+
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .portalHolder {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .portalWindow {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 85%;
+        height: 35vw;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+
+    .portalHolder {
+        width: 90vw;
+        flex-flow: row wrap;
+    }
+
+    .windowHolder {
+        width: 40vw;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .portalWindow {
+        height: 30vh;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+
+    .portalHolder {
+        width: 90vw;
+        flex-flow: row wrap;
+    }
+
+    .windowHolder {
+        width: 30vw;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .portalWindow {
+        height: 30vh;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    .portalHolder {
+        width: 80vw;
+        flex-flow: row wrap;
+    }
+
+    .windowHolder {
+        width: 20vw;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .portalWindow {
+        height: 30vh;
+    }
+}
