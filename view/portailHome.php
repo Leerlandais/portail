@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?></title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleHome.css">
     
 </head>
 <body>
@@ -24,9 +24,9 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
         <?php
         foreach ($getPortals as $port) {
             ?>
-            <div class="windowHolder">
+            <div class="windowHolder" url = <?=$port["dest_url"]?>>
                 <h3><?=$port["title"]?></h3>
-            <a href="<?=$port["dest_url"]?>"><div class="portalWindow" id="" style="background-image: <?=$port["img_src"]?>;"><div class="portalDesc"><?=$port["description"]?></div></div></a>
+            <div class="portalWindow" id="" style="background-image: <?=$port["img_src"]?>;"><div class="portalDesc"><?=$port["description"]?></div></div>
             </div>
         <?php
         }

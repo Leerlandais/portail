@@ -1,7 +1,7 @@
 <?php
 
-function addNewWindow (PDO $db, string $title, string $desc, string $image, string $url) {
-    var_dump($title, $desc, $image, $url);
+function addNewWindow (PDO $log, string $title, string $desc, string $image, string $url) {
+
     $sql = "INSERT INTO `portals`
                         (`title`, 
                         `description`, 
@@ -9,13 +9,12 @@ function addNewWindow (PDO $db, string $title, string $desc, string $image, stri
                         `dest_url`) 
             VALUES (?, ?, ?, ?)";
 
-    $stmt = $db->prepare($sql);
-    
+    $stmt = $log->prepare($sql);
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
     $stmt->bindValue(4, $url);
-
+    
     try {
         $stmt->execute();
         return true;
