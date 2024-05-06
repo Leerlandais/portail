@@ -12,11 +12,6 @@ a {
     color: hsla(180, 36%, 46%, 1);    
 }
 
-.portalHolder, .windowHolder {
-    display: flex;
-    /* flex-flow etc in media */
-}
-
 #portalHeader {
     margin: 2vh auto 0;
 }
@@ -59,50 +54,6 @@ fieldset {
     box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
 }
 
-.windowCF2M {
-    background-image: url(../images/cf2m_logo.png); 
-    
-    background-color: white;
-}
-
-.windowGit {
-    background-image: url(../images/git_shadow.jpeg);
-}
-
-.windowTI1 {
-    background-image: url(../images/TI1.png);
-}
-
-.windowTI2 {
-    background-image: url(../images/postit.jpeg);
-}
-
-.windowEarlyJS {
-  /*  background-image: url(../images/earlyJS.png); */
-    background-image: url(../images/javascript.jpeg);
-}
-
-.windowPrefo {
-   /* background-image: url(../images/prefo.png); */
-    background-image: url(../images/cmdrPet.jpeg);
-}
-
-.windowCardMem {
-    background-image: url(../images/memCardGame.png);
-}
-
-.windowCountries {
-    background-image: url(../images/ie.svg); 
-}
-
-.windowTabs {
-    background-image: url(../images/guitar1.jpg); 
-}
-
-.windowCrudProject {
-    background-image: url(../images/mapCard.png); 
-}
-
 h6 {
     text-align: center;
     color: #fff;
@@ -119,45 +70,6 @@ h3 {
 h1 {
     text-align: center;
 }
-
-.windowHolder {
-    /* width and margin in media */
-    transition: transform 1250ms ease-in-out;
-}
-
-.spinIt {
-    transform: rotateY(-360deg);
-}
-
-.portalWindow {
-    margin: 3% 0 3%;
-    border: 2px solid  hsla(211, 36%, 46%, 1);
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8; 
-    transition: all 450ms ease-in-out;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    /* width and height in media */
-}
-
-.portalDesc {
-    margin-top: 5%;
-    text-align: center;
-    opacity: 0;
-}
-
-
-.portalWindow:hover {
-    transform: scale(1.3);
-    opacity: 1;
-}
-
-
 
 .contactPage {
     display: flex;
@@ -290,7 +202,6 @@ textarea {
     
 }
 
-
 .cardWindow:active {
     background-image: url("../images/BWHappy.svg") !important;
 }
@@ -372,39 +283,6 @@ textarea {
 
 @media screen and (max-width: 600px) {
 
-    .headerDiv {
-        width: 90%;
-        font-size: 14px;
-    }
-
-    .portalHolder {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100%;
-        padding-top: 2vh;
-    }
-
-    .windowHolder {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 85%;
-        height: 40vw;
-        
-    }
-
-    .portalWindow {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 65%;
-        height: 30vw;
-        margin: 1vh auto;
-    }
-
-    h3 {
-        font-size: 1em;
-        margin: 0;
-    }
-
     .contactLabel {
         width: 25%;
         text-align: right;
@@ -465,99 +343,8 @@ textarea {
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 900px) {
-
-    .headerDiv {
-        width: 90%;
-        font-size: 18px;
-    }
-
-    .portalHolder {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100%;
-        padding-top: 2vh;
-    }
-
-    .windowHolder, .portalWindow {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 85%;
-        height: 40vw;
-    }
-
-    h3 {
-        font-size: 1.5em;
-        margin: 0;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width: 1200px) {
-
-    .headerDiv {
-        width: 90%;
-        font-size: 18px;
-    }
-
-    .portalHolder {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100%;
-        padding-top: 2vh;
-    }
-
-    .windowHolder, .portalWindow {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 85%;
-        height: 40vw;
-    }
-
-    h3 {
-        font-size: 2em;
-        margin: 0;
-    }
-}
-
-
 @media screen and (min-width: 1200px) {
 
-    .headerDiv {
-        width: 90%;
-        font-size: 24px;
-    }
-
-    fieldset {
-        width: 85vw;
-    }
-
-    .portalHolder {
-        flex-flow: row wrap;
-        justify-content: center;
-        width: 100%;
-        padding-top: 2vh;
-    }
-
-    .windowHolder {
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 33%;
-    }
-
-    .portalWindow {
-        background-size: cover;
-        width: 20vw;
-        height: 22vh;
-    }
-    
-
-        
-  
-
-    h3 {
-        font-size: 1.5em;
-        margin: 0;
-    }
     .cardWindow {
         height: fit-content;
     }

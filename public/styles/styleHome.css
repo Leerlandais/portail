@@ -74,7 +74,7 @@ fieldset {
     flex-flow: column nowrap;
     align-items: center;
     width: 80%;
-    height: 18vh;
+    height: 90%;
     margin: 1vh auto;
     /* width and height in media */
 }
