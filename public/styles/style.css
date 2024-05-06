@@ -540,4 +540,10 @@ textarea {
         font-size: 1.5em;
         margin: 0;
     }
+    .cardWindow {
+        height: fit-content;
+    }
+    .cardDeck {
+        height: fit-content;
+    }
 }
