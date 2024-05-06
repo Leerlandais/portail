@@ -8,7 +8,7 @@ displayScreenWidth();
 
 
 
-const portalWindow = document.querySelectorAll(".portalWindow");
+
 const descPrefo = document.getElementById("descPrefo");
 const descEarlyJS = document.getElementById("descEarlyJS");
 const descTI1 = document.getElementById("descTI1");
@@ -19,143 +19,40 @@ const descCardMem = document.getElementById("descCardMem");
 const descCountries = document.getElementById("descCountries");
 const descTabs = document.getElementById("descTabs");
 
-for (let i=0; i<portalWindow.length; i++) {
-    portalWindow[i].addEventListener("mouseenter", showDesc);
-}
 
-function showDesc () {
-    switch(this.id) {
-        case "portalToCountries" :
-            descCountries.style.opacity = 1
-            setTimeout(() => {
-                descCountries.style.opacity = 0;
-              }, 3000);
-            break;
-            case "portalToTabs" :
-                descTabs.style.opacity = 1
-                setTimeout(() => {
-                    descTabs.style.opacity = 0;
-                  }, 3000);
-                break;
-        case "portalToPrefo" :
-            descPrefo.style.opacity = 1
-            setTimeout(() => {
-                descPrefo.style.opacity = 0;
-              }, 3000);
-            break;
-            case "portalToEarlyJS" :
-                descEarlyJS.style.opacity = 1
-                setTimeout(() => {
-                    descEarlyJS.style.opacity = 0;
-                  }, 3000);
-                break;
-                case "portalToTI1" :
-                    descTI1.style.opacity = 1
-                    setTimeout(() => {
-                        descTI1.style.opacity = 0;
-                      }, 3000);
-                    break;
-                    case "portalToTI2" :
-                        descTI2.style.opacity = 1
-                        setTimeout(() => {
-                            descTI2.style.opacity = 0;
-                          }, 3000);
-                        break;
-                        case "portalToCardMem" :
-                            descCardMem.style.opacity = 1
-                            setTimeout(() => {
-                                descCardMem.style.opacity = 0;
-                              }, 3000);
-                            break;
-                        case "portalToGit" :
-                            descGit.style.opacity = 1
-                            setTimeout(() => {
-                                descGit.style.opacity = 0;
-                              }, 3000);
-                            break;
-                            case "portalToCF2M" :
-                                descCF2M.style.opacity = 1
-                                setTimeout(() => {
-                                    descCF2M.style.opacity = 0;
-                                  }, 3000);
-                                break; 
-                                case "portalToCrudProject" :
-                                    descCrudProject.style.opacity = 1
-                                    setTimeout(() => {
-                                        descCrudProject.style.opacity = 0;
-                                      }, 3000);
-                                    break;                                     
+const portalWindow = document.querySelectorAll(".portalWindow");
+    for (let i=0; i<portalWindow.length; i++) {
+        portalWindow[i].addEventListener("mouseenter", showDesc);
     }
-}
+        function showDesc () {
+           let desc = this.childNodes;
+        //  console.log(desc);
+        // console.log(desc[0].style);
+          desc[0].style.opacity = 1;
+                setTimeout(() => {
+                   desc[0].style.opacity = 0;
+                  }, 3000);
 
+        }
 const windowHolder = document.querySelectorAll(".windowHolder");
+    for (let i=0; i<windowHolder.length; i++) {
+        windowHolder[i].addEventListener("click", makeItSpin);
+    }
+        function makeItSpin() {
+        let spinThis = this;
+        spinThis.classList.toggle("spinIt");
+        spinUrl = spinThis.getAttribute("url");
+  //      console.log (spinThis);
+  //      console.log(spinUrl);
+       if (window.innerWidth < 700){
+            alert("Please understand, many of these pages were created before I was able to make responsive view");
+        }       
+        setTimeout(function () {
+            window.open(spinUrl);
+        }, 1250);
+                
 
-for (let i=0; i<windowHolder.length; i++) {
-    windowHolder[i].addEventListener("click", makeItSpin);
-}
-
-function makeItSpin() {
-let spinThis = this;
-spinThis.classList.toggle("spinIt");
-console.log(spinThis.id);
-if (window.innerWidth < 700 && spinThis.id != "windowHolder4"){
-    alert("Sorry, this site is only available on larger screens");
-    return;
-}
-switch(spinThis.id) {
-    case "windowHolder1" :
-            setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/Site/", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder2" :
-            setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/javaStuff/", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder3" :
-            setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/TI/public/", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder4" :
-            setTimeout(function () {
-        window.open("https://2023.webdev-cf2m.be/Lee/TI2-HomeVersion/public/", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder5" :
-            setTimeout(function () {
-        window.open("?p=cardgame", "_self");
-    }, 1250);
-        break;    
-    case "windowHolder6" :
-            setTimeout(function () {
-        window.open("https://leerlandais.com/newMaps", "_self");
-    }, 1250);
-        break;
-    case "windowHolder7" :
-            setTimeout(function () {
-        window.open("https://github.com/Leerlandais", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder8" :
-            setTimeout(function () {
-        window.open("https://www.cf2m.be/home", "_blank");
-    }, 1250);
-        break;
-    case "windowHolder9" :
-            setTimeout(function () {
-        window.open("https://leerlandais.com/newTabs", "_self");
-    }, 1250);
-        break;  
-    case "windowHolder10" :
-            setTimeout(function () {
-        window.open("https://leerlandais.com/newCrud", "_self");
-    }, 1250);
-        break;             
-}
-
-}
+        }
 
 const messageHolder = document.querySelectorAll(".messageHolder");
 const replyField = document.querySelectorAll(".replyField");

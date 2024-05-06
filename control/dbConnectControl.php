@@ -8,7 +8,7 @@ try {
     die($errorMessage = "Problem connecting to the DB");
 }
 
-/*
+
 try {
 
     $log = new PDO(DB_DRIVERS . ":host=" . DB_HOSTS . ";dbname=" . DB_NAMES . ";charset=" . DB_CHARSETS . ";port=" . DB_PORTS, DB_LOGINS, DB_PWDS);
@@ -18,4 +18,3 @@ try {
     die($errorMessage = "Problem connecting to the DB");
 }
 
-*/
