@@ -1,3 +1,3 @@
 <?php
-header("Location: portail/public");
+header("Location: public");
 die;

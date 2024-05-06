@@ -24,6 +24,7 @@ a {
 
 .headerDiv {
     border: 2px solid  hsla(211, 36%, 46%, 1);
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
     border-radius: 20px;
     margin: 5vh auto;
     text-align: center; 
@@ -56,6 +57,7 @@ fieldset {
     width: 60vw;
     border-color: hsla(211, 36%, 46%, 1);
     border-radius: 10px;
+    box-shadow: 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black, 0px 32px 64px black;
 }
 
 .windowCF2M {
@@ -98,6 +100,9 @@ fieldset {
     background-image: url(../images/guitar1.jpg); 
 }
 
+.windowCrudProject {
+    background-image: url(../images/mapCard.png); 
+}
 
 h6 {
     text-align: center;
@@ -126,7 +131,7 @@ h1 {
 }
 
 .portalWindow {
-    margin: 3% 0 10%;
+    margin: 3% 0 3%;
     border: 2px solid  hsla(211, 36%, 46%, 1);
     border-radius: 20px;
     background-size: cover;
@@ -260,7 +265,7 @@ textarea {
 
 .cardDeck {
     width: 90%;
-    height: 100%;
+    height: 500px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -268,6 +273,7 @@ textarea {
 
 .cardField {
     display: flex;
+    box-shadow: 0px 2px 4px black, 0px 4px 8px black, 0px 8px 16px black, 0px 16px 32px black;
     flex-direction: column;
     align-items: center;
     width: 35vw;
@@ -530,10 +536,16 @@ textarea {
         width: 33%;
     }
 
+    .portalWindow {
+        background-size: cover;
+        width: 300px !important;
+    }
+    
+
         
     .portalWindow {
-        width: 80%;
-        height: 22vw;
+        width: 100%;
+        height: 22vh;
     }
 
     h3 {
