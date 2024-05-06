@@ -19,10 +19,10 @@ if (isset($_POST["nameInp"], $_POST["passInp"])) {
 }
 
 /*  -------------     CONTACT    --------------  */
-
+/*                                                          TURN THESE BACK ON
 $messages = getMessages($db);
 $replies = getReplies($db);
-
+*/
 if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
     
     

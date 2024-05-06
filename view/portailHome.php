@@ -41,7 +41,6 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     }
         if (isset($_GET["login"])) include ("inc/login-form.php");
     ?>
-
-<!-- <script src="scripts/script.js"></script> -->
+ <script src="scripts/script.js"></script>
 </body>
 </html>
