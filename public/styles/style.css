@@ -385,11 +385,20 @@ textarea {
         padding-top: 2vh;
     }
 
-    .windowHolder, .portalWindow {
+    .windowHolder {
         flex-flow: column nowrap;
         align-items: center;
         width: 85%;
         height: 40vw;
+        
+    }
+
+    .portalWindow {
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 65%;
+        height: 30vw;
+        margin: 1vh auto;
     }
 
     h3 {
@@ -538,18 +547,22 @@ textarea {
 
     .portalWindow {
         background-size: cover;
-        width: 300px !important;
+        width: 20vw;
+        height: 22vh;
     }
     
 
         
-    .portalWindow {
-        width: 100%;
-        height: 22vh;
-    }
+  
 
     h3 {
         font-size: 1.5em;
         margin: 0;
+    }
+    .cardWindow {
+        height: fit-content;
+    }
+    .cardDeck {
+        height: fit-content;
     }
 }
