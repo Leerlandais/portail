@@ -1,4 +1,4 @@
-<form method="POST" id="updateForm" class="mt-5">
+<form method="POST" id="updateForm" class="mt-5 w-25">
   <div class="mb-4">
     <label for="title" class="form-label text-info">Title</label>
     <input type="text" class="form-control" id="title" name="titleUpdate" value="<?=$onePortal["title"]?>">

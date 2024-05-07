@@ -20,10 +20,35 @@ if (isset($_POST["titleInp"],
     header ('Location: ./');
 }
 
-if (isset($_GET["update"], $_GET["item"]) && ctype_digit($_GET["item"])) {
+// UPDATE
+if (isset($_POST["titleUpdate"],
+          $_POST["descUpdate"],
+          $_POST["imageUpdate"],
+          $_POST["urlUpdate"],
+          $_GET["item"]) &&
+          ctype_digit($_GET["item"])) {
+    
+    $title  = standardClean($_POST["titleUpdate"]);
+    $desc   = standardClean($_POST["descUpdate"]);
+    $image  = simpleTrim($_POST["imageUpdate"]);
+    $url    = urlClean($_POST["urlUpdate"]);
+    $id     = intval(intClean($_GET["item"]));
+
+    $updateWindow = updateExistingWindow ($port, $title, $desc, $image, $url, $id);
+            if ($updateWindow !== true) {
+                $errorMessage = "Problem updating Window";
+            }
+            header("Location: ./");
+          }
+
+// PRE-UPDATE SELECTION   ------ WHY DOES THIS NEED TO BE AFTER THE UPDATE CONTROL???
+if (isset($_GET["update"], 
+          $_GET["item"]) && 
+          ctype_digit($_GET["item"])) {
+
     $id = intval(intClean($_GET["item"]));
-    $onePortal = getOnePortalForUpdate($port, $id);
-}
+        $onePortal = getOnePortalForUpdate($port, $id);
+}          
 
 // so Admin can leave
 if (isset($_GET["logout"])) include("../model/logoutModel.php");

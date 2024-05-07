@@ -18,12 +18,22 @@
                     foreach($adminPortals as $port) { 
                         ?>
                     <tr>
-                        <td>up</td>
-                        <td>hide</td>
                         <td><?=$port["placement"]?></td>
+                        <td>up</td>
+                        <td>down</td>
                         <td><?=$port["title"]?></td>
                         <td><a href="?update&item=<?=$port["id"]?>">update</a></td>
-                        <td>hide</td>
+                        <?php 
+                            if ($port["visible"] === 1) {
+                        ?>
+                        <td><a href="?update&visible=0">hide</a></td>
+                        <?php
+                            }else {
+                        ?>
+                        <td><a href="?update&visible=1">show</a></td>
+                        <?php
+                        }
+                        ?>
                     </tr>
                     <?php
                     }
