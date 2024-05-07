@@ -81,3 +81,21 @@ function updateExistingWindow (PDO $port, string $title, string $desc, string $i
         return $e->getMessage();
     }
 }
+
+function changePortalVisibility(PDO $port, int $id, int $vis) : bool | string {
+    $sql = "UPDATE `portals`
+            SET `visible` = ?
+            WHERE `id` = ?";
+
+    $stmt = $port->prepare($sql);
+    $stmt->bindValue(1, $vis);
+    $stmt->bindValue(2, $id);
+
+    try {
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+
+}

@@ -1,6 +1,6 @@
 <?php
 
-$adminPortals = getPortalPlaceForAdmin($port);
+
 
 // INSERTION
 if (isset($_POST["titleInp"], 
@@ -41,7 +41,7 @@ if (isset($_POST["titleUpdate"],
             header("Location: ./");
           }
 
-// PRE-UPDATE SELECTION   ------ WHY DOES THIS NEED TO BE AFTER THE UPDATE CONTROL???
+// PRE-UPDATE SELECTION 
 if (isset($_GET["update"], 
           $_GET["item"]) && 
           ctype_digit($_GET["item"])) {
@@ -49,6 +49,18 @@ if (isset($_GET["update"],
     $id = intval(intClean($_GET["item"]));
         $onePortal = getOnePortalForUpdate($port, $id);
 }          
+
+
+// HIDE/SHOW
+if (isset($_GET["update"], 
+          $_GET["id"],
+          $_GET["show"]) && 
+          ctype_digit($_GET["id"]) && ctype_digit($_GET["show"])) {
+
+    $id  = intval(intClean($_GET["id"]));
+    $vis = intval(intClean($_GET["show"]));
+        $showHide = changePortalVisibility($port, $id, $vis);
+} 
 
 // so Admin can leave
 if (isset($_GET["logout"])) include("../model/logoutModel.php");

@@ -15,6 +15,7 @@
                 </thead>
                 <tbody>
                     <?php
+                    $adminPortals = getPortalPlaceForAdmin($port);
                     foreach($adminPortals as $port) { 
                         ?>
                     <tr>
@@ -26,11 +27,11 @@
                         <?php 
                             if ($port["visible"] === 1) {
                         ?>
-                        <td><a href="?update&visible=0">hide</a></td>
+                        <td><a href="?update&id=<?=$port["id"]?>&show=0">hide</a></td>
                         <?php
                             }else {
                         ?>
-                        <td><a href="?update&visible=1">show</a></td>
+                        <td><a href="?update&id=<?=$port["id"]?>&show=1">show</a></td>
                         <?php
                         }
                         ?>
