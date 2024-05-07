@@ -2,7 +2,7 @@
 <div class="container my-3 border border-secondary rounded-3 pt-3">
     <div class="container">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped animate__animated animate__zoomIn" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true" data-checkbox-header="true">
+            <table class="table table-bordered table-striped animate__animated animate__fadeIn" data-toggle="table" data-show-columns="true" data-search="true"data-pagination="true" data-checkbox-header="true">
                 <thead>
                     <tr>
                         <th class="text-center"  data-sortable="true">Placement</th>
@@ -16,22 +16,40 @@
                 <tbody>
                     <?php
                     $adminPortals = getPortalPlaceForAdmin($db);
-                    foreach($adminPortals as $db) { 
+                    $count = count($adminPortals);
+                    $count--;
+                    foreach($adminPortals as $port) { 
                         ?>
                     <tr>
-                        <td><?=$db["placement"]?></td>
-                        <td>up</td>
-                        <td>down</td>
-                        <td><?=$db["title"]?></td>
-                        <td><a href="?update&item=<?=$db["id"]?>">update</a></td>
-                        <?php 
-                            if ($db["visible"] === 1) {
+                        <td><?=$port["placement"]?></td>
+                        <?php
+                            if ($port["placement"] === 0) {
                         ?>
-                        <td><a href="?update&id=<?=$db["id"]?>&show=0">hide</a></td>
+                            <td class="text-center">-</td>
+                            <?php
+                            }else {
+                            ?>
+                        <td><img src="images/arrow-up.svg" alt="up arrow"></td>
+                        <?php } ?>
+                        <?php
+                            if ($port["placement"] === $count) {
+                        ?>
+                            <td class="text-center">-</td>
+                            <?php
+                            }else {
+                            ?>
+                        <td><img src="images/arrow-down.svg" alt="down arrow"></td>
+                        <?php } ?>
+                        <td><?=$port["title"]?></td>
+                        <td><a href="?update&item=<?=$port["id"]?>">update</a></td>
+                        <?php 
+                            if ($port["visible"] === 1) {
+                        ?>
+                        <td><a href="?update&id=<?=$port["id"]?>&show=0">hide</a></td>
                         <?php
                             }else {
                         ?>
-                        <td><a href="?update&id=<?=$db["id"]?>&show=1">show</a></td>
+                        <td><a href="?update&id=<?=$port["id"]?>&show=1">show</a></td>
                         <?php
                         }
                         ?>
