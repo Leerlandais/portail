@@ -25,6 +25,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 45%;
     /* width and fontsize to be added via media */
 }
 
@@ -222,7 +223,7 @@ textarea {
 }
 
 .devLogField {
-    width: 20%;
+    width: 40%;
 }
 
 #devList {

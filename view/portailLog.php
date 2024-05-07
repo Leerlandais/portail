@@ -15,6 +15,9 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">07/05/2024 - Completely changed backend of site</li>
+            <li class="devListItem">06/05/2024 - Rewrote homepage CSS to improve responsiveness</li>
+            <li class="devListItem">29/04/2024 - Working on TI3</li>
             <li class="devListItem">21/04/2024 - Added new Session, CRUD, Bootstrap and Map project</li>
             <li class="devListItem">10/04/2024 - Working on School Projects : Completed Company &lpar;for AP&rpar;</li>
             <li class="devListItem">05/04/2024 - Working on School Projects : Completed questionnaire &lpar;for MP&rpar;</li>
