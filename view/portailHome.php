@@ -10,7 +10,7 @@
 <body>
 <?php
 include("../view/inc/header.php");
-$getPortals = getAllVisiblePortals ($port);
+$getPortals = getAllVisiblePortals ($db);
 if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     ?>
     <a href="?retour">Back to Admin</a>
@@ -25,11 +25,11 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     <legend>Choisissez votre Passage</a></legend>
     <div class="portalHolder">
         <?php
-        foreach ($getPortals as $port) {
+        foreach ($getPortals as $db) {
             ?>
-            <div class="windowHolder" url = <?=$port["dest_url"]?>>
-                <h3><?=$port["title"]?></h3>
-            <div class="portalWindow" id="" style="background-image: <?=$port["img_src"]?>;"><div class="portalDesc"><?=$port["description"]?></div></div>
+            <div class="windowHolder" url = <?=$db["dest_url"]?>>
+                <h3><?=$db["title"]?></h3>
+            <div class="portalWindow" id="" style="background-image: <?=$db["img_src"]?>;"><div class="portalDesc"><?=$db["description"]?></div></div>
             </div>
         <?php
         }

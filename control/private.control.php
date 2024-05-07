@@ -13,7 +13,7 @@ if (isset($_POST["titleInp"],
     $image  = simpleTrim($_POST["imageInp"]);
     $url    = urlClean($_POST["urlInp"]);
 
-    $insertNewWindow = addNewWindow ($port, $title, $desc, $image, $url);
+    $insertNewWindow = addNewWindow ($db, $title, $desc, $image, $url);
     if ($insertNewWindow !== true) {
         $errorMessage = "Problem adding Window";
     }
@@ -34,11 +34,11 @@ if (isset($_POST["titleUpdate"],
     $url    = urlClean($_POST["urlUpdate"]);
     $id     = intval(intClean($_GET["item"]));
 
-    $updateWindow = updateExistingWindow ($port, $title, $desc, $image, $url, $id);
+    $updateWindow = updateExistingWindow ($db, $title, $desc, $image, $url, $id);
             if ($updateWindow !== true) {
                 $errorMessage = "Problem updating Window";
             }
-            header("Location: ./");
+            header("Location: ?update");
           }
 
 // PRE-UPDATE SELECTION 
@@ -47,7 +47,7 @@ if (isset($_GET["update"],
           ctype_digit($_GET["item"])) {
 
     $id = intval(intClean($_GET["item"]));
-        $onePortal = getOnePortalForUpdate($port, $id);
+        $onePortal = getOnePortalForUpdate($db, $id);
 }          
 
 
@@ -59,7 +59,7 @@ if (isset($_GET["update"],
 
     $id  = intval(intClean($_GET["id"]));
     $vis = intval(intClean($_GET["show"]));
-        $showHide = changePortalVisibility($port, $id, $vis);
+        $showHide = changePortalVisibility($db, $id, $vis);
 } 
 
 // so Admin can leave

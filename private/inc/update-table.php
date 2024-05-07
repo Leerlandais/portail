@@ -15,23 +15,23 @@
                 </thead>
                 <tbody>
                     <?php
-                    $adminPortals = getPortalPlaceForAdmin($port);
-                    foreach($adminPortals as $port) { 
+                    $adminPortals = getPortalPlaceForAdmin($db);
+                    foreach($adminPortals as $db) { 
                         ?>
                     <tr>
-                        <td><?=$port["placement"]?></td>
+                        <td><?=$db["placement"]?></td>
                         <td>up</td>
                         <td>down</td>
-                        <td><?=$port["title"]?></td>
-                        <td><a href="?update&item=<?=$port["id"]?>">update</a></td>
+                        <td><?=$db["title"]?></td>
+                        <td><a href="?update&item=<?=$db["id"]?>">update</a></td>
                         <?php 
-                            if ($port["visible"] === 1) {
+                            if ($db["visible"] === 1) {
                         ?>
-                        <td><a href="?update&id=<?=$port["id"]?>&show=0">hide</a></td>
+                        <td><a href="?update&id=<?=$db["id"]?>&show=0">hide</a></td>
                         <?php
                             }else {
                         ?>
-                        <td><a href="?update&id=<?=$port["id"]?>&show=1">show</a></td>
+                        <td><a href="?update&id=<?=$db["id"]?>&show=1">show</a></td>
                         <?php
                         }
                         ?>

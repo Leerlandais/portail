@@ -1,7 +1,7 @@
 <?php
 
-function addNewWindow (PDO $port, string $title, string $desc, string $image, string $url) : bool | string {
-    $place = count(getAllVisiblePortals($port));
+function addNewWindow (PDO $db, string $title, string $desc, string $image, string $url) : bool | string {
+    $place = count(getAllVisiblePortals($db));
     $place++;
     $sql = "INSERT INTO `portals`
                         (`title`, 
@@ -11,7 +11,7 @@ function addNewWindow (PDO $port, string $title, string $desc, string $image, st
                         `placement`) 
             VALUES (?, ?, ?, ?, ?)";
 
-    $stmt = $port->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
@@ -26,13 +26,13 @@ function addNewWindow (PDO $port, string $title, string $desc, string $image, st
     }
 }
 
-function getPortalPlaceForAdmin (PDO $port) : array | bool {
+function getPortalPlaceForAdmin (PDO $db) : array | bool {
     $sql = "SELECT `id`, `title`, `placement`, `visible`
             FROM `portals`
             ORDER BY `placement`";
     
     try{        
-        $query = $port->query($sql);
+        $query = $db->query($sql);
             if($query->rowCount()===0) return false;
         $result = $query->fetchAll();
             $query->closeCursor();
@@ -43,12 +43,12 @@ function getPortalPlaceForAdmin (PDO $port) : array | bool {
     }
 }
 
-function getOnePortalForUpdate(PDO $port, int $id) : array | bool {
+function getOnePortalForUpdate(PDO $db, int $id) : array | bool {
     $sql = "SELECT *
             FROM `portals`
             WHERE `id` = ?";
     
-    $stmt = $port->prepare($sql);
+    $stmt = $db->prepare($sql);
     try {
         $stmt->execute([$id]);
         $result = $stmt->fetch();
@@ -58,7 +58,7 @@ function getOnePortalForUpdate(PDO $port, int $id) : array | bool {
     }
 }
 
-function updateExistingWindow (PDO $port, string $title, string $desc, string $image, string $url, int $id) : bool | string {
+function updateExistingWindow (PDO $db, string $title, string $desc, string $image, string $url, int $id) : bool | string {
 
     $sql = "UPDATE `portals` 
             SET `title`= ?,
@@ -67,7 +67,7 @@ function updateExistingWindow (PDO $port, string $title, string $desc, string $i
                 `dest_url`= ? 
             WHERE `id` = ?";
     
-    $stmt = $port->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
@@ -82,12 +82,12 @@ function updateExistingWindow (PDO $port, string $title, string $desc, string $i
     }
 }
 
-function changePortalVisibility(PDO $port, int $id, int $vis) : bool | string {
+function changePortalVisibility(PDO $db, int $id, int $vis) : bool | string {
     $sql = "UPDATE `portals`
             SET `visible` = ?
             WHERE `id` = ?";
 
-    $stmt = $port->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $vis);
     $stmt->bindValue(2, $id);
 

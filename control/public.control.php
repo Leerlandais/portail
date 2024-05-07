@@ -1,11 +1,11 @@
 <?php
-
+$getPortals = getAllVisiblePortals ($db);
 
 if (isset($_POST["nameInp"], $_POST["passInp"])) {
     $name = standardClean($_POST["nameInp"]);
     $pass = simpleTrim($_POST["passInp"]);
         
-    $loginAttempt = userLogin ($log, $name, $pass);
+    $loginAttempt = userLogin ($db, $name, $pass);
     if ($loginAttempt === true) {
         header("Location: ./");
         die();
@@ -54,7 +54,7 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
 
 /*  -------------     CONTROLLER    --------------  */
 
- $db =null;
+
 
 if(isset($_GET["p"])){
     switch($_GET["p"]){
@@ -93,3 +93,4 @@ if(isset($_GET["p"])){
                                 
                             }
                             
+ $db =null;
