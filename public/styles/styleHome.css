@@ -24,6 +24,11 @@ a {
     width: 85vw;
 }
 
+#portalHeader a {
+    text-decoration: none;
+    cursor: text;
+}
+
 .navLinks {
     display: flex;
     flex-direction: row;

@@ -1,6 +1,6 @@
 <?php
 
-function addNewWindow (PDO $log, string $title, string $desc, string $image, string $url) {
+function addNewWindow (PDO $port, string $title, string $desc, string $image, string $url) : bool | string {
 
     $sql = "INSERT INTO `portals`
                         (`title`, 
@@ -9,7 +9,7 @@ function addNewWindow (PDO $log, string $title, string $desc, string $image, str
                         `dest_url`) 
             VALUES (?, ?, ?, ?)";
 
-    $stmt = $log->prepare($sql);
+    $stmt = $port->prepare($sql);
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
@@ -21,4 +21,37 @@ function addNewWindow (PDO $log, string $title, string $desc, string $image, str
     }catch(Exception $e) {
         return $e->getMessage();
     }
+}
+
+function getPortalPlaceForAdmin (PDO $port) : array | bool {
+    $sql = "SELECT `id`, `title`, `placement`
+            FROM `portals`
+            ORDER BY `placement`";
+    
+    try{        
+        $query = $port->query($sql);
+            if($query->rowCount()===0) return false;
+        $result = $query->fetchAll();
+            $query->closeCursor();
+        return $result;
+
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
+function getOnePortalForUpdate(PDO $port, int $id) : array | bool {
+    $sql = "SELECT *
+            FROM `portals`
+            WHERE `id` = ?";
+    
+    $stmt = $port->prepare($sql);
+    try {
+        $stmt->execute([$id]);
+        $result = $stmt->fetch();
+        return $result;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+
 }

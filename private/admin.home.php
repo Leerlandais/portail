@@ -19,7 +19,9 @@
         <?php
             if (isset($_GET["insert"])) {
                 include ("inc/insert-form.php");
-            }else if (isset($_GET["update"])) {
+            }else if (isset($_GET["update"]) && !isset($_GET["item"])) {
+                include ("inc/update-table.php");
+            }else if (isset($_GET["update"]) && isset($_GET["item"])) {
                 include ("inc/update-form.php");
             }
         ?>

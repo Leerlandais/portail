@@ -1,5 +1,5 @@
 <div class="headerDiv">
-    <h1 id="portalHeader">Bienvenue sur mon Portail</h1>
+    <h1 id="portalHeader">Bienvenue sur mon Portai<a href="?login">l</a></h1>
  <h3 id="screenwidth"></h3>
     <div class="navLinks">
         <?php
