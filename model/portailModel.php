@@ -4,7 +4,7 @@ function getAllVisiblePortals(PDO $db) : array | bool {
     $sql = "SELECT *
             FROM `portals`
             WHERE `visible` = 1
-            ORDER BY `placement`";
+            ORDER BY `placement` DESC";
        try{        
         $query = $db->query($sql);
             if($query->rowCount()===0) return false;

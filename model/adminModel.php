@@ -2,7 +2,7 @@
 
 function addNewWindow (PDO $db, string $title, string $desc, string $image, string $url) : bool | string {
     $place = count(getPortalPlaceForAdmin($db));
-
+    $place++;
     $sql = "INSERT INTO `portals`
                         (`title`, 
                         `description`, 
