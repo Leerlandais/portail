@@ -30,7 +30,7 @@ $stmt = $db->prepare($sql);
 function getPortalPlaceForAdmin (PDO $db) : array | bool {
     $sql = "SELECT `id`, `title`, `placement`, `visible`
             FROM `portals`
-            ORDER BY `placement`";
+            ORDER BY `placement` DESC";
     
     try{        
         $query = $db->query($sql);
