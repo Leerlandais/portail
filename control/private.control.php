@@ -1,6 +1,6 @@
 <?php
 
-
+require_once ("../model/adminModel.php");
 
 // INSERTION
 if (isset($_POST["titleInp"], 
@@ -72,7 +72,7 @@ if (isset($_GET["home"])) {
     die();
 }
 
-// and get back tp the admin page
+// and get back to the admin page
 if (isset($_GET["retour"])) {
     $title = 'Hello again, Boss';
     include ("../private/admin.home.php");
