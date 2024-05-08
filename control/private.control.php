@@ -15,9 +15,9 @@ if (isset($_POST["titleInp"],
 
     $insertNewWindow = addNewWindow ($db, $title, $desc, $image, $url);
     if ($insertNewWindow !== true) {
-        $errorMessage = "Problem adding Window";
+      echo $errorMessage = "Problem adding Window";
     }
-    header ('Location: ./');
+    header ('Location: ?home');
 }
 
 // UPDATE

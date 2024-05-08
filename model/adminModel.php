@@ -1,8 +1,8 @@
 <?php
 
 function addNewWindow (PDO $db, string $title, string $desc, string $image, string $url) : bool | string {
-    $place = count(getAllVisiblePortals($db));
-    $place++;
+    $place = count(getPortalPlaceForAdmin($db));
+
     $sql = "INSERT INTO `portals`
                         (`title`, 
                         `description`, 
@@ -11,7 +11,8 @@ function addNewWindow (PDO $db, string $title, string $desc, string $image, stri
                         `placement`) 
             VALUES (?, ?, ?, ?, ?)";
 
-    $stmt = $db->prepare($sql);
+$stmt = $db->prepare($sql);
+
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
