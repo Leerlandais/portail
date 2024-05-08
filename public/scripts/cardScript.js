@@ -1,11 +1,11 @@
-const cardStart = document.getElementById("cardStart");
-const cardQuit = document.getElementById("cardQuit");
-const cardWindow = document.querySelectorAll(".cardWindow");
-const cardWinFront = document.querySelectorAll(".cardWinFront");
-const cardWinBack = document.querySelectorAll(".cardWinBack");
-let gameTicker = 0;
-let gameScore = 0;
-let goCount = 0;
+const cardStart     = document.getElementById("cardStart");
+const cardQuit      = document.getElementById("cardQuit");
+const cardWindow    = document.querySelectorAll(".cardWindow");
+const cardWinFront  = document.querySelectorAll(".cardWinFront");
+const cardWinBack   = document.querySelectorAll(".cardWinBack");
+let gameTicker      = 0;
+let gameScore       = 0;
+let goCount         = 0;
 let cardBackgrounds = [
     "images/MoustacheGlasses.svg",
     "images/MoustacheGlasses.svg",
@@ -24,7 +24,7 @@ let cardBackgrounds = [
     "images/WinkSmile.svg",
     "images/WinkSmile.svg"
   ];
-  let firstCard = "";
+  let firstCard  = "";
   let secondCard = "";
 /*
   window.addEventListener('resize', displayScreenWidth); 

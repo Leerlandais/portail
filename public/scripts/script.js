@@ -9,15 +9,15 @@ displayScreenWidth();
 
 
 
-const descPrefo = document.getElementById("descPrefo");
-const descEarlyJS = document.getElementById("descEarlyJS");
-const descTI1 = document.getElementById("descTI1");
-const descTI2 = document.getElementById("descTI2");
-const descGit = document.getElementById("descGit");
-const descCF2M = document.getElementById("descCF2M");
-const descCardMem = document.getElementById("descCardMem");
+const descPrefo     = document.getElementById("descPrefo");
+const descEarlyJS   = document.getElementById("descEarlyJS");
+const descTI1       = document.getElementById("descTI1");
+const descTI2       = document.getElementById("descTI2");
+const descGit       = document.getElementById("descGit");
+const descCF2M      = document.getElementById("descCF2M");
+const descCardMem   = document.getElementById("descCardMem");
 const descCountries = document.getElementById("descCountries");
-const descTabs = document.getElementById("descTabs");
+const descTabs      = document.getElementById("descTabs");
 
 
 const portalWindow = document.querySelectorAll(".portalWindow");
@@ -42,8 +42,6 @@ const windowHolder = document.querySelectorAll(".windowHolder");
         let spinThis = this;
         spinThis.classList.toggle("spinIt");
         spinUrl = spinThis.getAttribute("url");
-  //      console.log (spinThis);
-  //      console.log(spinUrl);
        if (window.innerWidth < 700){
             alert("Please understand, many of these pages were created before I was able to make responsive view");
         }       
@@ -55,8 +53,8 @@ const windowHolder = document.querySelectorAll(".windowHolder");
         }
 
 const messageHolder = document.querySelectorAll(".messageHolder");
-const replyField = document.querySelectorAll(".replyField");
-const replyForm = document.querySelectorAll(".replyField");
+const replyField    = document.querySelectorAll(".replyField");
+const replyForm     = document.querySelectorAll(".replyField");
 const parentIdField = document.getElementById("parentIdField");
 
 for (let i=0; i<messageHolder.length; i++) {

@@ -1,6 +1,6 @@
-const devOrderUp = document.getElementById("devOrderUp");
-const devOrderDown = document.getElementById("devOrderDown");
-const devList = document.getElementById('devList');
+const devOrderUp    = document.getElementById("devOrderUp");
+const devOrderDown  = document.getElementById("devOrderDown");
+const devList       = document.getElementById('devList');
 
 devOrderUp.addEventListener("click", function () {
     devList.style.flexDirection = "column-reverse";
