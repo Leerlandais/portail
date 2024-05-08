@@ -50,7 +50,6 @@ if (isset($_GET["update"],
         $onePortal = getOnePortalForUpdate($db, $id);
 }          
 
-
 // HIDE/SHOW
 if (isset($_GET["update"], 
           $_GET["id"],
@@ -61,6 +60,17 @@ if (isset($_GET["update"],
     $vis = intval(intClean($_GET["show"]));
         $showHide = changePortalVisibility($db, $id, $vis);
 } 
+
+// MOVE POSITION
+if (isset($_GET["update"],
+          $_GET["dir"],
+          $_GET["place"]) &&
+          ctype_digit($_GET["place"])) {
+
+            $_GET['dir'] === "up" ? $dir = "+1" : $dir = "-1";
+            $place = intval(intClean($_GET["place"]));
+                $changePlaces = switchPlacements ($db, $dir, $place);
+          }
 
 // so Admin can leave
 if (isset($_GET["logout"])) include("../model/logoutModel.php");
@@ -82,3 +92,4 @@ if (isset($_GET["retour"])) {
 $title = "Admin Only";
 include ("../private/admin.home.php");
 die();
+
