@@ -19,10 +19,10 @@
         <?php
             if (isset($_GET["insert"])) {
                 include ("inc/insert-form.php");
-            }else if (isset($_GET["update"]) && !isset($_GET["item"])) {
-                include ("inc/update-table.php");
             }else if (isset($_GET["update"]) && isset($_GET["item"])) {
                 include ("inc/update-form.php");
+            }else {
+                include ("inc/update-table.php");
             }
         ?>
 

@@ -100,3 +100,24 @@ function changePortalVisibility(PDO $db, int $id, int $vis) : bool | string {
     }
 
 }
+
+function switchPlacements (PDO $db, string $dir, int $place) : bool | string {
+    $sqlTemp = "UPDATE `portals`
+            SET `placement` = 100
+            WHERE `placement` = ?";
+
+    
+
+
+
+    $stmtTemp = $db->prepare($sqlTemp);
+
+
+
+    try {
+        $stmtTemp->execute([$place]);
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
