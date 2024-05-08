@@ -67,7 +67,7 @@ if (isset($_GET["update"],
           $_GET["place"]) &&
           ctype_digit($_GET["place"])) {
 
-            $_GET['dir'] === "up" ? $dir = "+1" : $dir = "-1";
+            $_GET['dir'] === "up" ? $dir = "-1" : $dir = "+1";
             $place = intval(intClean($_GET["place"]));
                 $changePlaces = switchPlacements ($db, $dir, $place);
           }

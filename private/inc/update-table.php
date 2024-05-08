@@ -29,7 +29,7 @@
                             <?php
                             }else {
                             ?>
-                        <td><a href="?update&dir=down&place=<?=$port["placement"]?>"><img src="images/arrow-up.svg" alt="down arrow"></a></td>
+                        <td><a href="?update&dir=down&place=<?=$port["placement"]?>"><img src="images/arrow-up.svg" alt="up arrow"></a></td>
                         <?php } ?>
                         <?php
                             if ($port["placement"] === 0) {
@@ -38,7 +38,7 @@
                             <?php
                             }else {
                             ?>
-                        <td><a href="?update&dir=up&place=<?=$port["placement"]?>"><img src="images/arrow-down.svg" alt="up arrow"></a></td>                            
+                        <td><a href="?update&dir=up&place=<?=$port["placement"]?>"><img src="images/arrow-down.svg" alt="down arrow"></a></td>                            
                         <?php } ?>
                         <td><?=$port["title"]?></td>
                         <td><a href="?update&item=<?=$port["id"]?>">update</a></td>
