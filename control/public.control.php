@@ -1,6 +1,5 @@
 <?php
 $getPortals = getAllVisiblePortals ($db);
-
 if (isset($_POST["nameInp"], $_POST["passInp"])) {
     $name = standardClean($_POST["nameInp"]);
     $pass = simpleTrim($_POST["passInp"]);

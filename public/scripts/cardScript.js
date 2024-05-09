@@ -99,51 +99,67 @@ function flipCard () {
         switch (clickedCard.id) {
             case "cardWinFront16" :
                 clickedCard.style.backgroundImage = `url(${cardBackgrounds[15]})`;
+                clickedCard.setAttribute("alt", "cardImage");
                 break;
             case "cardWinFront15" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[14]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[14]})`; 
+                clickedCard.setAttribute("alt", "cardImage");                   
                 break;
             case "cardWinFront14" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[13]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[13]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront13" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[12]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[12]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront12" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[11]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[11]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront11" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[10]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[10]})`; 
+                clickedCard.setAttribute("alt", "cardImage");                   
                 break;
             case "cardWinFront10" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[9]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[9]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront9" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[8]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[8]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront8" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[7]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[7]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront7" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[6]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[6]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront6" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[5]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[5]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;
             case "cardWinFront5" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[4]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[4]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;  
             case "cardWinFront4" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[3]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[3]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;  
             case "cardWinFront3" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[2]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[2]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;  
             case "cardWinFront2" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[1]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[1]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;       
             case "cardWinFront1" :
-                clickedCard.style.backgroundImage = `url(${cardBackgrounds[0]})`;                    
+                clickedCard.style.backgroundImage = `url(${cardBackgrounds[0]})`;
+                clickedCard.setAttribute("alt", "cardImage");                    
                 break;                                                                                                                                                                                     
     }    
     

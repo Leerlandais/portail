@@ -17,7 +17,7 @@
                     <?php
                     $adminPortals = getPortalPlaceForAdmin($db);
                     $count = count($adminPortals);
-                    $count--;
+                    
                     foreach($adminPortals as $port) { 
                         ?>
                     <tr>
