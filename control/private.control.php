@@ -24,6 +24,8 @@ if (isset($_POST["titleInp"],
 if (isset($_POST["titleUpdate"],
           $_POST["descUpdate"],
           $_POST["imageUpdate"],
+          $_POST["widthUpdate"],
+          $_POST["heightUpdate"],
           $_POST["urlUpdate"],
           $_GET["item"]) &&
           ctype_digit($_GET["item"])) {
@@ -31,10 +33,12 @@ if (isset($_POST["titleUpdate"],
     $title  = standardClean($_POST["titleUpdate"]);
     $desc   = standardClean($_POST["descUpdate"]);
     $image  = simpleTrim($_POST["imageUpdate"]);
+    $imgW   = intval(intClean($_POST["widthUpdate"]));
+    $imgH   = intval(intClean($_POST["heightUpdate"]));
     $url    = urlClean($_POST["urlUpdate"]);
     $id     = intval(intClean($_GET["item"]));
 
-    $updateWindow = updateExistingWindow ($db, $title, $desc, $image, $url, $id);
+    $updateWindow = updateExistingWindow ($db, $title, $desc, $image, $imgW, $imgH, $url, $id);
             if ($updateWindow !== true) {
                 $errorMessage = "Problem updating Window";
             }
