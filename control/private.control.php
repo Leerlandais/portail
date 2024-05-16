@@ -80,6 +80,7 @@ if (isset($_GET["update"],
 if (isset($_POST["bgColour"])) {
     $bgColour   = standardClean($_POST["bgColour"]);
     $changeCSS  = updateGlobalCss($db, $bgColour);
+
 }
 
 // so Admin can leave

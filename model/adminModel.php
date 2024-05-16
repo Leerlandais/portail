@@ -158,7 +158,8 @@ function getGlobalCss(PDO $db) : array | bool {
 
 function updateGlobalCss(PDO $db, string $bgColour) : bool | string {
     // step one   : copy the existing css
-    // $sql = ""
+    $sql = "SELECT `value` FROM `global_css` WHERE `selector` = 'Background Colour'"; // change these to ? and prepare
+    
     // step two   : update old_css with this value
     // step three : add new css
 
