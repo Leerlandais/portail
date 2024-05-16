@@ -17,7 +17,7 @@
   </div>
   <div class="mb-4">
     <label for="imageHeight" class="form-label text-info">Image Height &lpar;vh&rpar;</label>
-    <input type="number" step="1" class="form-control" id="image" name="heightUpdate" value="<?=$onePortal["img_height"]?>">
+    <input type="number" step="1" class="form-control" id="imageHeight" name="heightUpdate" value="<?=$onePortal["img_height"]?>">
   </div>
   <div class="mb-1">
     <label for="url" class="form-label text-info">URL</label>
