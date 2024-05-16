@@ -138,3 +138,20 @@ function switchPlacements (PDO $db, string $dir, int $place) : bool | string {
         return $e->getMessage();
     }
 }
+
+function getGlobalCss(PDO $db) : array | bool {
+    
+    $sql = "SELECT * 
+            FROM `global_css`
+            ORDER BY `id`";
+    
+    try{
+        $query = $db->query($sql);
+        if ($query->rowCount() === 0) return false;
+        $result = $query->fetchAll();
+        $query->closeCursor();
+        return $result;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
