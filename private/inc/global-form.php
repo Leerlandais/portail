@@ -1,6 +1,6 @@
 <?php 
 
-var_dump($siteCss);
+
 ?>
 <form method="POST" id="globalForm" class="mt-5 w-25">
 <div class="mb-4">

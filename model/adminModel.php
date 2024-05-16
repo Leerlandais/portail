@@ -155,3 +155,13 @@ function getGlobalCss(PDO $db) : array | bool {
         return $e->getMessage();
     }
 }
+
+function updateGlobalCss(PDO $db, string $bgColour) : bool | string {
+    // step one   : copy the existing css
+    // $sql = ""
+    // step two   : update old_css with this value
+    // step three : add new css
+
+        var_dump($db, $bgColour);
+            return true;
+}

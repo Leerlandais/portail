@@ -76,6 +76,12 @@ if (isset($_GET["update"],
                 $changePlaces = switchPlacements ($db, $dir, $place);
           }
 
+// UPDATE GLOBAL CSS
+if (isset($_POST["bgColour"])) {
+    $bgColour   = standardClean($_POST["bgColour"]);
+    $changeCSS  = updateGlobalCss($db, $bgColour);
+}
+
 // so Admin can leave
 if (isset($_GET["logout"])) include("../model/logoutModel.php");
 
