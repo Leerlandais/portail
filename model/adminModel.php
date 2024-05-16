@@ -156,9 +156,19 @@ function getGlobalCss(PDO $db) : array | bool {
     }
 }
 
-function updateGlobalCss(PDO $db, string $bgColour) : bool | string {
+function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't forget to set  : bool | string once done
     // step one   : copy the existing css
-    $sql = "SELECT `value` FROM `global_css` WHERE `selector` = 'Background Colour'"; // change these to ? and prepare
+    $sqlCopy = "SELECT `value` FROM `global_css` WHERE `selector` = ?"; 
+    $stmtCopy = $db->prepare($sqlCopy);
+
+    try {
+        $stmtCopy->execute([$selector]);
+        $result = $stmtCopy->fetch();
+        return $result;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    } 
+    // step one : OK
     
     // step two   : update old_css with this value
     // step three : add new css

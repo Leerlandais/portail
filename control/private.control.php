@@ -79,7 +79,12 @@ if (isset($_GET["update"],
 // UPDATE GLOBAL CSS
 if (isset($_POST["bgColour"])) {
     $bgColour   = standardClean($_POST["bgColour"]);
-    $changeCSS  = updateGlobalCss($db, $bgColour);
+    $selector   = standardClean($_POST["selectorBGC"]);
+    $changeCSS  = updateGlobalCss($db, $bgColour, $selector);
+    if ($changeCSS) {
+        var_dump($changeCSS); 
+        die();
+    }
 
 }
 
