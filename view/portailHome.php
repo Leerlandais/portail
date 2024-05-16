@@ -27,9 +27,9 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
         <?php
         foreach ($getPortals as $db) {
             ?>
-            <div class="windowHolder" url = <?=$db["dest_url"]?>>
+            <div class="windowHolder" style="height :<?=$db["img_height"]?>vh;" url=<?=$db["dest_url"]?>>
                 <h3><?=$db["title"]?></h3>
-            <div class="portalWindow" id="" style="background-image: <?=$db["img_src"]?>;"><div class="portalDesc"><?=$db["description"]?></div></div>
+            <div class="portalWindow" id="" style="background-image: <?=$db["img_src"]?>; width :<?=$db["img_width"]?>%; "><div class="portalDesc"><?=$db["description"]?></div></div>
             </div>
         <?php
         }
@@ -37,8 +37,6 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     </div>
 </fieldset>       
 
- 
-
- <script src="scripts/script.js"></script>
+<script src="scripts/script.js"></script>
 </body>
 </html>

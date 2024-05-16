@@ -11,6 +11,14 @@
     <label for="image" class="form-label text-info">Image</label>
     <input type="text" class="form-control" id="image" name="imageUpdate" value="<?=$onePortal["img_src"]?>">
   </div>
+  <div class="mb-4">
+    <label for="imgWidth" class="form-label text-info">Image Width &lpar;%&rpar;</label>
+    <input type="number" step="1" class="form-control" id="imgWidth" name="widthUpdate" value="<?=$onePortal["img_width"]?>">
+  </div>
+  <div class="mb-4">
+    <label for="imageHeight" class="form-label text-info">Image Height &lpar;vh&rpar;</label>
+    <input type="number" step="1" class="form-control" id="image" name="heightUpdate" value="<?=$onePortal["img_height"]?>">
+  </div>
   <div class="mb-1">
     <label for="url" class="form-label text-info">URL</label>
     <input type="text" class="form-control" id="url" name="urlUpdate" value="<?=$onePortal["dest_url"]?>">

@@ -59,12 +59,14 @@ function getOnePortalForUpdate(PDO $db, int $id) : array | bool {
     }
 }
 
-function updateExistingWindow (PDO $db, string $title, string $desc, string $image, string $url, int $id) : bool | string {
+function updateExistingWindow (PDO $db, string $title, string $desc, string $image, int $imgW, int $imgH, string $url, int $id) : bool | string {
 
     $sql = "UPDATE `portals` 
             SET `title`= ?,
                 `description`= ?,
                 `img_src`= ?,
+                `img_width`= ?,
+                `img_height`= ?,
                 `dest_url`= ? 
             WHERE `id` = ?";
     
@@ -72,8 +74,10 @@ function updateExistingWindow (PDO $db, string $title, string $desc, string $ima
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
-    $stmt->bindValue(4, $url);
-    $stmt->bindValue(5, $id);
+    $stmt->bindValue(4, $imgW);
+    $stmt->bindValue(5, $imgH);
+    $stmt->bindValue(6, $url);
+    $stmt->bindValue(7, $id);
 
     try {
         $stmt->execute();
