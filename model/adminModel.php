@@ -157,21 +157,37 @@ function getGlobalCss(PDO $db) : array | bool {
 }
 
 function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't forget to set  : bool | string once done
-    // step one   : copy the existing css
-    $sqlCopy = "SELECT `value` FROM `global_css` WHERE `selector` = ?"; 
-    $stmtCopy = $db->prepare($sqlCopy);
 
+    $sqlCopy = "SELECT `value` 
+                FROM `global_css` 
+                WHERE `selector` = ?"; 
+
+    $stmtCopy   = $db->prepare($sqlCopy);
+    $stmtCopy->execute([$selector]);
+    $result  = $stmtCopy->fetch();
+    $sqlOld  = "UPDATE `global_css`
+                SET `old_val` = ? 
+                WHERE `selector` = ?";
+
+    $sqlNew  = "UPDATE `global_css`
+                SET `value` = ?
+                WHERE `selector` = ?";
     try {
-        $stmtCopy->execute([$selector]);
-        $result = $stmtCopy->fetch();
+    $stmtOld = $db->prepare($sqlOld);
+    $stmtOld->bindValue(1, $result["value"]);
+    $stmtOld->bindValue(2, $selector);
+    $stmtNew = $db->prepare($sqlNew);
+    $stmtNew->bindValue(1, $bgColour);
+    $stmtNew->bindValue(2, $selector);
+        $stmtNew->execute();
         return $result;
     }catch(Exception $e) {
         return $e->getMessage();
     } 
-    // step one : OK
+
     
-    // step two   : update old_css with this value
-    // step three : add new css
+ 
+
 
         var_dump($db, $bgColour);
             return true;
