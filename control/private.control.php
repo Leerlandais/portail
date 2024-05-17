@@ -81,11 +81,19 @@ if (isset($_POST["bgColour"])) {
     $bgColour   = standardClean($_POST["bgColour"]);
     $selector   = standardClean($_POST["selectorBGC"]);
     $changeCSS  = updateGlobalCss($db, $bgColour, $selector);
-    if ($changeCSS) {
-        var_dump($changeCSS); 
-        die();
-    }
 
+}
+
+// UNDO CHANGE TO GLOBAL
+if (isset($_POST["undoChange"])) {
+    $selector   = standardClean($_POST["selectorBGC"]);    
+    $undo = undoChangeToGlobal($db, $selector);
+}
+
+// RESET TO DEFAULT
+if (isset($_POST["resetDefault"])) {
+    $selector   = standardClean($_POST["selectorBGC"]);        
+    $reset = resetGlobalToDefault($db, $selector);
 }
 
 // so Admin can leave

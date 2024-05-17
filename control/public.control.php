@@ -1,5 +1,6 @@
 <?php
 $getPortals = getAllVisiblePortals ($db);
+$getGlobalCss = getAllCss ($db);
 if (isset($_POST["nameInp"], $_POST["passInp"])) {
     $name = standardClean($_POST["nameInp"]);
     $pass = simpleTrim($_POST["passInp"]);
@@ -16,6 +17,7 @@ if (isset($_POST["nameInp"], $_POST["passInp"])) {
     die();
 }
 }
+
 
 /*  -------------     CONTACT    --------------  */
 /*                                                          TURN THESE BACK ON
