@@ -84,6 +84,18 @@ if (isset($_POST["bgColour"])) {
 
 }
 
+// UNDO CHANGE TO GLOBAL
+if (isset($_POST["undoChange"])) {
+    $selector   = standardClean($_POST["selectorBGC"]);    
+    $undo = undoChangeToGlobal($db, $selector);
+}
+
+// RESET TO DEFAULT
+if (isset($_POST["resetDefault"])) {
+    $selector   = standardClean($_POST["selectorBGC"]);        
+    $reset = resetGlobalToDefault($db, $selector);
+}
+
 // so Admin can leave
 if (isset($_GET["logout"])) include("../model/logoutModel.php");
 

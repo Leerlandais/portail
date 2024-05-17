@@ -165,6 +165,8 @@ function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't
     $stmtCopy   = $db->prepare($sqlCopy);
     $stmtCopy->execute([$selector]);
     $result  = $stmtCopy->fetch();
+
+    
     $sqlOld  = "UPDATE `global_css`
                 SET `old_val` = ? 
                 WHERE `selector` = ?";
@@ -179,16 +181,65 @@ function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't
     $stmtNew = $db->prepare($sqlNew);
     $stmtNew->bindValue(1, $bgColour);
     $stmtNew->bindValue(2, $selector);
+        $stmtOld->execute();
         $stmtNew->execute();
         return $result;
     }catch(Exception $e) {
         return $e->getMessage();
     } 
 
-    
+}
+
+function undoChangeToGlobal($db, $selector) {
+    $sqlUndo = "SELECT `old_val`
+                FROM `global_css`
+                WHERE `selector` = ?";
+    $stmtUndo = $db->prepare($sqlUndo);
+    $stmtUndo->bindValue(1, $selector);
+    $stmtUndo->execute();
+    $result = $stmtUndo->fetch();
  
 
+    $sqlReplace = "UPDATE `global_css`
+                   SET `value` = ?
+                   WHERE `selector` = ?";
+    $stmtReplace = $db->prepare($sqlReplace);
+    try {
+        $stmtUndo->execute();
+        $stmtReplace->bindValue(1, $result["old_val"]);
+        $stmtReplace->bindValue(2, $selector);
+        $stmtReplace->execute();
+        if ($stmtReplace->rowCount()=== 0) {
+            return false;
+        }
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
 
-        var_dump($db, $bgColour);
-            return true;
+function resetGlobalToDefault($db, $selector) {
+    $sqlReset = "SELECT `def_val`
+                FROM `global_css`
+                WHERE `selector` = ?";
+    $stmtReset = $db->prepare($sqlReset);
+    $stmtReset->bindValue(1, $selector);
+    $result = $stmtReset->execute();
+
+    $sqlReplace = "UPDATE `global_css`
+                   SET `value` = ?
+                   WHERE `selector` = ?";
+    $stmtReplace = $db->prepare($sqlReplace);
+    try {
+        $stmtReset->execute();
+        $stmtReplace->bindValue(1, $result["def_val"]);
+        $stmtReplace->bindValue(2, $selector);
+        $stmtReplace->execute();
+        if ($stmtReplace->rowCount()=== 0) {
+            return false;
+        }
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
 }
