@@ -224,8 +224,8 @@ function resetGlobalToDefault($db, $selector) {
                 WHERE `selector` = ?";
     $stmtReset = $db->prepare($sqlReset);
     $stmtReset->bindValue(1, $selector);
-    $result = $stmtReset->execute();
-
+    $stmtReset->execute();
+    $result = $stmtReset->fetch();
     $sqlReplace = "UPDATE `global_css`
                    SET `value` = ?
                    WHERE `selector` = ?";
