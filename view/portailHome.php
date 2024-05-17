@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?></title>
-    <link rel="stylesheet" href="styles/styleHome.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleHome.css.php">
     
 </head>
 <body>
 <?php
 include("../view/inc/header.php");
 $getPortals = getAllVisiblePortals ($db);
+
 if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
     ?>
     <a href="?retour">Back to Admin</a>
@@ -18,7 +19,7 @@ if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
 }
 ?>
     <?php 
-    
+
     if (isset($_GET["login"])) include ("inc/login-form.php");
 ?>
 <fieldset>
