@@ -23,6 +23,5 @@
     <label for="url" class="form-label text-info">URL</label>
     <input type="text" class="form-control" id="url" name="urlUpdate" value="<?=$onePortal["dest_url"]?>">
   </div>
-  <!-- 2 more here, vis and place -->
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

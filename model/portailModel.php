@@ -18,6 +18,24 @@ function getAllVisiblePortals(PDO $db) : array | bool {
 
 }
 
+function getAllCss (PDO $db) {
+    $sql = "SELECT `selector`,`value`
+            FROM `global_css`
+            ORDER BY `id`";
+    try{
+        $query = $db->query($sql);
+        if ($query->rowCount()===0) return false;
+
+        $result = $query->fetchAll();
+        $query->closeCursor();
+    
+        return $result;
+    }catch(Exception $e) {
+        $e->getMessage();
+    }
+}
+
+
 function getMessages(PDO $db): array
 {
     /*
@@ -138,3 +156,4 @@ function addReply(PDO $db, string $firstname, string $parent, string $message) {
         return false;
     }
 }
+

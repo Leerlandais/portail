@@ -1,3 +1,10 @@
+<?php
+header("Content-type: text/css");
+?>
+
+    <?php
+//    foreach ($getGlobalCss as $css) {
+    ?>
 body {
     font-family: Helvetica;
     display: flex;
@@ -177,3 +184,7 @@ fieldset {
     }
 
 }
+
+<?php
+// }
+?>

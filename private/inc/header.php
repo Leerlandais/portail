@@ -15,6 +15,9 @@
                 <a class="nav-link text-warning" href="?update">Update</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link text-warning" href="?global">Site Settings</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-warning" href="?logout" tabindex="-1" aria-disabled="true">Exit</a>
             </li>
         </div>

@@ -21,7 +21,10 @@
                 include ("inc/insert-form.php");
             }else if (isset($_GET["update"]) && isset($_GET["item"])) {
                 include ("inc/update-form.php");
-            }else {
+            }else if (isset($_GET["global"])) {
+                include ("inc/global-form.php");
+            }
+            else {
                 include ("inc/update-table.php");
             }
         ?>
