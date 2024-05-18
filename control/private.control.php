@@ -20,6 +20,20 @@ if (isset($_POST["titleInp"],
     header ('Location: ?home');
 }
 
+// ADD NEW LOG
+if (isset($_POST["dateInp"],
+          $_POST["logInp"])) {
+    
+    $date   = standardClean($_POST["dateInp"]);
+    $log    = standardClean($_POST["logInp"]);
+
+    $addNewLog = addNewLog ($db, $date, $log);
+    if ($addNewLog !== true) {
+        $errorMessage = "Problem adding Log";
+    }
+    header ("Location: ?home");
+          }
+
 // UPDATE
 if (isset($_POST["titleUpdate"],
           $_POST["descUpdate"],

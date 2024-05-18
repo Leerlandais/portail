@@ -27,6 +27,8 @@
                 include ("inc/devlog-table.php");
             }else if (isset($_GET["updateLog"]) && isset($_GET["log"])) {
                 include ("inc/updateLog-form.php");
+            }else if (isset($_GET["addNewLog"])) {
+                include ("inc/addLog-form.php");
             }else {
                 include ("inc/update-table.php");
             }

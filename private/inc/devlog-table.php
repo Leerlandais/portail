@@ -39,6 +39,7 @@ $getDevLogs   = getAllDevLogsForAdmin($db);
                 </tbody>                      
             </table>
         </div>
+        <a href="?addNewLog"><button class="btn btn-primary">Add New Log</button></a>
     </div>
 </div>
 

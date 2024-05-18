@@ -27,6 +27,24 @@ $stmt = $db->prepare($sql);
     }
 }
 
+function addNewLog (PDO $db, string $date, string $log) : bool | string {
+    $sql = "INSERT INTO `devlog`
+                        (`date`,
+                        `log`)
+            VALUES (?, ?)";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1, $date);
+    $stmt->bindValue(2, $log);
+
+    try {
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
 function getPortalPlaceForAdmin (PDO $db) : array | bool {
     $sql = "SELECT `id`, `title`, `placement`, `visible`
             FROM `portals`
