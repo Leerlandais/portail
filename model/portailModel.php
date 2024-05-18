@@ -19,7 +19,7 @@ function getAllVisiblePortals(PDO $db) : array | bool {
 }
 
 function getAllCss (PDO $db) {
-    $sql = "SELECT *
+    $sql = "SELECT `selector`,`value`
             FROM `global_css`
             ORDER BY `id`";
     try{
@@ -34,6 +34,7 @@ function getAllCss (PDO $db) {
         $e->getMessage();
     }
 }
+
 
 function getMessages(PDO $db): array
 {
@@ -155,3 +156,4 @@ function addReply(PDO $db, string $firstname, string $parent, string $message) {
         return false;
     }
 }
+
