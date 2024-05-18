@@ -31,7 +31,7 @@ if (isset($_POST["dateInp"],
     if ($addNewLog !== true) {
         $errorMessage = "Problem adding Log";
     }
-    header ("Location: ?home");
+    header ("Location: ?addNewLog");
           }
 
 // UPDATE
