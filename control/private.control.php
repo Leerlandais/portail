@@ -1,7 +1,7 @@
 <?php
 
 require_once ("../model/adminModel.php");
-
+$getDevLogs   = getAllDevLogs($db);
 // INSERTION
 if (isset($_POST["titleInp"], 
           $_POST["descInp"], 
