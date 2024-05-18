@@ -1,7 +1,7 @@
 <?php
 
 require_once ("../model/adminModel.php");
-$getDevLogs   = getAllDevLogs($db);
+
 // INSERTION
 if (isset($_POST["titleInp"], 
           $_POST["descInp"], 
@@ -54,6 +54,15 @@ if (isset($_GET["update"],
         $onePortal = getOnePortalForUpdate($db, $id);
 }          
 
+// PRE-UPDATE SELECTION LOG
+if (isset($_GET["updateLog"], 
+          $_GET["log"]) && 
+          ctype_digit($_GET["log"])) {
+
+    $id = intval(intClean($_GET["log"]));
+        $oneLog = getOneLogForUpdate($db, $id);
+} 
+
 // HIDE/SHOW
 if (isset($_GET["update"], 
           $_GET["id"],
@@ -63,6 +72,17 @@ if (isset($_GET["update"],
     $id  = intval(intClean($_GET["id"]));
     $vis = intval(intClean($_GET["show"]));
         $showHide = changePortalVisibility($db, $id, $vis);
+} 
+
+// HIDE/SHOW LOG
+if (isset($_GET["updateLog"], 
+          $_GET["id"],
+          $_GET["show"]) && 
+          ctype_digit($_GET["id"]) && ctype_digit($_GET["show"])) {
+
+    $id  = intval(intClean($_GET["id"]));
+    $vis = intval(intClean($_GET["show"]));
+        $showHide = changeLogVisibility($db, $id, $vis);
 } 
 
 // MOVE POSITION

@@ -38,6 +38,7 @@ function getAllCss (PDO $db) {
 function getAllDevLogs(PDO $db) : array | bool {
     $sql = "SELECT *
             FROM `devlog`
+            WHERE `visible` = 1
             ORDER BY `id`";
     
     try{

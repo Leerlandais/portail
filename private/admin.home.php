@@ -25,8 +25,9 @@
                 include ("inc/global-form.php");
             }else if (isset($_GET["devlog"])) {
                 include ("inc/devlog-table.php");
-            }
-            else {
+            }else if (isset($_GET["updateLog"]) && isset($_GET["log"])) {
+                include ("inc/updateLog-form.php");
+            }else {
                 include ("inc/update-table.php");
             }
         ?>
