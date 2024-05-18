@@ -15,6 +15,7 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
+            <li class="devListItem">18/05/2024 - Added Trivia Quiz game</li> 
             <li class="devListItem">16/05/2024 - Added Image resize to backend</li>            
             <li class="devListItem">09/05/2024 - Added TI3 to site</li>
             <li class="devListItem">07/05/2024 - Completely changed backend of site</li>
