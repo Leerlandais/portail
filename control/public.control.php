@@ -56,7 +56,11 @@ if (isset($_POST['nameRep'], $_POST['parent_id'], $_POST['messageRep'])) {
 }    
 
 /*  -------------     CONTROLLER    --------------  */
-
+if (isset($_GET["video"])) {
+    $title = "Demo";
+    include("../view/portailVideo.php");
+    die();
+}
 
 
 if(isset($_GET["p"])){
@@ -65,6 +69,10 @@ if(isset($_GET["p"])){
             $title = "Welcome";
             include("../view/portailHome.php");
             break;
+            case 'video' :
+                $title = "Demo";
+                include("../view/portailVideo.php");
+                break;
             case 'contact' :
                 $title = "Contact Me";
                 include("../view/portailContact.php");
@@ -85,7 +93,7 @@ if(isset($_GET["p"])){
                                 $title = "Me Only";
                                 include("../view/portailTabDB.php");
                                 break;
-             
+ 
                                     default :
                                     $title = "Page d'Accueil";
                                     include("../view/portailHome.php");

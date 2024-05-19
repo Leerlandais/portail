@@ -9,7 +9,8 @@
             case 'home':
                 ?>
 
-                <a href="?p=devlog"><h4>Development Log</h4></a>
+            <a href="?video"><h4>Demo</h4></a>
+            <a href="?p=devlog"><h4>Development Log</h4></a>
                 <?php
                 break;
                 case 'cardgame':
@@ -22,16 +23,21 @@
                 case 'devlog':
                     ?>
                 <a href="?p=home"><h4>Home</h4></a>
-
+                <a href="?video"><h4>Demo</h4></a>
                 <?php
                 break;
                 default:
                 header("Location: ?p=home");
                 exit();
             }
-            }else {
+            }else if (isset($_GET["video"])){
                 ?>
-
+                <a href="?p=home"><h4>Home</h4></a>
+                <a href="?p=devlog"><h4>Development Log</h4></a>
+                <?php
+             }else {
+                ?>
+                <a href="?video"><h4>Demo</h4></a>
                 <a href="?p=devlog"><h4>Development Log</h4></a>
         <?php
     }

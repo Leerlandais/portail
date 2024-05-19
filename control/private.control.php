@@ -167,6 +167,8 @@ if (isset($_GET["retour"])) {
 // and the global update form
 if (isset($_GET["global"])) $siteCss = getGlobalCss($db);
 
+
+
 $title = "Admin Only";
 include ("../private/admin.home.php");
 die();

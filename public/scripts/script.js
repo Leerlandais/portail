@@ -85,10 +85,11 @@ function showReplies () {
 
 function makeGlobalCss(datas) {
     let body = document.querySelector('body');
+    let link = document.querySelector("a")
     for (let data in datas) {
         if (datas[data].selector === "backgroundColor") body.style.background = datas[data].value;
         if (datas[data].selector === "font-family") body.style.fontFamily = datas[data].value;
-        if (datas[data].selector === "color") body.style.color = datas[data].value;
+        if (datas[data].selector === "color") { body.style.color = datas[data].value; link.style.color = datas[data].value; }
     }
     
   
