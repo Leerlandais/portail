@@ -5,7 +5,7 @@ require_once("../control/dbConnectControl.php");
 require_once("../model/portailModel.php");
 require_once("../model/laundryModel.php");
 require_once("../model/loginModel.php");
-
+require_once("../control/jsonController.php");
 
 try {
 
@@ -22,3 +22,5 @@ if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
 }else {
     require_once("../control/public.control.php");
 }
+
+$db = null;

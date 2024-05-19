@@ -226,7 +226,7 @@ function getGlobalCss(PDO $db) : array | bool {
     }
 }
 
-function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't forget to set  : bool | string once done
+function updateGlobalCss(PDO $db, string $value, string $selector){  // don't forget to set  : bool | string once done
 
     $sqlCopy = "SELECT `value` 
                 FROM `global_css` 
@@ -249,7 +249,7 @@ function updateGlobalCss(PDO $db, string $bgColour, string $selector){  // don't
     $stmtOld->bindValue(1, $result["value"]);
     $stmtOld->bindValue(2, $selector);
     $stmtNew = $db->prepare($sqlNew);
-    $stmtNew->bindValue(1, $bgColour);
+    $stmtNew->bindValue(1, $value);
     $stmtNew->bindValue(2, $selector);
         $stmtOld->execute();
         $stmtNew->execute();
@@ -269,13 +269,14 @@ function undoChangeToGlobal($db, $selector) {
     $stmtUndo->execute();
     $result = $stmtUndo->fetch();
  
-
+// var_dump($result["old_val"]);
+// die();
     $sqlReplace = "UPDATE `global_css`
                    SET `value` = ?
                    WHERE `selector` = ?";
     $stmtReplace = $db->prepare($sqlReplace);
     try {
-        $stmtUndo->execute();
+    
         $stmtReplace->bindValue(1, $result["old_val"]);
         $stmtReplace->bindValue(2, $selector);
         $stmtReplace->execute();
