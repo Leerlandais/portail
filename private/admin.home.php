@@ -23,8 +23,13 @@
                 include ("inc/update-form.php");
             }else if (isset($_GET["global"])) {
                 include ("inc/global-form.php");
-            }
-            else {
+            }else if (isset($_GET["devlog"])) {
+                include ("inc/devlog-table.php");
+            }else if (isset($_GET["updateLog"]) && isset($_GET["log"])) {
+                include ("inc/updateLog-form.php");
+            }else if (isset($_GET["addNewLog"])) {
+                include ("inc/addLog-form.php");
+            }else {
                 include ("inc/update-table.php");
             }
         ?>

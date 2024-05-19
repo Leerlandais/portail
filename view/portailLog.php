@@ -15,35 +15,13 @@ include("../view/inc/header.php");
     <button id="devOrderUp" class="devOrderChange">&uarr;</button><button id="devOrderDown" class="devOrderChange">&darr;</button>
     <div class="listHolder">
         <ul id="devList">
-            <li class="devListItem">18/05/2024 - Added Trivia Quiz game</li> 
-            <li class="devListItem">16/05/2024 - Added Image resize to backend</li>            
-            <li class="devListItem">09/05/2024 - Added TI3 to site</li>
-            <li class="devListItem">07/05/2024 - Completely changed backend of site</li>
-            <li class="devListItem">06/05/2024 - Rewrote homepage CSS to improve responsiveness</li>
-            <li class="devListItem">29/04/2024 - Working on TI3</li>
-            <li class="devListItem">21/04/2024 - Added new Session, CRUD, Bootstrap and Map project</li>
-            <li class="devListItem">10/04/2024 - Working on School Projects : Completed Company &lpar;for AP&rpar;</li>
-            <li class="devListItem">05/04/2024 - Working on School Projects : Completed questionnaire &lpar;for MP&rpar;</li>
-            <li class="devListItem">26/03/2024 - Completed New Tabs. Now online</li>
-            <li class="devListItem">24/03/2024 - Rebuilt tabs to improve DB efficiency</li>
-            <li class="devListItem">23/03/2024 - Completed Tabs Project including homemade SlugMaker</li>
-            <li class="devListItem">21/03/2024 - Moved Tabs and Maps into their own folders (local, Git and Site)</li>
-            <li class="devListItem">20/03/2024 - Made Tabs Page visible and protected the AddTab page</li>
-            <li class="devListItem">16/03/2024 - Complete rewrite of Countries, fully working</li>
-            <li class="devListItem">15/03/2024 - Added SortBy to Countries</li>
-            <li class="devListItem">14/03/2024 - Select Amount to display to Countries</li>
-            <li class="devListItem">13/03/2024 - Added Pages to Countries</li>
-            <li class="devListItem">12/03/2024 - Changed PHP query to prepare</li>
-            <li class="devListItem">11/03/2024 - Changed SQL to JOIN</li>     
-            <li class="devListItem">10/03/2024 - Started new project. Tabs</li>
-            <li class="devListItem">09/03/2024 - Started Dev Log</li>
-            <li class="devListItem">09/03/2024 - Finished Card Game</li>
-            <li class="devListItem">07/03/2024 - Started Card Game</li>
-            <li class="devListItem">06/03/2024 - Finished Reply Field</li>
-            <li class="devListItem">04/03/2024 - Started Reply Field</li>
-            <li class="devListItem">02/03/2024 - Started Contact Page</li>
-            <li class="devListItem">01/03/2024 - Created Portal Home Page</li>
-            <li class="devListItem">29/02/2024 - Registered Domain</li>
+<?php	
+foreach($getDevLogs as $log) {
+?>
+        <li class="devListItem"><?=$log["date"]?> - <?=$log["log"]?></li> 
+<?php	
+}
+?>
         </ul>
     </div>
 </fieldset>

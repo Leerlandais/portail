@@ -1,6 +1,7 @@
 <?php
-$getPortals = getAllVisiblePortals ($db);
+$getPortals   = getAllVisiblePortals ($db);
 $getGlobalCss = getAllCss ($db);
+$getDevLogs   = getAllDevLogs($db);
 
 if (isset($_POST["nameInp"], $_POST["passInp"])) {
     $name = standardClean($_POST["nameInp"]);

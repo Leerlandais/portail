@@ -35,6 +35,24 @@ function getAllCss (PDO $db) {
     }
 }
 
+function getAllDevLogs(PDO $db) : array | bool {
+    $sql = "SELECT *
+            FROM `devlog`
+            WHERE `visible` = 1
+            ORDER BY `id` DESC";
+    
+    try{
+        $query = $db->query($sql);
+        if ($query->rowCount()===0) return false;
+        $result = $query->fetchAll();
+        $query->closeCursor();
+        return $result;   
+    }catch(Exception $e) {
+        $e->getMessage();
+    }
+
+}
+
 
 function getMessages(PDO $db): array
 {

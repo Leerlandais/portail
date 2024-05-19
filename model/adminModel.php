@@ -27,6 +27,24 @@ $stmt = $db->prepare($sql);
     }
 }
 
+function addNewLog (PDO $db, string $date, string $log) : bool | string {
+    $sql = "INSERT INTO `devlog`
+                        (`date`,
+                        `log`)
+            VALUES (?, ?)";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1, $date);
+    $stmt->bindValue(2, $log);
+
+    try {
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
 function getPortalPlaceForAdmin (PDO $db) : array | bool {
     $sql = "SELECT `id`, `title`, `placement`, `visible`
             FROM `portals`
@@ -59,15 +77,30 @@ function getOnePortalForUpdate(PDO $db, int $id) : array | bool {
     }
 }
 
+function getOneLogForUpdate(PDO $db, int $id) : array | bool {
+    $sql = "SELECT *
+            FROM `devlog`
+            WHERE `id` = ?";
+    
+    $stmt = $db->prepare($sql);
+    try {
+        $stmt->execute([$id]);
+        $result = $stmt->fetch();
+        return $result;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
 function updateExistingWindow (PDO $db, string $title, string $desc, string $image, int $imgW, int $imgH, string $url, int $id) : bool | string {
 
     $sql = "UPDATE `portals` 
-            SET `title`= ?,
+            SET `title`      = ?,
                 `description`= ?,
-                `img_src`= ?,
-                `img_width`= ?,
-                `img_height`= ?,
-                `dest_url`= ? 
+                `img_src`    = ?,
+                `img_width`  = ?,
+                `img_height` = ?,
+                `dest_url`   = ? 
             WHERE `id` = ?";
     
     $stmt = $db->prepare($sql);
@@ -87,8 +120,45 @@ function updateExistingWindow (PDO $db, string $title, string $desc, string $ima
     }
 }
 
+function updateExistingLog(PDO $db, string $date, string $log, int $id) : bool | string {
+    $sql = "UPDATE `devlog`
+            SET `date` = ?,
+                `log`  = ?
+            WHERE `id` = ?";
+    
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1, $date);
+    $stmt->bindValue(2, $log);
+    $stmt->bindValue(3, $id);
+
+    try{
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
+
 function changePortalVisibility(PDO $db, int $id, int $vis) : bool | string {
     $sql = "UPDATE `portals`
+            SET `visible` = ?
+            WHERE `id` = ?";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1, $vis);
+    $stmt->bindValue(2, $id);
+
+    try {
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+
+}
+
+function changeLogVisibility(PDO $db, int $id, int $vis) : bool | string {
+    $sql = "UPDATE `devlog`
             SET `visible` = ?
             WHERE `id` = ?";
 
@@ -242,4 +312,22 @@ function resetGlobalToDefault($db, $selector) {
     }catch(Exception $e) {
         return $e->getMessage();
     }
+}
+
+
+function getAllDevLogsForAdmin(PDO $db) : array | bool {
+    $sql = "SELECT *
+            FROM `devlog`
+            ORDER BY `id`";
+    
+    try{
+        $query = $db->query($sql);
+        if ($query->rowCount()===0) return false;
+        $result = $query->fetchAll();
+        $query->closeCursor();
+        return $result;   
+    }catch(Exception $e) {
+        $e->getMessage();
+    }
+
 }

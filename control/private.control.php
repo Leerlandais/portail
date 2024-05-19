@@ -20,6 +20,20 @@ if (isset($_POST["titleInp"],
     header ('Location: ?home');
 }
 
+// ADD NEW LOG
+if (isset($_POST["dateInp"],
+          $_POST["logInp"])) {
+    
+    $date   = standardClean($_POST["dateInp"]);
+    $log    = standardClean($_POST["logInp"]);
+
+    $addNewLog = addNewLog ($db, $date, $log);
+    if ($addNewLog !== true) {
+        $errorMessage = "Problem adding Log";
+    }
+    header ("Location: ?addNewLog");
+          }
+
 // UPDATE
 if (isset($_POST["titleUpdate"],
           $_POST["descUpdate"],
@@ -54,6 +68,31 @@ if (isset($_GET["update"],
         $onePortal = getOnePortalForUpdate($db, $id);
 }          
 
+// UPDATE LOG
+if (isset($_POST["dateUpdate"],
+          $_POST["logUpdate"],
+          $_GET["log"]) &&
+          ctype_digit($_GET["log"])) {
+    $date   = standardClean($_POST["dateUpdate"]);
+    $log    = standardClean($_POST["logUpdate"]);
+    $id     = intval(intClean($_GET["log"]));
+
+    $updateLog = updateExistingLog($db, $date, $log, $id);
+    if ($updateLog !== true) {
+        $errorMessage = "Problem updating Log";
+    }
+    header("Location: ?devlog");
+          }
+
+// PRE-UPDATE SELECTION LOG
+if (isset($_GET["updateLog"], 
+          $_GET["log"]) && 
+          ctype_digit($_GET["log"])) {
+
+    $id = intval(intClean($_GET["log"]));
+        $oneLog = getOneLogForUpdate($db, $id);
+} 
+
 // HIDE/SHOW
 if (isset($_GET["update"], 
           $_GET["id"],
@@ -63,6 +102,17 @@ if (isset($_GET["update"],
     $id  = intval(intClean($_GET["id"]));
     $vis = intval(intClean($_GET["show"]));
         $showHide = changePortalVisibility($db, $id, $vis);
+} 
+
+// HIDE/SHOW LOG
+if (isset($_GET["updateLog"], 
+          $_GET["id"],
+          $_GET["show"]) && 
+          ctype_digit($_GET["id"]) && ctype_digit($_GET["show"])) {
+
+    $id  = intval(intClean($_GET["id"]));
+    $vis = intval(intClean($_GET["show"]));
+        $showHide = changeLogVisibility($db, $id, $vis);
 } 
 
 // MOVE POSITION

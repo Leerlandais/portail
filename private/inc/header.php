@@ -15,6 +15,9 @@
                 <a class="nav-link text-warning" href="?update">Update</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link text-warning" href="?devlog">DevLog</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-warning" href="?global">Site Settings</a>
             </li>
             <li class="nav-item">
