@@ -19,6 +19,17 @@ const descCardMem   = document.getElementById("descCardMem");
 const descCountries = document.getElementById("descCountries");
 const descTabs      = document.getElementById("descTabs");
 
+fetch("?json")
+.then(function(response){
+    response.json().then(function(data){
+        makeGlobalCss(data);
+
+        });
+
+        })
+        .catch(function(error){
+            console.log(error.message);
+    });
 
 const portalWindow = document.querySelectorAll(".portalWindow");
     for (let i=0; i<portalWindow.length; i++) {
@@ -72,3 +83,13 @@ function showReplies () {
    //     pleaseWork[5].childNodes[5].setAttribute("style", "display: block;");
     }
 
+function makeGlobalCss(datas) {
+    let body = document.querySelector('body');
+    for (let data in datas) {
+        if (datas[data].selector === "backgroundColor") body.style.background = datas[data].value;
+        if (datas[data].selector === "font-family") body.style.fontFamily = datas[data].value;
+        if (datas[data].selector === "color") body.style.color = datas[data].value;
+    }
+    
+  
+}

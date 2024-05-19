@@ -2,23 +2,29 @@
 
 
 ?>
-<form method="POST" id="globalForm" class="mt-5 w-25">
-<div class="mb-4">
-    <?php
+<div class="mb-4 d-flex flex-row flex-wrap w-auto">
+  <?php
     foreach ($siteCss as $css) {
-    ?>
-    <label for="bgColourUpdate" class="form-label text-info"><?=$css["selector"]?></label>
-    <input type="text" name="selectorBGC" style="display: none;" value="<?=$css["selector"]?>">
-    <input type="text" class="form-control" name="bgColour" id="bgColourUpdate" value="<?=$css["value"]?>">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <form method="POST" id="globalForm" class="mt-5 w-25">
-  <button type="submit" class="btn btn-primary" name="undoChange">Undo Change</button>
-  <button type="submit" class="btn btn-primary" name="resetDefault">Reset to Default</button>
+      ?>
+      <div class="d-flex flex-column mx-5">
+      <form method="POST" id="globalForm" class="mt-5 w-auto">
+    <label for="cssSelector" class="form-label text-info"><?=$css["selector"]?></label>
+    <input type="text" name="cssSelector" style="display: none;" value="<?=$css["selector"]?>">
+    <input type="text" class="form-control" name="cssValue"  value="<?=$css["value"]?>">
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  <form method="POST" id="globalFormOpt" class="mt-1 w-auto">
+    <input type="text" name="cssReset" style="display: none;" value="<?=$css["selector"]?>">
+    <button type="submit" class="btn btn-primary" name="undoChange">Undo Change</button>
+    <button type="submit" class="btn btn-primary" name="resetDefault">Reset to Default</button>
   </form> 
+</div>
+  
     <?php
     }
     ?>
-</form>
+    </div>
 
 
