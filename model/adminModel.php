@@ -92,25 +92,29 @@ function getOneLogForUpdate(PDO $db, int $id) : array | bool {
     }
 }
 
-function updateExistingWindow (PDO $db, string $title, string $desc, string $image, int $imgW, int $imgH, string $url, int $id) : bool | string {
+function updateExistingWindow (PDO $db, string $title, string $desc, string $image, int $imgW, string $wType, int $imgH, string $hType, string $url, int $id) : bool | string {
 
     $sql = "UPDATE `portals` 
-            SET `title`      = ?,
-                `description`= ?,
-                `img_src`    = ?,
-                `img_width`  = ?,
-                `img_height` = ?,
-                `dest_url`   = ? 
+            SET `title`           = ?,
+                `description`     = ?,
+                `img_src`         = ?,
+                `img_width`       = ?,
+                `img_width_type`  = ?,
+                `img_height`      = ?,
+                `img_height_type` = ?,
+                `dest_url`        = ? 
             WHERE `id` = ?";
-    
+
     $stmt = $db->prepare($sql);
     $stmt->bindValue(1, $title);
     $stmt->bindValue(2, $desc);
     $stmt->bindValue(3, $image);
     $stmt->bindValue(4, $imgW);
-    $stmt->bindValue(5, $imgH);
-    $stmt->bindValue(6, $url);
-    $stmt->bindValue(7, $id);
+    $stmt->bindValue(5, $wType);
+    $stmt->bindValue(6, $imgH);
+    $stmt->bindValue(7, $hType);
+    $stmt->bindValue(8, $url);
+    $stmt->bindValue(9, $id);
 
     try {
         $stmt->execute();

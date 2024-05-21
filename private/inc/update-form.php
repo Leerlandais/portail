@@ -11,13 +11,17 @@
     <label for="image" class="form-label text-info">Image</label>
     <input type="text" class="form-control" id="image" name="imageUpdate" value="<?=$onePortal["img_src"]?>">
   </div>
-  <div class="mb-4">
-    <label for="imgWidth" class="form-label text-info">Image Width &lpar;%&rpar;</label>
-    <input type="number" step="1" class="form-control" id="imgWidth" name="widthUpdate" value="<?=$onePortal["img_width"]?>">
+  <div class="mb-4 d-flex flex-row">
+    <label for="imgWidth" class="form-label text-info me-3">Image Width</label>
+    <input type="number" step="1" class="form-control me-3 w-25" id="imgWidth" name="widthUpdate" value="<?=$onePortal["img_width"]?>">
+    <input type="text" step="1" class="form-control w-25" id="imgWidthType" name="widthType" value="<?=$onePortal["img_width_type"]?>">
+    <label for="imgWidthType" class="form-label text-info ms-3">&lpar;% - best&rpar;</label>
   </div>
-  <div class="mb-4">
-    <label for="imageHeight" class="form-label text-info">Image Height &lpar;vh&rpar;</label>
-    <input type="number" step="1" class="form-control" id="imageHeight" name="heightUpdate" value="<?=$onePortal["img_height"]?>">
+  <div class="mb-4 d-flex flex-row">
+    <label for="imageHeight" class="form-label text-info me-3">Image Height</label>
+    <input type="number" step="1" class="form-control me-3 w-25" id="imageHeight" name="heightUpdate" value="<?=$onePortal["img_height"]?>">
+    <input type="text" step="1" class="form-control w-25" id="imageHeightType" name="heightType" value="<?=$onePortal["img_height_type"]?>">
+    <label for="imageHeightType" class="form-label text-info ms-3">&lpar;vh - best&rpar;</label>
   </div>
   <div class="mb-1">
     <label for="url" class="form-label text-info">URL</label>
