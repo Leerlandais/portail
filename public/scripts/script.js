@@ -22,6 +22,7 @@ const descTabs      = document.getElementById("descTabs");
 fetch("?json")
 .then(function(response){
     response.json().then(function(data){
+        
         makeGlobalCss(data);
 
         });
@@ -84,12 +85,19 @@ function showReplies () {
     }
 
 function makeGlobalCss(datas) {
-    let body = document.querySelector('body');
-    let link = document.querySelector("a")
+    let body    = document.querySelector('body'),
+        link    = document.querySelector("a"),
+        header  = document.querySelector(".headerDiv"),
+        windows = document.querySelector(".portalWindow");
+console.log(header.style.border);
+    console.log(datas);
     for (let data in datas) {
         if (datas[data].selector === "backgroundColor") body.style.background = datas[data].value;
         if (datas[data].selector === "font-family") body.style.fontFamily = datas[data].value;
         if (datas[data].selector === "color") { body.style.color = datas[data].value; link.style.color = datas[data].value; }
+        if (datas[data].selector === "border-header")  header.style = datas[data].value; 
+        if (datas[data].selector === "box-shadow-header") header.style.boxShadow = datas[data].value;
+        if (datas[data].selector === "border-radius-windows") windows.style.borderRadius = datas[data].value;
     }
     
   
