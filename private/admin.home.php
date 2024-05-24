@@ -36,6 +36,6 @@
 
     </div>
 
-    <?php require_once("inc/jsBS.php"); ?>
+    <?php  require_once("inc/jsBS.php"); ?>
 </body>
 </html>
