@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+
+
 window.addEventListener('resize', displayScreenWidth); 
 function displayScreenWidth() { 
     const screenwidth = document.getElementById("screenwidth");
@@ -88,17 +92,24 @@ function makeGlobalCss(datas) {
     let body    = document.querySelector('body'),
         link    = document.querySelector("a"),
         header  = document.querySelector(".headerDiv"),
-        windows = document.querySelector(".portalWindow");
-console.log(header.style.border);
-    console.log(datas);
-    for (let data in datas) {
-        if (datas[data].selector === "backgroundColor") body.style.background = datas[data].value;
-        if (datas[data].selector === "font-family") body.style.fontFamily = datas[data].value;
-        if (datas[data].selector === "color") { body.style.color = datas[data].value; link.style.color = datas[data].value; }
-        if (datas[data].selector === "border-header")  header.style = datas[data].value; 
-        if (datas[data].selector === "box-shadow-header") header.style.boxShadow = datas[data].value;
-        if (datas[data].selector === "border-radius-windows") windows.style.borderRadius = datas[data].value;
-    }
+        windows = document.querySelectorAll(".portalWindow");
+        console.log(windows);
+        for (let data in datas) {
+            if (datas[data].selector === "backgroundColor") body.style.background = datas[data].value;
+            if (datas[data].selector === "font-family") body.style.fontFamily = datas[data].value;
+            if (datas[data].selector === "color") { body.style.color = datas[data].value; link.style.color = datas[data].value; }
+            if (datas[data].selector === "border-header")  header.style.border = datas[data].value; 
+            if (datas[data].selector === "box-shadow-header") header.style.boxShadow = datas[data].value;
+            if (datas[data].selector === "border-radius-windows") {
+                for(i=0;i<windows.length;i++) {
+                windows[i].style.borderRadius = datas[data].value;
+            }
+        }
+                
+        }
+        
     
   
 }
+
+});
