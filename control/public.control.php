@@ -85,23 +85,14 @@ if(isset($_GET["p"])){
                         $title = "Development History";
                         include("../view/portailLog.php");
                         break;
-                        case 'tabsLee' :
-                            $title = "Guitar Tablatures";
-                            include("../view/portailTabs.php");
-                            break;
-                            case 'tabcontrol' :
-                                $title = "Me Only";
-                                include("../view/portailTabDB.php");
-                                break;
- 
-                                    default :
-                                    $title = "Page d'Accueil";
-                                    include("../view/portailHome.php");
-                                }
-                            }else{
-                                $title = "Page d'Accueil";
-                                include("../view/portailHome.php");
-                                
+                    default :
+                        $title = "Page d'Accueil";
+                        include("../view/portailHome.php");
                             }
+                        }else{
+                            $title = "Page d'Accueil";
+                            include("../view/portailHome.php");
+                               
+                        }
                             
  $db =null;

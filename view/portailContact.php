@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php
-include_once("../view/inc/header.php");
+include("../view/inc/header.php");
 ?>
 <div class="contactPage">
     <h1>Leave me a message</h1>

@@ -10,8 +10,12 @@ require_once("../control/jsonController.php");
 
 
 if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
+	if($_SESSION["user_name"] === "Lee" || $_SESSION["user_name" === "leerlandais"]) {
     require_once ("../control/private.control.php");
     die();
+	}else {
+		require_once("../control/public.control.php");
+	}
 }else {
     require_once("../control/public.control.php");
 }
