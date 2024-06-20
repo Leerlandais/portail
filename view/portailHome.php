@@ -12,9 +12,11 @@ include("../view/inc/header.php");
 $getPortals = getAllVisiblePortals ($db);
 
 if (isset($_SESSION['id']) && $_SESSION["id"] === session_id()) {
+    if($_SESSION["user_name"] === "Lee" || $_SESSION["user_name" === "leerlandais"]) {
     ?>
     <a href="?retour">Back to Admin</a>
     <?php
+    }
 }
 ?>
     <?php 
